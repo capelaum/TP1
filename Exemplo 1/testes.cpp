@@ -25,12 +25,12 @@ void TUAssento::testarCenarioSucesso(){
         assento->setAssento(TRASEIRO_VALIDO);
 
         if(assento->getAssento().compare(DIANTEIRO_VALIDO) == false){
-            cout << "falhou!" << endl;
+            cout << "teste! 1" << endl;
             estado = FALHA;
         }
 
         if(assento->getAssento().compare(TRASEIRO_VALIDO) == false){
-            cout << "falhou!" << endl;
+            cout << "teste! 2" << endl;
             estado = FALHA;
         }
 
@@ -46,11 +46,14 @@ void TUAssento::testarCenarioFalha(){
         assento->setAssento(DIANTEIRO_INVALIDO);
         assento->setAssento(TRASEIRO_INVALIDO);
 
-        if(assento->getAssento().compare(DIANTEIRO_INVALIDO) == false)
-            estado = SUCESSO;
-
-        if(assento->getAssento().compare(TRASEIRO_INVALIDO) == false)
-            estado = SUCESSO;
+        if(assento->getAssento().compare(DIANTEIRO_INVALIDO)){
+            cout << "teste! 3" << endl;
+            estado = FALHA;
+        }
+        if(assento->getAssento().compare(TRASEIRO_INVALIDO)){
+            cout << "teste! 4" << endl;
+            estado = FALHA;
+        }
 
         // estado = FALHA;
     }
@@ -96,6 +99,7 @@ void TUCodigo::testarCenarioFalha(){
 
         if (codigo->getCodigo() != VALOR_VALIDO)
             estado = FALHA;
+
 
         estado = FALHA;
     }

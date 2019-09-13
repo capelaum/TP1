@@ -5,7 +5,7 @@
 //Definicoes de constantes.
 
 
-// Metodos da classe Assento - 'D' ou 'T'
+// Metodos da classe Assento - D ou T
 
 const string Assento::Dianteiro = "D";
 const string Assento::Traseiro = "T";

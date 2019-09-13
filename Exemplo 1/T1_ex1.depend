@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1568308978 source:c:\users\luis\documents\github\tp1_t1\exemplo 1\entidades.cpp
+	"entidades.h"
+
+1568308896 c:\users\luis\documents\github\tp1_t1\exemplo 1\entidades.h
+	"dominios.h"
+	<string>
+
+1568315151 c:\users\luis\documents\github\tp1_t1\exemplo 1\dominios.h
+	<stdexcept>
+	<string>
+
+1568317051 source:c:\users\luis\documents\github\tp1_t1\exemplo 1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1568316634 c:\users\luis\documents\github\tp1_t1\exemplo 1\testes.h
+	"dominios.h"
+
+1568317885 source:c:\users\luis\documents\github\tp1_t1\exemplo 1\testes.cpp
+	"testes.h"
+	<iostream>
+
+1568387115 source:c:\users\luis\documents\github\tp1_t1\exemplo 1\dominios.cpp
+	"dominios.h"
+
