@@ -11,6 +11,7 @@ using namespace std;
 
 class TUAssento {
 private:
+
     // Definições de constantes para evitar numeros mágicos
 
     const string DIANTEIRO_VALIDO = "D";

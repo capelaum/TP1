@@ -6,7 +6,7 @@
 	"dominios.h"
 	<string>
 
-1568315151 c:\users\luis\documents\github\tp1_t1\exemplo 1\dominios.h
+1568379324 c:\users\luis\documents\github\tp1_t1\exemplo 1\dominios.h
 	<stdexcept>
 	<string>
 
@@ -16,13 +16,13 @@
 	"entidades.h"
 	"testes.h"
 
-1568316634 c:\users\luis\documents\github\tp1_t1\exemplo 1\testes.h
+1568387678 c:\users\luis\documents\github\tp1_t1\exemplo 1\testes.h
 	"dominios.h"
 
-1568317885 source:c:\users\luis\documents\github\tp1_t1\exemplo 1\testes.cpp
+1568387646 source:c:\users\luis\documents\github\tp1_t1\exemplo 1\testes.cpp
 	"testes.h"
 	<iostream>
 
-1568387115 source:c:\users\luis\documents\github\tp1_t1\exemplo 1\dominios.cpp
+1568379404 source:c:\users\luis\documents\github\tp1_t1\exemplo 1\dominios.cpp
 	"dominios.h"
 

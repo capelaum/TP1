@@ -14,7 +14,7 @@ void Assento::validar(string Assento) {
     // Se a string assento passada for diferente de D e T
     if ( !(Assento.compare(Dianteiro) && Assento.compare(Traseiro)) ) {
         // pode se fazer outro if aqui dentro se n funcionar
-
+        cout << "validar assento falhou! 1" << endl;
         throw invalid_argument ("Argumento invalido.");
     }
 }

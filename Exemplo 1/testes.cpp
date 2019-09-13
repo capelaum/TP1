@@ -2,11 +2,12 @@
 
 #include <iostream>
 
+
+// Definicoes de metodos de teste
+
 // Separar cenarios de FALHA/SUCESSO
 // Especificar o que falhou
 // Testes unitarios para cada classe
-
-// Definições de métodos de teste
 
 // Metodos testes da classe Assento
 

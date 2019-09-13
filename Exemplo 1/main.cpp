@@ -29,6 +29,8 @@ int main()
             break;
     }
 
+
+    // run teste de codigo exemplo
     switch(teste.run()){
         case TUCodigo::SUCESSO: cout << "SUCESSO!" << endl;
             break;

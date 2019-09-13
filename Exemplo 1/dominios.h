@@ -33,7 +33,7 @@ private:
 
     string Bagagem;
 
-    // string guarda qtd de bagagens
+    // string guarda valor de Bagagens
     const static string quantidade;
 
     void validar(string); // throw (invalid_argument);
