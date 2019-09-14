@@ -2,12 +2,13 @@
 
 #include <iostream>
 
+// Definicoes de Metodos de Testes Unitarios
 
-// Definicoes de metodos de teste
-
-// Separar cenarios de FALHA/SUCESSO
-// Especificar o que falhou
-// Testes unitarios para cada classe
+/*
+    Separar cenarios de FALHA/SUCESSO
+    Especificar o que falhou
+    Testes unitarios para cada classe
+*/
 
 // Metodos testes da classe Assento
 
@@ -23,15 +24,18 @@ void TUAssento::tearDown(){
 void TUAssento::testarCenarioSucesso(){
     try{
         assento->setAssento(DIANTEIRO_VALIDO);
-        assento->setAssento(TRASEIRO_VALIDO);
 
-        if(assento->getAssento().compare(DIANTEIRO_VALIDO) == false){
-            cout << "teste! 1" << endl;
+        if(assento->getAssento().compare(DIANTEIRO_VALIDO) != 0){
+            cout << "TUAssento::testarCenarioFalha falhou! 1" << endl;
+            cout << "Assento: " << assento->getAssento() << endl;
+            cout << "DIANTEIRO_VALIDO: " << DIANTEIRO_VALIDO << endl;
             estado = FALHA;
         }
 
-        if(assento->getAssento().compare(TRASEIRO_VALIDO) == false){
-            cout << "teste! 2" << endl;
+        assento->setAssento(TRASEIRO_VALIDO);
+
+        if(assento->getAssento().compare(TRASEIRO_VALIDO) != 0){
+            cout << "TUAssento::testarCenarioFalha falhou! 2" << endl;
             estado = FALHA;
         }
 
@@ -45,14 +49,16 @@ void TUAssento::testarCenarioFalha(){
     try{
 
         assento->setAssento(DIANTEIRO_INVALIDO);
-        assento->setAssento(TRASEIRO_INVALIDO);
 
         if(assento->getAssento().compare(DIANTEIRO_INVALIDO)){
-            cout << "teste! 3" << endl;
+            cout << "TUAssento::testarCenarioFalha falhou! 3" << endl;
             estado = FALHA;
         }
+
+        assento->setAssento(TRASEIRO_INVALIDO);
+
         if(assento->getAssento().compare(TRASEIRO_INVALIDO)){
-            cout << "teste! 4" << endl;
+            cout << "TUAssento::testarCenarioFalha falhou! 4" << endl;
             estado = FALHA;
         }
 
@@ -100,7 +106,6 @@ void TUCodigo::testarCenarioFalha(){
 
         if (codigo->getCodigo() != VALOR_VALIDO)
             estado = FALHA;
-
 
         estado = FALHA;
     }

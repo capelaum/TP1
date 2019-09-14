@@ -26,3 +26,31 @@
 1568379404 source:c:\users\luis\documents\github\tp1_t1\exemplo 1\dominios.cpp
 	"dominios.h"
 
+1568497298 source:/home/capellett/Documents/UnB_2019_2/TP_1/T1/TP1_T1-master/Exemplo 1/dominios.cpp
+	"dominios.h"
+
+1568496801 /home/capellett/Documents/UnB_2019_2/TP_1/T1/TP1_T1-master/Exemplo 1/dominios.h
+	<iostream>
+	<stdexcept>
+	<string>
+
+1568383128 source:/home/capellett/Documents/UnB_2019_2/TP_1/T1/TP1_T1-master/Exemplo 1/entidades.cpp
+	"entidades.h"
+
+1568383128 /home/capellett/Documents/UnB_2019_2/TP_1/T1/TP1_T1-master/Exemplo 1/entidades.h
+	"dominios.h"
+	<string>
+
+1568497428 source:/home/capellett/Documents/UnB_2019_2/TP_1/T1/TP1_T1-master/Exemplo 1/main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1568489353 /home/capellett/Documents/UnB_2019_2/TP_1/T1/TP1_T1-master/Exemplo 1/testes.h
+	"dominios.h"
+
+1568497546 source:/home/capellett/Documents/UnB_2019_2/TP_1/T1/TP1_T1-master/Exemplo 1/testes.cpp
+	"testes.h"
+	<iostream>
+
