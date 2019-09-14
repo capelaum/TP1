@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Declaração de classes de testes unitarios
+// Declaração de Classes de Testes Unitarios
 
 // TU para classe Assento
 
@@ -22,7 +22,7 @@ private:
     const string TRASEIRO_INVALIDO  = " ";
 
     // Referência (ponteiro) para o objeto a ser testado
-    Assento* assento; // note que o ptr eh minusculo
+    Assento* assento; // note o ptr em minusculo
 
     // Estado do teste.
     int estado;
@@ -43,7 +43,9 @@ public:
     int run(); //
 };
 
+//==================================================================================
 // Teste Unitario para Classe Codigo (exemplo)
+
 class TUCodigo {
 private:
 

@@ -1,6 +1,7 @@
 #ifndef DOMINIOS_H_INCLUDED
 #define DOMINIOS_H_INCLUDED
 
+#include <iostream>
 #include <stdexcept>
 #include <string>
 
@@ -14,7 +15,7 @@ private:
     string Assento;
 
     // static pois eh declarado como privado mas funciona como global
-    const static string Dianteiro, Traseiro; // porque static..
+    const static string Dianteiro, Traseiro;
 
     void validar(string); //throw (invalid_argument) -> desnecessario na declaracao
 
@@ -36,11 +37,11 @@ private:
     // string guarda valor de Bagagens
     const static string quantidade;
 
-    void validar(string); // throw (invalid_argument);
+    void validar(string);
 
 public:
 
-    void setBagagem (string); // throw (invalid_argument);
+    void setBagagem (string);
 
     string getBagagem() const {
         return Bagagem;
@@ -55,11 +56,11 @@ private:
 
         const static int LIMITE = 25;
 
-        // M�todo respons�vel por valida��o.
-        void validar(int);  // throw (invalid_argument);
+        // Metodo responsavel por valida��o.
+        void validar(int);  //throw (invalid_argument) -> desnecessario na declaracao
 
 public:
-        // M�todos de acesso.
+        // Metodos de acesso.
         void setCodigo(int);
 
         int getCodigo() const {

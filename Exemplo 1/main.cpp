@@ -15,11 +15,11 @@ using namespace std;
 int main()
 {
 
-    TUCodigo teste;
+    TUCodigo teste;  // exemplo
     TUAssento teste_assento;
 
-    cout << "-->TESTES DE DOMINIOS<--" << endl;
-    cout << "TESTE DE ASSENTO: " ;
+    cout << "--------->TESTES DE DOMINIOS<---------" << endl;
+    cout << "TESTE DE ASSENTO: \n\n" ;
 
     switch(teste_assento.run()){
 
