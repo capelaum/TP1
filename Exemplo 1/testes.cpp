@@ -108,6 +108,7 @@ void TUBagagem::testarCenarioSucesso()
     try
     {
         bagagem->setBagagem(VALOR_VALIDO);
+        cout << "Valor de Bagagens valido: " << bagagem->getBagagem() << endl;
 
         if (bagagem->getBagagem() != VALOR_VALIDO){
             cout << "TUBagagem::testarCenarioSucesso falhou! 1" << endl;
@@ -116,7 +117,7 @@ void TUBagagem::testarCenarioSucesso()
     }
     catch(invalid_argument excecao)
     {
-        estado = FALHA;
+        estado = FALHA; // aqui que troca o estado para falha de bagagem!
     }
 }
 
@@ -125,7 +126,7 @@ void TUBagagem::testarCenarioFalha()
     try
     {
         bagagem->setBagagem(VALOR_INVALIDO);
-
+        cout << "Valor de Bagagens invalido: " << bagagem->getBagagem() << endl;
         if (bagagem->getBagagem() != VALOR_INVALIDO){
             estado = SUCESSO;
             cout << "TUBagagem::testarCenarioFalha falhou! 1" << endl;

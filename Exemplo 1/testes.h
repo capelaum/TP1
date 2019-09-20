@@ -51,7 +51,7 @@ class TUBagagem
 private:
 
     // Definições de constantes para evitar numeros mágicos
-
+    // Necessário para valores numericos mais!
     const static int VALOR_VALIDO   = 2;
     const static int VALOR_INVALIDO = 30;
 

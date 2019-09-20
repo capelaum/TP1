@@ -57,7 +57,7 @@
 1569016862 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\dominios.cpp
 	"dominios.h"
 
-1569016579 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\dominios.h
+1569017854 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\dominios.h
 	<iostream>
 	<stdexcept>
 	<string>
@@ -75,10 +75,10 @@
 	"entidades.h"
 	"testes.h"
 
-1569016870 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\testes.h
+1569017817 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\testes.h
 	"dominios.h"
 
-1569017461 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\testes.cpp
+1569017714 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\testes.cpp
 	"testes.h"
 	<iostream>
 
