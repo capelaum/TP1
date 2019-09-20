@@ -18,6 +18,7 @@ int main()
     TUBagagem teste_bagagem;
 
     cout << "--------->TESTES DE DOMINIOS<---------" << endl;
+
     cout << "TESTE DE ASSENTO: " ;
     // run teste de Assento
     switch(teste_assento.run())
@@ -30,7 +31,6 @@ int main()
         cout << "FALHA!" << endl;
         break;
     }
-
 
     cout << "TESTE DE BAGAGEM: " ;
     // run teste de Bagagem
