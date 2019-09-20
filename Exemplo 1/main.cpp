@@ -14,32 +14,33 @@ using namespace std;
 
 int main()
 {
-
-    TUCodigo teste;  // exemplo
     TUAssento teste_assento;
+    TUBagagem teste_bagagem;
 
     cout << "--------->TESTES DE DOMINIOS<---------" << endl;
-    cout << "TESTE DE ASSENTO: \n\n" ;
-
+    cout << "TESTE DE ASSENTO: " ;
+    // run teste de Assento
     switch(teste_assento.run())
     {
 
-    case TUCodigo::SUCESSO:
+    case TUAssento::SUCESSO:
         cout << "SUCESSO!" << endl;
         break;
-    case TUCodigo::FALHA  :
+    case TUAssento::FALHA  :
         cout << "FALHA!" << endl;
         break;
     }
 
 
-    // run teste de codigo exemplo
-    switch(teste.run())
+    cout << "TESTE DE BAGAGEM: " ;
+    // run teste de Bagagem
+    switch(teste_bagagem.run())
     {
-    case TUCodigo::SUCESSO:
+
+    case TUBagagem::SUCESSO:
         cout << "SUCESSO!" << endl;
         break;
-    case TUCodigo::FALHA  :
+    case TUBagagem::FALHA  :
         cout << "FALHA!" << endl;
         break;
     }

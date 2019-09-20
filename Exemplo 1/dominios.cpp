@@ -32,29 +32,30 @@ void Assento::setAssento(string Assento)
 
 // Metodos da classe Bagagem - 0,1,2,3,4
 
-void Bagagem ::validar(string Bagagem )
+void Bagagem ::validar(string Bagagem, int int_bagagem )
 {
+
+    // string::size_type sz;
+
     // transformar string bagagem para inteiro e verificar 0 <= Bagagem <= 4
+    int_bagagem = stoi (Bagagem, nullptr, 10);
+
+    if ((0 <= int_bagagem) && (int_bagagem <= 4))
+    {
+        cout << "Valor valido!" << endl;
+        cout << "Valor de Bagagens: " << int_bagagem << endl;
+    }
+    else
+    {
+        cout << "validar bagagem falhou!" << endl;
+        throw invalid_argument ("Argumento invalido.");
+    }
+
 }
 
-void Bagagem ::setBagagem(string Bagagem)
+void Bagagem ::setBagagem(int int_bagagem)
 {
-    validar(Bagagem );
-    this->Bagagem  = Bagagem ;
+    validar(Bagagem, int_bagagem);
+    this->int_bagagem  = Bagagem::int_bagagem ;
 }
 
-// Metodos da classe Codigo
-void Codigo::validar(int codigo)
-{
-
-    // Lança exceção se valor for menor que o limite definido.
-
-    if (codigo > LIMITE)
-        throw invalid_argument("Argumento invalido.");
-}
-
-void Codigo::setCodigo(int codigo)
-{
-    validar(codigo);
-    this->codigo = codigo;
-}

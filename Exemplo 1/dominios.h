@@ -15,10 +15,9 @@ private:
 
     string Assento;
 
-    // static pois eh declarado como privado mas funciona como global
     const static string Dianteiro, Traseiro;
 
-    void validar(string); //throw (invalid_argument) -> desnecessario na declaracao
+    void validar(string);
 
 public:
 
@@ -36,19 +35,17 @@ class Bagagem
 private:
 
     string Bagagem;
+    int int_bagagem;
 
-    // string guarda valor de Bagagens
-    const static string quantidade;
-
-    void validar(string);
+    void validar(string,int);
 
 public:
 
-    void setBagagem (string);
+    void setBagagem (int);
 
-    string getBagagem() const
+    int getBagagem() const
     {
-        return Bagagem;
+        return int_bagagem;
     }
 
 };

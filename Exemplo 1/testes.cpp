@@ -9,7 +9,7 @@
     Especificar o que falhou
     Testes unitarios para cada classe
 */
-
+//========================================================================
 // Metodos testes da classe Assento
 
 void TUAssento::setUp()
@@ -89,43 +89,43 @@ int TUAssento::run()
 
     return estado;
 }
+//========================================================================
+// Metodos testes da classe Bagagem
 
-// Metodos testes da classe Codigo (exemplo)
-
-void TUCodigo::setUp()
+void TUBagagem::setUp()
 {
-    codigo = new Codigo();
-    estado = SUCESSO;  // inicial
+    bagagem = new Bagagem();
+    estado = SUCESSO; // inicial
 }
 
-void TUCodigo::tearDown()
+void TUBagagem::tearDown()
 {
-    delete codigo;
+    delete bagagem;
 }
 
-void TUCodigo::testarCenarioSucesso()
+void TUBagagem::testarCenarioSucesso()
 {
     try
     {
-        codigo->setCodigo(VALOR_VALIDO);
-        if (codigo->getCodigo() != VALOR_VALIDO)
-            estado = FALHA;
-    }
+        bagagem->setBagagem(VALOR_VALIDO);
 
+        if (bagagem->getBagagem() != VALOR_VALIDO)
+            estado = FALHA;
+
+    }
     catch(invalid_argument excecao)
     {
         estado = FALHA;
     }
-
 }
 
-void TUCodigo::testarCenarioFalha()
+void TUBagagem::testarCenarioFalha()
 {
     try
     {
-        codigo->setCodigo(VALOR_INVALIDO);
+        bagagem->setBagagem(VALOR_INVALIDO);
 
-        if (codigo->getCodigo() != VALOR_VALIDO)
+        if (bagagem->getBagagem() != VALOR_VALIDO)
             estado = FALHA;
 
 
@@ -138,7 +138,7 @@ void TUCodigo::testarCenarioFalha()
     }
 }
 
-int TUCodigo::run()
+int TUBagagem::run()
 {
     setUp();
     testarCenarioSucesso();
@@ -147,4 +147,5 @@ int TUCodigo::run()
 
     return estado;
 }
+
 

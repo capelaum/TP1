@@ -43,21 +43,20 @@ public:
 
     int run(); //
 };
-
 //==================================================================================
-// Teste Unitario para Classe Codigo (exemplo)
+// Teste Unitario para Classe Bagagem (exemplo)
 
-class TUCodigo
+class TUBagagem
 {
 private:
 
     // Definições de constantes para evitar numeros mágicos
 
-    const static int VALOR_VALIDO   = 20;
+    const static int VALOR_VALIDO   = 2;
     const static int VALOR_INVALIDO = 30;
 
     // Referência (ponteiro) para o objeto a ser testado
-    Codigo *codigo;
+    Bagagem *bagagem;
 
     // Estado do teste.
     int estado;
@@ -77,6 +76,6 @@ public:
 
     int run(); //
 };
-
+//==================================================================================
 
 #endif // TESTES_H_INCLUDED
