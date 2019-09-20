@@ -9,7 +9,8 @@ using namespace std;
 
 // TU para classe Assento
 
-class TUAssento {
+class TUAssento
+{
 private:
 
     // Definições de constantes para evitar numeros mágicos
@@ -46,7 +47,8 @@ public:
 //==================================================================================
 // Teste Unitario para Classe Codigo (exemplo)
 
-class TUCodigo {
+class TUCodigo
+{
 private:
 
     // Definições de constantes para evitar numeros mágicos

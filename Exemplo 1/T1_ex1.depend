@@ -54,3 +54,31 @@
 	"testes.h"
 	<iostream>
 
+1569008426 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\dominios.cpp
+	"dominios.h"
+
+1569008426 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\dominios.h
+	<iostream>
+	<stdexcept>
+	<string>
+
+1569008426 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\entidades.cpp
+	"entidades.h"
+
+1569008426 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\entidades.h
+	"dominios.h"
+	<string>
+
+1569008426 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1569008426 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\testes.h
+	"dominios.h"
+
+1569008426 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp1_t1\exemplo 1\testes.cpp
+	"testes.h"
+	<iostream>
+

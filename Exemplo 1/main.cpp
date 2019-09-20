@@ -21,21 +21,27 @@ int main()
     cout << "--------->TESTES DE DOMINIOS<---------" << endl;
     cout << "TESTE DE ASSENTO: \n\n" ;
 
-    switch(teste_assento.run()){
+    switch(teste_assento.run())
+    {
 
-        case TUCodigo::SUCESSO: cout << "SUCESSO!" << endl;
-            break;
-        case TUCodigo::FALHA  : cout << "FALHA!" << endl;
-            break;
+    case TUCodigo::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUCodigo::FALHA  :
+        cout << "FALHA!" << endl;
+        break;
     }
 
 
     // run teste de codigo exemplo
-    switch(teste.run()){
-        case TUCodigo::SUCESSO: cout << "SUCESSO!" << endl;
-            break;
-        case TUCodigo::FALHA  : cout << "FALHA!" << endl;
-            break;
+    switch(teste.run())
+    {
+    case TUCodigo::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUCodigo::FALHA  :
+        cout << "FALHA!" << endl;
+        break;
     }
 
     return 0;

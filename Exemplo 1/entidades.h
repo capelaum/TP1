@@ -11,7 +11,8 @@ using namespace std;
 
 // Declaracao de classe.
 
-class Projeto {
+class Projeto
+{
 
 private:
 
@@ -19,11 +20,13 @@ private:
 
 public:
 
-    void setCodigo(const Codigo &codigo){
+    void setCodigo(const Codigo &codigo)
+    {
         this->codigo = codigo;
     }
 
-    Codigo getCodigo() const {
+    Codigo getCodigo() const
+    {
         return codigo;
     }
 

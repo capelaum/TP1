@@ -9,7 +9,8 @@ using namespace std;
 
 // Declaracao de classes de dominios
 
-class Assento{
+class Assento
+{
 private:
 
     string Assento;
@@ -23,13 +24,15 @@ public:
 
     void setAssento (string);
 
-    string getAssento() const {
+    string getAssento() const
+    {
         return Assento;
     }
 
 };
 
-class Bagagem {
+class Bagagem
+{
 private:
 
     string Bagagem;
@@ -43,29 +46,32 @@ public:
 
     void setBagagem (string);
 
-    string getBagagem() const {
+    string getBagagem() const
+    {
         return Bagagem;
     }
 
 };
 
 
-class Codigo {
+class Codigo
+{
 private:
-        int codigo;
+    int codigo;
 
-        const static int LIMITE = 25;
+    const static int LIMITE = 25;
 
-        // Metodo responsavel por valida��o.
-        void validar(int);  //throw (invalid_argument) -> desnecessario na declaracao
+    // Metodo responsavel por valida��o.
+    void validar(int);  //throw (invalid_argument) -> desnecessario na declaracao
 
 public:
-        // Metodos de acesso.
-        void setCodigo(int);
+    // Metodos de acesso.
+    void setCodigo(int);
 
-        int getCodigo() const {
-            return codigo;
-        }
+    int getCodigo() const
+    {
+        return codigo;
+    }
 };
 
 #endif // DOMINIOS_H_INCLUDED
