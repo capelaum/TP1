@@ -31,7 +31,7 @@ void TUAssento::testarCenarioSucesso()
 
         if(assento->getAssento().compare(DIANTEIRO_VALIDO) != 0)
         {
-            cout << "TUAssento::testarCenarioFalha falhou! 1" << endl;
+            cout << "TUAssento::testarCenarioSucesso falhou! 1" << endl;
             cout << "Assento: " << assento->getAssento() << endl;
             cout << "DIANTEIRO_VALIDO: " << DIANTEIRO_VALIDO << endl;
             estado = FALHA;
@@ -41,7 +41,7 @@ void TUAssento::testarCenarioSucesso()
 
         if(assento->getAssento().compare(TRASEIRO_VALIDO) != 0)
         {
-            cout << "TUAssento::testarCenarioFalha falhou! 2" << endl;
+            cout << "TUAssento::testarCenarioSucesso falhou! 2" << endl;
             estado = FALHA;
         }
 
@@ -61,7 +61,7 @@ void TUAssento::testarCenarioFalha()
 
         if(assento->getAssento().compare(DIANTEIRO_INVALIDO))
         {
-            cout << "TUAssento::testarCenarioFalha falhou! 3" << endl;
+            cout << "TUAssento::testarCenarioFalha falhou! 1" << endl;
             estado = FALHA;
         }
 
@@ -69,7 +69,7 @@ void TUAssento::testarCenarioFalha()
 
         if(assento->getAssento().compare(TRASEIRO_INVALIDO))
         {
-            cout << "TUAssento::testarCenarioFalha falhou! 4" << endl;
+            cout << "TUAssento::testarCenarioFalha falhou! 2" << endl;
             estado = FALHA;
         }
 
@@ -110,6 +110,7 @@ void TUBagagem::testarCenarioSucesso()
         bagagem->setBagagem(VALOR_VALIDO);
 
         if (bagagem->getBagagem() != VALOR_VALIDO)
+
             estado = FALHA;
 
     }
