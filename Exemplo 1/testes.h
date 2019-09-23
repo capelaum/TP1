@@ -3,8 +3,6 @@
 
 #include "dominios.h"
 
-using namespace std;
-
 // Declaração de Classes de Testes Unitarios
 
 // TU para classe Assento
@@ -20,7 +18,7 @@ private:
 
     // talvez n precise dos invalidos
     const string DIANTEIRO_INVALIDO = "X";
-    const string TRASEIRO_INVALIDO  = " ";
+    const string TRASEIRO_INVALIDO  = "Y";
 
     // Referência (ponteiro) para o objeto a ser testado
     Assento* assento; // note o ptr em minusculo
@@ -50,8 +48,11 @@ class TUBagagem
 {
 private:
 
+    const string str_bagagem_valida = "2";
+    const string str_bagagem_invalida = "30";
+
     // Definições de constantes para evitar numeros mágicos
-    // Necessário para valores numericos mais!
+    // Necessário para valores numericos
     const static int VALOR_VALIDO   = 2;
     const static int VALOR_INVALIDO = 30;
 

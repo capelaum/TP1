@@ -37,11 +37,11 @@ private:
     string Bagagem;
     int int_bagagem;
 
-    void validar(string,int);
+    void validar(string);
 
 public:
 
-    void setBagagem (int);
+    void setBagagem (string);
 
     int getBagagem() const
     {

@@ -32,8 +32,6 @@ void TUAssento::testarCenarioSucesso()
         if(assento->getAssento().compare(DIANTEIRO_VALIDO) != 0)
         {
             cout << "TUAssento::testarCenarioSucesso falhou! 1" << endl;
-            cout << "Assento: " << assento->getAssento() << endl;
-            cout << "DIANTEIRO_VALIDO: " << DIANTEIRO_VALIDO << endl;
             estado = FALHA;
         }
 
@@ -107,18 +105,18 @@ void TUBagagem::testarCenarioSucesso()
 {
     try
     {
-        bagagem->setBagagem(VALOR_VALIDO);
-        cout << "Valor de Bagagens valido: " << bagagem->getBagagem() << endl;
+        bagagem->setBagagem(str_bagagem_valida);
+        // cout << "Valor de Bagagens valido: " << bagagem->getBagagem() << endl;
 
         if (bagagem->getBagagem() != VALOR_VALIDO)
         {
-            cout << "TUBagagem::testarCenarioSucesso falhou! 1" << endl;
+            cout << "TUBagagem::testarCenarioSucesso falhou!" << endl;
             estado = FALHA;
         }
     }
     catch(invalid_argument excecao)
     {
-        estado = FALHA; // aqui que troca o estado para falha de bagagem!
+        estado = FALHA;
     }
 }
 
@@ -126,12 +124,13 @@ void TUBagagem::testarCenarioFalha()
 {
     try
     {
-        bagagem->setBagagem(VALOR_INVALIDO);
-        cout << "Valor de Bagagens invalido: " << bagagem->getBagagem() << endl;
+        bagagem->setBagagem(str_bagagem_invalida);
+        // cout << "Valor de Bagagens invalido: " << bagagem->getBagagem() << endl;
+
         if (bagagem->getBagagem() != VALOR_INVALIDO)
         {
             estado = SUCESSO;
-            cout << "TUBagagem::testarCenarioFalha falhou! 1" << endl;
+            cout << "TUBagagem::testarCenarioFalha falhou!" << endl;
         }
 
     }

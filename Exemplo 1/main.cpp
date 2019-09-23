@@ -24,7 +24,6 @@ int main()
     // run teste de Assento
     switch(teste_assento.run())
     {
-
     case TUAssento::SUCESSO:
         cout << "SUCESSO!" << endl;
         break;
@@ -37,7 +36,6 @@ int main()
     // run teste de Bagagem
     switch(teste_bagagem.run())
     {
-
     case TUBagagem::SUCESSO:
         cout << "SUCESSO!" << endl;
         break;
