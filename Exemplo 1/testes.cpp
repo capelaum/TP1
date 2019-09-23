@@ -204,7 +204,7 @@ void TUEstado::testarCenarioFalha()
     }
     catch(invalid_argument excecao)
     {
-        if (estado->getEstado().compare(ESTADO_INVALIDO) != 0)
+        if (estado->getEstado().compare(ESTADO_INVALIDO) == 0)
         {
             estado_teste = FALHA;
             cout << "TUEstado::testarCenarioFalha falhou! 2" << endl;

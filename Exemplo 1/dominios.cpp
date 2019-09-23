@@ -58,9 +58,9 @@ const string Estado::ESTADOS_VALIDOS[27] = {"AC","AL","AP","AM","BA","CE","DF","
     "PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"};
 
 void Estado::validar(string Estado){
-    bool notExists = !(std::find(std::begin(ESTADOS_VALIDOS), std::end(ESTADOS_VALIDOS), Estado) == std::end(ESTADOS_VALIDOS));
+    bool notExists = (std::find(std::begin(ESTADOS_VALIDOS), std::end(ESTADOS_VALIDOS), Estado) == std::end(ESTADOS_VALIDOS));
     if(notExists){
-        cout << "Validar estado falhou!" << endl;
+        //cout << "Validar estado falhou!" << endl;
         throw invalid_argument("Argumento invalido.");
     }
 }
@@ -68,5 +68,5 @@ void Estado::validar(string Estado){
 void Estado::setEstado(string Estado)
 {
     Estado::validar(Estado);
-    this->Estado = Estado::Estado ;
+    this->Estado = Estado;
 }
