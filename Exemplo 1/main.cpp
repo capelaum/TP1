@@ -5,6 +5,7 @@
 // explicar como foram validados e como funciona
 // Como se explicasse para um leigo em prog
 
+/** main() **/
 
 #include "dominios.h"
 #include "entidades.h"
