@@ -49,24 +49,69 @@ public:
 
 };
 
-
-class Codigo
+class CodigoBanco
 {
 private:
-    int codigo;
+    string CodigoBanco;
 
-    const static int LIMITE = 25;
+    const static int QUANTIDADE_NUMEROS;
+    const static int MENOR_VALOR_VALIDO;
+    const static int MAIOR_VALOR_VALIDO;
 
     // Metodo responsavel por validacao.
-    void validar(int);  //throw (invalid_argument) -> desnecessario na declaracao
+    void validar(string);  //throw (invalid_argument) -> desnecessario na declaracao
 
 public:
     // Metodos de acesso.
-    void setCodigo(int);
+    void setCodigoBanco(string);
 
-    int getCodigo() const
+    string getCodigoBanco() const
     {
-        return codigo;
+        return CodigoBanco;
+    }
+};
+
+class CodigoCarona
+{
+private:
+    string CodigoCarona;
+
+    const static int QUANTIDADE_NUMEROS;
+    const static int MENOR_VALOR_VALIDO;
+    const static int MAIOR_VALOR_VALIDO;
+
+    // Metodo responsavel por validacao.
+    void validar(string);  //throw (invalid_argument) -> desnecessario na declaracao
+
+public:
+    // Metodos de acesso.
+    void setCodigoCarona(string);
+
+    string getCodigoCarona() const
+    {
+        return CodigoCarona;
+    }
+};
+
+class CodigoReserva
+{
+private:
+    string CodigoReserva;
+
+    const static int QUANTIDADE_NUMEROS;
+    const static int MENOR_VALOR_VALIDO;
+    const static int MAIOR_VALOR_VALIDO;
+
+    // Metodo responsavel por validacao.
+    void validar(string);  //throw (invalid_argument) -> desnecessario na declaracao
+
+public:
+    // Metodos de acesso.
+    void setCodigoReserva(string);
+
+    string getCodigoReserva() const
+    {
+        return CodigoReserva;
     }
 };
 

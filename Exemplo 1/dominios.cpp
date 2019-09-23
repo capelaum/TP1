@@ -70,3 +70,81 @@ void Estado::setEstado(string Estado)
     Estado::validar(Estado);
     this->Estado = Estado;
 }
+
+//Metodos da classe CodigoBanco - XXX - X de 0 a 9
+const int CodigoBanco::QUANTIDADE_NUMEROS = 3;
+const int CodigoBanco::MENOR_VALOR_VALIDO = 0;
+const int CodigoBanco::MAIOR_VALOR_VALIDO = 9;
+
+void CodigoBanco::validar(string Codigo)
+{
+    if(Codigo.size() > CodigoBanco::QUANTIDADE_NUMEROS ||
+        Codigo.size() == 0){
+        throw invalid_argument("Argumento invalido.");
+    }
+    int i;
+    for(i=0; i<CodigoBanco::QUANTIDADE_NUMEROS; i++){
+        int x = stoi(Codigo[i]+"");
+        if( x < 0 || x > 9){
+            throw invalid_argument("Argumento invalido.");
+        }
+    }
+}
+
+void CodigoBanco::setCodigoBanco(string CodigoBanco)
+{
+    CodigoBanco::validar(CodigoBanco);
+    this->CodigoBanco = CodigoBanco;
+}
+
+//Metodos da classe CodigoCarona - XXXX - X de 0 a 9
+const int CodigoCarona::QUANTIDADE_NUMEROS = 4;
+const int CodigoCarona::MENOR_VALOR_VALIDO = 0;
+const int CodigoCarona::MAIOR_VALOR_VALIDO = 9;
+
+void CodigoCarona::validar(string Codigo)
+{
+    if(Codigo.size() > CodigoCarona::QUANTIDADE_NUMEROS ||
+        Codigo.size() == 0){
+        throw invalid_argument("Argumento invalido.");
+    }
+    int i;
+    for(i=0; i<CodigoCarona::QUANTIDADE_NUMEROS; i++){
+        int x = stoi(Codigo[i]+"");
+        if( x < 0 || x > 9){
+            throw invalid_argument("Argumento invalido.");
+        }
+    }
+}
+
+void CodigoCarona::setCodigoCarona(string CodigoCarona)
+{
+    CodigoCarona::validar(CodigoCarona);
+    this->CodigoCarona = CodigoCarona;
+}
+
+//Metodos da classe CodigoReserva - XXXXX - X de 0 a 9
+const int CodigoReserva::QUANTIDADE_NUMEROS = 5;
+const int CodigoReserva::MENOR_VALOR_VALIDO = 0;
+const int CodigoReserva::MAIOR_VALOR_VALIDO = 9;
+
+void CodigoReserva::validar(string Codigo)
+{
+    if(Codigo.size() > CodigoReserva::QUANTIDADE_NUMEROS ||
+        Codigo.size() == 0){
+        throw invalid_argument("Argumento invalido.");
+    }
+    int i;
+    for(i=0; i<CodigoReserva::QUANTIDADE_NUMEROS; i++){
+        int x = stoi(Codigo[i]+"");
+        if( x < 0 || x > 9){
+            throw invalid_argument("Argumento invalido.");
+        }
+    }
+}
+
+void CodigoReserva::setCodigoReserva(string CodigoReserva)
+{
+    CodigoReserva::validar(CodigoReserva);
+    this->CodigoReserva = CodigoReserva;
+}

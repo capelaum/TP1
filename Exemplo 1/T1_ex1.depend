@@ -82,12 +82,12 @@
 	"testes.h"
 	<iostream>
 
-1569271720 source:/home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/dominios.cpp
+1569277647 source:/home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/dominios.cpp
 	<algorithm>
 	<iterator>
 	"dominios.h"
 
-1569269975 /home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/dominios.h
+1569277565 /home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/dominios.h
 	<iostream>
 	<stdexcept>
 	<string>
