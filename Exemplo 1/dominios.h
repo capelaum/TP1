@@ -35,7 +35,6 @@ class Bagagem
 private:
 
     string Bagagem;
-    int int_bagagem;
 
     void validar(string);
 
@@ -43,9 +42,9 @@ public:
 
     void setBagagem (string);
 
-    int getBagagem() const
+    string getBagagem() const
     {
-        return int_bagagem;
+        return Bagagem;
     }
 
 };

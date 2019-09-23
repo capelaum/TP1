@@ -82,10 +82,12 @@
 	"testes.h"
 	<iostream>
 
-1569258225 source:/home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/dominios.cpp
+1569270133 source:/home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/dominios.cpp
+	<algorithm>
+	<iterator>
 	"dominios.h"
 
-1569264509 /home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/dominios.h
+1569269975 /home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/dominios.h
 	<iostream>
 	<stdexcept>
 	<string>
@@ -97,16 +99,16 @@
 	"dominios.h"
 	<string>
 
-1569258225 source:/home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/main.cpp
+1569268688 source:/home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/main.cpp
 	<iostream>
 	"dominios.h"
 	"entidades.h"
 	"testes.h"
 
-1569258225 /home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/testes.h
+1569270010 /home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/testes.h
 	"dominios.h"
 
-1569258225 source:/home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/testes.cpp
+1569270155 source:/home/rafael/Downloads/TP1/TP1_T1/Exemplo 1/testes.cpp
 	"testes.h"
 	<iostream>
 

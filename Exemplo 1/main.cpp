@@ -17,6 +17,7 @@ int main()
 {
     TUAssento teste_assento;
     TUBagagem teste_bagagem;
+    TUEstado teste_estado;
 
     cout << "--------->TESTES DE DOMINIOS<---------" << endl;
 
@@ -40,6 +41,18 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUBagagem::FALHA  :
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE ESTADO: " ;
+    // run teste de Estado
+    switch(teste_estado.run())
+    {
+    case TUEstado::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUEstado::FALHA  :
         cout << "FALHA!" << endl;
         break;
     }

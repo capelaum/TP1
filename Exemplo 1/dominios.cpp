@@ -15,13 +15,10 @@ const string Assento::Traseiro = "T";
 void Assento::validar(string Assento)
 {
     // Se a string assento passada for diferente de D e T
-    if ( Assento.compare(Dianteiro) == false )
+    if ( (Assento.compare(Dianteiro) != 0) && (Assento.compare(Traseiro) != 0) )
     {
-        if (Assento.compare(Traseiro) == false )
-        {
-            cout << "Validar assento falhou!" << endl;
+            //cout << "Validar assento falhou!" << endl;
             throw invalid_argument ("Argumento invalido.");
-        }
     }
 }
 
@@ -37,11 +34,11 @@ void Assento::setAssento(string Assento)
 void Bagagem ::validar(string Bagagem)
 {
     // transformar string bagagem para inteiro e verificar 0 <= Bagagem <= 4
-    int_bagagem = stoi (Bagagem);
+    int int_bagagem = stoi(Bagagem);
 
-    if ((0 >= int_bagagem) && (int_bagagem >= 4))
+    if ((int_bagagem <= 0) || (int_bagagem >= 4))
     {
-        cout << "Validar bagagem falhou!" << endl;
+        //cout << "Validar bagagem falhou!" << endl;
         throw invalid_argument ("Argumento invalido.");
     }
 
@@ -50,7 +47,7 @@ void Bagagem ::validar(string Bagagem)
 void Bagagem::setBagagem(string Bagagem)
 {
     validar(Bagagem);
-    this->int_bagagem = Bagagem::int_bagagem ;
+    this->Bagagem = Bagagem;
 }
 
 // Metodos da classe Estado -
@@ -61,15 +58,15 @@ const string Estado::ESTADOS_VALIDOS[27] = {"AC","AL","AP","AM","BA","CE","DF","
     "PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"};
 
 void Estado::validar(string Estado){
-    bool notExists = std::find(std::begin(ESTADOS_VALIDOS), std::end(ESTADOS_VALIDOS), Estado) == std::end(ESTADOS_VALIDOS);
+    bool notExists = !(std::find(std::begin(ESTADOS_VALIDOS), std::end(ESTADOS_VALIDOS), Estado) == std::end(ESTADOS_VALIDOS));
     if(notExists){
         cout << "Validar estado falhou!" << endl;
-        throw invalid_argument ("Argumento invalido.");
+        throw invalid_argument("Argumento invalido.");
     }
 }
 
 void Estado::setEstado(string Estado)
 {
-    validar(Estado);
+    Estado::validar(Estado);
     this->Estado = Estado::Estado ;
 }

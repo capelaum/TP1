@@ -48,13 +48,8 @@ class TUBagagem
 {
 private:
 
-    const string str_bagagem_valida = "2";
-    const string str_bagagem_invalida = "30";
-
-    // Definições de constantes para evitar numeros mágicos
-    // Necessário para valores numericos
-    const static int VALOR_VALIDO   = 2;
-    const static int VALOR_INVALIDO = 30;
+    const string VALOR_VALIDO = "2";
+    const string VALOR_INVALIDO = "30";
 
     // Referência (ponteiro) para o objeto a ser testado
     Bagagem *bagagem;
