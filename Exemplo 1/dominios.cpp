@@ -67,9 +67,9 @@ void CodigoBanco::validar(string Codigo)
         throw invalid_argument("Argumento invalido.");
     }
 
-    int x = stoi(Codigo);
+    int Banco_int = stoi(Codigo);
 
-    if( x < MENOR_VALOR_VALIDO || x > MAIOR_VALOR_VALIDO)
+    if(Banco_int < MENOR_VALOR_VALIDO || Banco_int > MAIOR_VALOR_VALIDO)
     {
         // cout << "Validar Codigo Banco falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
@@ -97,9 +97,9 @@ void CodigoCarona::validar(string Codigo)
         throw invalid_argument("Argumento invalido.");
     }
 
-    int x = stoi(Codigo);
+    int Carona_int = stoi(Codigo);
 
-    if( x < MENOR_VALOR_VALIDO || x > MAIOR_VALOR_VALIDO)
+    if(Carona_int < MENOR_VALOR_VALIDO || Carona_int > MAIOR_VALOR_VALIDO)
     {
         // cout << "Validar Codigo Carona falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
@@ -126,9 +126,9 @@ void CodigoReserva::validar(string Codigo)
         throw invalid_argument("Argumento invalido.");
     }
 
-    int x = stoi(Codigo);
+    int Reserva_int = stoi(Codigo);
 
-    if( x < MENOR_VALOR_VALIDO || x > MAIOR_VALOR_VALIDO)
+    if(Reserva_int < MENOR_VALOR_VALIDO || Reserva_int > MAIOR_VALOR_VALIDO)
     {
         // cout << "Validar Codigo Reserva falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
@@ -187,5 +187,31 @@ void Estado::setEstado(string Estado)
 {
     Estado::validar(Estado);
     this->Estado = Estado;
+}
+
+// Metodos da classe Preco - 1,00 a 5000,00
+
+const float Preco::PRECO_MIN = 1.00;
+const float Preco::PRECO_MAX = 5000.00;
+
+void Preco::validar(string Preco)
+{
+    // transformar string Preco para float e verificar 1,00 <= Preco <= 5000,00
+
+    float Preco_float = stof(Preco);
+
+    if (Preco_float < PRECO_MIN || Preco_float > PRECO_MAX)
+    {
+        // cout << "Validar Preco falhou!" << endl;
+        // cout << "Valor invalido: " << Preco << endl;
+        throw invalid_argument ("Argumento invalido.");
+    }
+
+}
+
+void Preco::setPreco(string Preco)
+{
+    validar(Preco);
+    this->Preco = Preco;
 }
 

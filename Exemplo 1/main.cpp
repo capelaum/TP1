@@ -22,6 +22,7 @@ int main()
     TUCodigoReserva teste_codigo_reserva;
     TUDuracao teste_duracao;
     TUEstado teste_estado;
+    TUPreco teste_preco;
 
     cout << "--------->TESTES DE DOMINIOS<---------" << endl;
 
@@ -105,6 +106,18 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUEstado::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE PRECO: " ;
+    // run teste de Preco
+    switch(teste_preco.run())
+    {
+    case TUPreco::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUPreco::FALHA:
         cout << "FALHA!" << endl;
         break;
     }

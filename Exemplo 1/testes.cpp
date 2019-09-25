@@ -485,4 +485,69 @@ int TUEstado::run()
     return estado_teste;
 }
 
+//========================================================================
+// Metodos testes da classe Preco
+
+void TUPreco::setUp()
+{
+    preco = new Preco();
+    estado = SUCESSO;
+}
+
+void TUPreco::tearDown()
+{
+    delete preco;
+}
+
+void TUPreco::testarCenarioSucesso()
+{
+    try
+    {
+        preco->setPreco(VALOR_VALIDO);
+
+        if (preco->getPreco().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUPreco::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUPreco::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUPreco::testarCenarioFalha()
+{
+    try
+    {
+        preco->setPreco(VALOR_INVALIDO);
+
+        cout << "TUDPreco::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (preco->getPreco().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUDuracao::testarCenarioFalha falhou! CATCH VALOR INVALIDO" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUPreco::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+
 

@@ -152,4 +152,25 @@ public:
     }
 };
 
+class Preco
+{
+private:
+
+    string Preco;
+
+    const static float PRECO_MIN;
+    const static float PRECO_MAX;
+
+    void validar(string);
+
+public:
+    void setPreco (string);
+
+    string getPreco() const
+    {
+        return Preco;
+    }
+
+};
+
 #endif // DOMINIOS_H_INCLUDED
