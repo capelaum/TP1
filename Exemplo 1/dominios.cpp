@@ -4,7 +4,6 @@
 
 //Definicoes de constantes.
 
-
 // Metodos da classe Assento - D ou T
 
 const string Assento::Dianteiro = "D";
@@ -26,13 +25,12 @@ void Assento::setAssento(string Assento)
     this->Assento = Assento;
 }
 
-
 // Metodos da classe Bagagem - 0 a 4
 
 const int Bagagem::BAGAGEM_MIN = 0;
 const int Bagagem::BAGAGEM_MAX = 4;
 
-void Bagagem ::validar(string Bagagem)
+void Bagagem::validar(string Bagagem)
 {
     // transformar string bagagem para inteiro e verificar 0 <= Bagagem <= 4
 
@@ -41,11 +39,11 @@ void Bagagem ::validar(string Bagagem)
     if ((Bagagem_int < BAGAGEM_MIN) || (Bagagem_int > BAGAGEM_MAX))
     {
         // cout << "Validar Bagagem falhou!" << endl;
+        // cout << "Valor invalido: " << Bagagem << endl;
         throw invalid_argument ("Argumento invalido.");
     }
 
 }
-
 
 void Bagagem::setBagagem(string Bagagem)
 {
@@ -142,6 +140,32 @@ void CodigoReserva::setCodigoReserva(string CodigoReserva)
 {
     CodigoReserva::validar(CodigoReserva);
     this->CodigoReserva = CodigoReserva;
+}
+
+// Metodos da classe Duracao - 1 a 48
+
+const int Duracao::DURACAO_MIN = 1;
+const int Duracao::DURACAO_MAX = 48;
+
+void Duracao::validar(string Duracao)
+{
+    // transformar string Duracao para inteiro e verificar 1 <= Duracao <= 48
+
+    int Duracao_int = stoi(Duracao);
+
+    if ((Duracao_int < DURACAO_MIN) || (Duracao_int > DURACAO_MAX))
+    {
+        // cout << "Validar Duracao falhou!" << endl;
+        // cout << "Valor invalido: " << Duracao << endl;
+        throw invalid_argument ("Argumento invalido.");
+    }
+
+}
+
+void Duracao::setDuracao(string Duracao)
+{
+    validar(Duracao);
+    this->Duracao = Duracao;
 }
 
 // Metodos da classe Estado -

@@ -107,7 +107,7 @@ int TUAssento::run()
 void TUBagagem::setUp()
 {
     bagagem = new Bagagem();
-    estado = SUCESSO; // inicial
+    estado = SUCESSO;
 }
 
 void TUBagagem::tearDown()
@@ -349,6 +349,70 @@ void TUCodigoReserva::testarCenarioFalha()
 }
 
 int TUCodigoReserva::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
+// Metodos testes da classe Duracao
+
+void TUDuracao::setUp()
+{
+    duracao = new Duracao();
+    estado = SUCESSO;
+}
+
+void TUDuracao::tearDown()
+{
+    delete duracao;
+}
+
+void TUDuracao::testarCenarioSucesso()
+{
+    try
+    {
+        duracao->setDuracao(VALOR_VALIDO);
+
+        if (duracao->getDuracao().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUDuracao::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUDuracao::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUDuracao::testarCenarioFalha()
+{
+    try
+    {
+        duracao->setDuracao(VALOR_INVALIDO);
+
+        cout << "TUDuracao::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (duracao->getDuracao().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUDuracao::testarCenarioFalha falhou! CATCH VALOR INVALIDO" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUDuracao::run()
 {
     setUp();
     testarCenarioSucesso();

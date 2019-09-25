@@ -112,6 +112,27 @@ public:
     }
 };
 
+class Duracao
+{
+private:
+
+    string Duracao;
+
+    const static int DURACAO_MIN;
+    const static int DURACAO_MAX;
+
+    void validar(string);
+
+public:
+    void setDuracao (string);
+
+    string getDuracao() const
+    {
+        return Duracao;
+    }
+
+};
+
 class Estado
 {
 private:

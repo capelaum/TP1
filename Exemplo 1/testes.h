@@ -46,7 +46,7 @@ class TUBagagem
 private:
 
     const string VALOR_VALIDO = "2";
-    const string VALOR_INVALIDO = "30";
+    const string VALOR_INVALIDO = "20";
 
     Bagagem *bagagem;
 
@@ -142,6 +142,32 @@ public:
     const static int FALHA   = -1;
 
     int run();
+};
+//==================================================================================
+// Teste Unitario para Classe Duracao
+
+class TUDuracao
+{
+private:
+
+    const string VALOR_VALIDO = "20";
+    const string VALOR_INVALIDO = "0";
+
+    Duracao *duracao;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
 };
 //==================================================================================
 // Teste Unitario para Classe Estado
