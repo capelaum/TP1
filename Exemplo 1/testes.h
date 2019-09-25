@@ -176,7 +176,7 @@ class TUData
 {
 private:
 
-    const string VALOR_VALIDO = "291239";
+    const string VALOR_VALIDO = "310299";
     const string VALOR_INVALIDO = "451389";
 
     Data *data;

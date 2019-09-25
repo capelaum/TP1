@@ -131,6 +131,27 @@ public:
     }
 };
 
+class CPF
+{
+private:
+    long long int num_cpf;
+
+    // temos que checar se o numero tem 9 digitos
+    // suponho que a entrada é um numero sem pontos e sem barra
+
+    void validar(long long int);
+
+public:
+
+    void setCPF (long long int);
+
+    long long int getCPF ()
+    {
+        // cout << num_cpf << endl;
+        return num_cpf;
+    }
+};
+
 class Data
 {
 private:
