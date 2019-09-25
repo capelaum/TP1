@@ -20,6 +20,7 @@ int main()
     TUCodigoBanco teste_codigo_banco;
     TUCodigoCarona teste_codigo_carona;
     TUCodigoReserva teste_codigo_reserva;
+    TUCidade teste_cidade;
     TUDuracao teste_duracao;
     TUEstado teste_estado;
     TUPreco teste_preco;
@@ -83,6 +84,18 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUCodigoReserva::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE CIDADE: ";
+    // run teste de Cidade
+    switch(teste_cidade.run())
+    {
+    case TUCidade::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUCidade::FALHA:
         cout << "FALHA!" << endl;
         break;
     }

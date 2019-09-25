@@ -144,6 +144,32 @@ public:
     int run();
 };
 //==================================================================================
+// Teste Unitario para Cidade
+
+class TUCidade
+{
+private:
+
+    const string VALOR_VALIDO = "Juiz De F.";
+    const string VALOR_INVALIDO = "ABRA  DA.  CADABRA";
+
+    Cidade *cidade;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+//==================================================================================
 // Teste Unitario para Classe Duracao
 
 class TUDuracao

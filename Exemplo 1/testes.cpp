@@ -311,7 +311,7 @@ void TUCodigoReserva::testarCenarioSucesso()
     try
     {
         codigo_reserva->setCodigoReserva(VALOR_VALIDO);
-        // cout << "Codigo de Reserva valido: " << codigo_reserva->getCCodigoReserva() << endl;
+        // cout << "Codigo de Reserva valido: " << codigo_reserva->getCodigoReserva() << endl;
 
         if (codigo_reserva->getCodigoReserva().compare(VALOR_VALIDO) != 0)
         {
@@ -349,6 +349,69 @@ void TUCodigoReserva::testarCenarioFalha()
 }
 
 int TUCodigoReserva::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
+// Metodos testes da classe Cidade
+void TUCidade::setUp()
+{
+    cidade = new Cidade();
+    estado = SUCESSO;
+}
+void TUCidade::tearDown()
+{
+    delete cidade;
+}
+
+void TUCidade::testarCenarioSucesso()
+{
+    try
+    {
+        cidade->setCidade(VALOR_VALIDO);
+        cout << "Cidade valida: " << cidade->getCidade() << endl;
+
+        if (cidade->getCidade().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUCidade::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUCidade::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCidade::testarCenarioFalha()
+{
+    try
+    {
+        cidade->setCidade(VALOR_INVALIDO);
+        cout << "Cidade invalida: " << cidade->getCidade() << endl;
+        cout << "TUCidade::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (cidade->getCidade().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUCidade::testarCenarioFalha falhou! CATCH" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUCidade::run()
 {
     setUp();
     testarCenarioSucesso();
@@ -440,7 +503,7 @@ void TUEstado::testarCenarioSucesso()
     try
     {
         estado->setEstado(ESTADO_VALIDO);
-        // cout << "Valor de Bagagens valido: " << bagagem->getBagagem() << endl;
+        // cout << "Estado valido: " << estado->getEstado() << endl;
 
         if (estado->getEstado().compare(ESTADO_VALIDO) != 0)
         {

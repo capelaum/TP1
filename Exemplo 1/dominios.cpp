@@ -142,6 +142,73 @@ void CodigoReserva::setCodigoReserva(string CodigoReserva)
     this->CodigoReserva = CodigoReserva;
 }
 
+//Metodos da classe Cidade - 10 caracteres - letra ponto ou espaço
+void Cidade::validar(string nova_cidade)
+{
+
+    int SUCESSO = 0;
+    char aux;
+    char aux2;
+    int i;
+    int tamanho_real_palavra;
+    int tem_letra = 1;
+
+    tamanho_real_palavra = nova_cidade.size();
+
+    i = 0;
+    while(i < tamanho_real_palavra){
+
+        if((isalpha(nova_cidade[i])))
+        {
+            tem_letra = 0;   //checa se existem letras e nao apenas caracteres invalidos
+        }
+
+        aux = nova_cidade[i];
+        aux2 = nova_cidade[i+1];
+
+        if(i>0)
+        {
+            // checa se existe letra antes do ponto
+            if((nova_cidade[i] == '.')){
+                if( (isalpha(nova_cidade[i-1])) ){
+                    SUCESSO = 0;
+                }
+                else{
+                    SUCESSO = 1;
+                }
+            }
+        }
+
+        if(i != (tamanho_real_palavra - 1)){
+            if((isspace(aux)) && (isspace(aux2))){       //checamos espacos vazios seguidos
+                SUCESSO = 1;
+            }
+        }
+
+        i++;
+
+    }
+
+    if(tem_letra == 1){
+        SUCESSO = 1;
+    }
+
+    if((SUCESSO != 0)){
+        throw invalid_argument("Cidade invalida");
+    }
+
+}
+
+void Cidade::setCidade(string nova_cidade)
+{
+    validar(nova_cidade);
+    int k = 0;
+    while(k < TAMANHO_ESPERADO){
+        this->cidade[k] = nova_cidade[k];
+        k++;
+    }
+}
+
 // Metodos da classe Duracao - 1 a 48
 
 const int Duracao::DURACAO_MIN = 1;
