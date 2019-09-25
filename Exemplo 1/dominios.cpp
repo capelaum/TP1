@@ -142,7 +142,10 @@ void CodigoReserva::setCodigoReserva(string CodigoReserva)
     this->CodigoReserva = CodigoReserva;
 }
 
-//Metodos da classe Cidade - 10 caracteres - letra ponto ou espaço
+// Metodos da classe Cidade - 10 caracteres - letra ponto ou espaço
+// pelo menos 1 caractere eh letra
+// nao ha espacos seguidos
+// antes de ponto ha uma letra
 void Cidade::validar(string nova_cidade)
 {
 
@@ -156,11 +159,13 @@ void Cidade::validar(string nova_cidade)
     tamanho_real_palavra = nova_cidade.size();
 
     i = 0;
-    while(i < tamanho_real_palavra){
+    while(i < tamanho_real_palavra)
+    {
 
         if((isalpha(nova_cidade[i])))
         {
-            tem_letra = 0;   //checa se existem letras e nao apenas caracteres invalidos
+            //checa se existem letras e nao apenas caracteres invalidos
+            tem_letra = 0;
         }
 
         aux = nova_cidade[i];
@@ -169,18 +174,24 @@ void Cidade::validar(string nova_cidade)
         if(i>0)
         {
             // checa se existe letra antes do ponto
-            if((nova_cidade[i] == '.')){
-                if( (isalpha(nova_cidade[i-1])) ){
+            if((nova_cidade[i] == '.'))
+            {
+                if( (isalpha(nova_cidade[i-1])) )
+                {
                     SUCESSO = 0;
                 }
-                else{
+                else
+                {
                     SUCESSO = 1;
                 }
             }
         }
 
-        if(i != (tamanho_real_palavra - 1)){
-            if((isspace(aux)) && (isspace(aux2))){       //checamos espacos vazios seguidos
+        if(i != (tamanho_real_palavra - 1))
+        {
+            //checa espacos vazios seguidos
+            if((isspace(aux)) && (isspace(aux2)))
+            {
                 SUCESSO = 1;
             }
         }
@@ -189,11 +200,13 @@ void Cidade::validar(string nova_cidade)
 
     }
 
-    if(tem_letra == 1){
+    if(tem_letra == 1)
+    {
         SUCESSO = 1;
     }
 
-    if((SUCESSO != 0)){
+    if((SUCESSO != 0))
+    {
         throw invalid_argument("Cidade invalida");
     }
 
@@ -203,7 +216,8 @@ void Cidade::setCidade(string nova_cidade)
 {
     validar(nova_cidade);
     int k = 0;
-    while(k < TAMANHO_ESPERADO){
+    while(k < TAMANHO_ESPERADO)
+    {
         this->cidade[k] = nova_cidade[k];
         k++;
     }
@@ -217,7 +231,6 @@ const int Duracao::DURACAO_MAX = 48;
 void Duracao::validar(string Duracao)
 {
     // transformar string Duracao para inteiro e verificar 1 <= Duracao <= 48
-
     int Duracao_int = stoi(Duracao);
 
     if ((Duracao_int < DURACAO_MIN) || (Duracao_int > DURACAO_MAX))

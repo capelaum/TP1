@@ -112,18 +112,13 @@ public:
     }
 };
 
-class Cidade {
+class Cidade
+{
 private:
 
     const static int TAMANHO_ESPERADO = 10;
 
     char cidade[TAMANHO_ESPERADO+1];
-
-    // temos que checar se a cidade tem 10 caracteres,
-    // cada caractere pode ser letra, espaço ou ponto
-    // pelo menos 1 caractere é letra
-    // não ha espaço seguido
-    // antes de ponto há uma letra
 
     void validar(string);
 
