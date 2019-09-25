@@ -131,6 +131,32 @@ public:
     }
 };
 
+class Data
+{
+private:
+    const static int LIMITE = 6;
+
+    char data[LIMITE+1];
+
+    // temos que checar se a data tem 6 caracteres
+    // formato: DD/MM/AA onde MM <= 12, AA <= 99 e >= 00, DD <= 31
+    // deve considerar anos bissextos
+    // vamos supor que não serão criados eventos para o passado ou para uma data que não pertence a este século, logo, ao se declarar o ano como "99", consideramos 2099.
+    // a entrada: se queremos expressar 25/12/2098, devemos escrever 251298 como a entrada (sem barras para facilitar, no output final se fara print com as divisoes)
+
+    void validar(int) throw (invalid_argument);
+
+public:
+
+    void setData (string) throw (invalid_argument);
+
+    string getData()
+    {
+        return data;
+    }
+
+};
+
 class Duracao
 {
 private:

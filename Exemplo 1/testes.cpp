@@ -374,7 +374,7 @@ void TUCidade::testarCenarioSucesso()
     try
     {
         cidade->setCidade(VALOR_VALIDO);
-        cout << "Cidade valida: " << cidade->getCidade() << endl;
+        // cout << "Cidade valida: " << cidade->getCidade() << endl;
 
         if (cidade->getCidade().compare(VALOR_VALIDO) != 0)
         {
