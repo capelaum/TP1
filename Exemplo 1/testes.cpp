@@ -549,5 +549,69 @@ int TUPreco::run()
 
     return estado;
 }
+//========================================================================
+// Metodos testes da classe Vagas
+
+void TUVagas::setUp()
+{
+    vagas = new Vagas();
+    estado = SUCESSO;
+}
+
+void TUVagas::tearDown()
+{
+    delete vagas;
+}
+
+void TUVagas::testarCenarioSucesso()
+{
+    try
+    {
+        vagas->setVagas(VALOR_VALIDO);
+
+        if (vagas->getVagas().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUVagas::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUVagas::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUVagas::testarCenarioFalha()
+{
+    try
+    {
+        vagas->setVagas(VALOR_INVALIDO);
+
+        cout << "TUVagas::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (vagas->getVagas().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUVagas::testarCenarioFalha falhou! CATCH VALOR INVALIDO" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUVagas::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
 
 

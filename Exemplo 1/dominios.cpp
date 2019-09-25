@@ -215,3 +215,29 @@ void Preco::setPreco(string Preco)
     this->Preco = Preco;
 }
 
+// Metodos da classe Vagas - 0 a 4
+
+const int Vagas::VAGAS_MIN = 0;
+const int Vagas::VAGAS_MAX = 4;
+
+void Vagas::validar(string Vagas)
+{
+    // transformar string Vagas para inteiro e verificar 0 <= Vagas <= 4
+
+    int Vagas_int = stoi(Vagas);
+
+    if ((Vagas_int < VAGAS_MIN) || (Vagas_int > VAGAS_MAX))
+    {
+        // cout << "Validar Vagas falhou!" << endl;
+        // cout << "Valor invalido: " << Vagas << endl;
+        throw invalid_argument ("Argumento invalido.");
+    }
+
+}
+
+void Vagas::setVagas(string Vagas)
+{
+    validar(Vagas);
+    this->Vagas = Vagas;
+}
+

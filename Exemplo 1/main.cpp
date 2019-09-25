@@ -23,6 +23,7 @@ int main()
     TUDuracao teste_duracao;
     TUEstado teste_estado;
     TUPreco teste_preco;
+    TUVagas teste_vagas;
 
     cout << "--------->TESTES DE DOMINIOS<---------" << endl;
 
@@ -118,6 +119,18 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUPreco::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE VAGAS: " ;
+    // run teste de Vagas
+    switch(teste_vagas.run())
+    {
+    case TUVagas::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUVagas::FALHA:
         cout << "FALHA!" << endl;
         break;
     }

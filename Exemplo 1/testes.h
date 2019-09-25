@@ -222,6 +222,33 @@ public:
     int run(); //
 };
 //==================================================================================
+// Teste Unitario para Classe Vagas
+
+class TUVagas
+{
+private:
+
+    const string VALOR_VALIDO = "2";
+    const string VALOR_INVALIDO = "20";
+
+    Vagas *vagas;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+
+//==================================================================================
 
 #endif // TESTES_H_INCLUDED
 

@@ -173,4 +173,25 @@ public:
 
 };
 
+class Vagas
+{
+private:
+
+    string Vagas;
+
+    const static int VAGAS_MIN;
+    const static int VAGAS_MAX;
+
+    void validar(string);
+
+public:
+    void setVagas (string);
+
+    string getVagas() const
+    {
+        return Vagas;
+    }
+
+};
+
 #endif // DOMINIOS_H_INCLUDED
