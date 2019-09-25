@@ -36,6 +36,9 @@ private:
 
     string Bagagem;
 
+    const static int BAGAGEM_MIN;
+    const static int BAGAGEM_MAX;
+
     void validar(string);
 
 public:
@@ -59,7 +62,7 @@ private:
     const static int MAIOR_VALOR_VALIDO;
 
     // Metodo responsavel por validacao.
-    void validar(string);  //throw (invalid_argument) -> desnecessario na declaracao
+    void validar(string);
 
 public:
     // Metodos de acesso.

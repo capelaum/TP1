@@ -17,6 +17,7 @@ int main()
 {
     TUAssento teste_assento;
     TUBagagem teste_bagagem;
+    TUCodigoBanco teste_codigo_banco;
     TUEstado teste_estado;
 
     cout << "--------->TESTES DE DOMINIOS<---------" << endl;
@@ -41,6 +42,18 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUBagagem::FALHA  :
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE CODIGO DE BANCO: ";
+    // run teste de Codigo de Banco
+    switch(teste_codigo_banco.run())
+    {
+    case TUCodigoBanco::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUCodigoBanco::FALHA  :
         cout << "FALHA!" << endl;
         break;
     }

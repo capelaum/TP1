@@ -16,18 +16,18 @@ class Projeto
 
 private:
 
-    Codigo codigo;
+    Assento assento;
 
 public:
 
-    void setCodigo(const Codigo &codigo)
+    void setAssento(const Assento &assento)
     {
-        this->codigo = codigo;
+        this->assento = assento;
     }
 
-    Codigo getCodigo() const
+    Assento getAssento() const
     {
-        return codigo;
+        return assento;
     }
 
 };

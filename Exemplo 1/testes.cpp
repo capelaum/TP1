@@ -31,7 +31,7 @@ void TUAssento::testarCenarioSucesso()
 
         if(assento->getAssento().compare(DIANTEIRO_VALIDO) != 0)
         {
-            cout << "TUAssento::testarCenarioSucesso falhou! 1" << endl;
+            cout << "TUAssento::testarCenarioSucesso falhou! DIANTEIRO VALIDO" << endl;
             estado = FALHA;
         }
 
@@ -39,14 +39,14 @@ void TUAssento::testarCenarioSucesso()
 
         if(assento->getAssento().compare(TRASEIRO_VALIDO) != 0)
         {
-            cout << "TUAssento::testarCenarioSucesso falhou! 2" << endl;
+            cout << "TUAssento::testarCenarioSucesso falhou! TRASEIRO VALIDO" << endl;
             estado = FALHA;
         }
 
     }
     catch(invalid_argument excecao)
     {
-        cout << "TUAssento::testarCenarioSucesso falhou! 3" << endl;
+        cout << "TUAssento::testarCenarioSucesso falhou! CATCH" << endl;
         estado = FALHA;
     }
 }
@@ -58,26 +58,33 @@ void TUAssento::testarCenarioFalha()
 
         assento->setAssento(DIANTEIRO_INVALIDO);
 
-        cout << "TUAssento::testarCenarioFalha falhou! 3" << endl;
-        estado = FALHA;
+        if(assento->getAssento().compare(DIANTEIRO_INVALIDO))
+
+        {
+            cout << "TUAssento::testarCenarioFalha falhou! DIANTEIRO INVALIDO" << endl;
+            estado = FALHA;
+        }
 
         assento->setAssento(TRASEIRO_INVALIDO);
 
-        cout << "TUAssento::testarCenarioFalha falhou! 4" << endl;
-        estado = FALHA;
+        if(assento->getAssento().compare(TRASEIRO_INVALIDO))
+        {
+            cout << "TUAssento::testarCenarioFalha falhou! TRASEIRO INVALIDO" << endl;
+            estado = FALHA;
+        }
 
     }
     catch(invalid_argument excecao)
     {
         if(assento->getAssento().compare(DIANTEIRO_INVALIDO) == 0)
         {
-            cout << "TUAssento::testarCenarioFalha falhou! 1" << endl;
+            cout << "TUAssento::testarCenarioFalha falhou! CATCH DIANTEIRO INVALIDO" << endl;
             estado = FALHA;
         }
 
         if(assento->getAssento().compare(TRASEIRO_INVALIDO) == 0)
         {
-            cout << "TUAssento::testarCenarioFalha falhou! 2" << endl;
+            cout << "TUAssento::testarCenarioFalha falhou! CATCH TRASEIRO INVALIDO" << endl;
             estado = FALHA;
         }
 
@@ -113,17 +120,16 @@ void TUBagagem::testarCenarioSucesso()
     try
     {
         bagagem->setBagagem(VALOR_VALIDO);
-        // cout << "Valor de Bagagens valido: " << bagagem->getBagagem() << endl;
 
         if (bagagem->getBagagem().compare(VALOR_VALIDO) != 0)
         {
-            cout << "TUBagagem::testarCenarioSucesso falhou!" << endl;
+            cout << "TUBagagem::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
             estado = FALHA;
         }
     }
     catch(invalid_argument excecao)
     {
-        cout << "TUBagagem::testarCenarioSucesso falhou!" << endl;
+        cout << "TUBagagem::testarCenarioSucesso falhou! CATCH" << endl;
         estado = FALHA;
     }
 }
@@ -133,8 +139,8 @@ void TUBagagem::testarCenarioFalha()
     try
     {
         bagagem->setBagagem(VALOR_INVALIDO);
-        // cout << "Valor de Bagagens invalido: " << bagagem->getBagagem() << endl;
-        cout << "TUBagagem::testarCenarioFalha falhou! 1" << endl;
+
+        cout << "TUBagagem::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
         estado = FALHA;
 
     }
@@ -142,7 +148,7 @@ void TUBagagem::testarCenarioFalha()
     {
         if (bagagem->getBagagem().compare(VALOR_INVALIDO) == 0)
         {
-            cout << "TUBagagem::testarCenarioFalha falhou! 2" << endl;
+            cout << "TUBagagem::testarCenarioFalha falhou! CATCH VALOR INVALIDO" << endl;
             estado = FALHA;
         }
 
@@ -160,12 +166,76 @@ int TUBagagem::run()
     return estado;
 }
 //========================================================================
+// Metodos testes da classe CodigoBanco
+
+void TUCodigoBanco::setUp()
+{
+    codigo_banco = new CodigoBanco();
+    estado = SUCESSO;
+}
+void TUCodigoBanco::tearDown()
+{
+    delete codigo_banco;
+}
+
+void TUCodigoBanco::testarCenarioSucesso()
+{
+    try
+    {
+        codigo_banco->setCodigoBanco(VALOR_VALIDO);
+        // cout << "Codigo de Banco valido: " << codigo_banco->getCodigoBanco() << endl;
+
+        if (codigo_banco->getCodigoBanco().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUCodigoBanco::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUCodigoBanco::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCodigoBanco::testarCenarioFalha()
+{
+    try
+    {
+        codigo_banco->setCodigoBanco(VALOR_INVALIDO);
+        cout << "Codigo de Banco invalido: " << codigo_banco->getCodigoBanco() << endl;
+        cout << "TUCodigoBanco::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (codigo_banco->getCodigoBanco().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUCodigoBanco::testarCenarioFalha falhou! CATCH" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUCodigoBanco::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
 // Metodos testes da classe Estado
 
 void TUEstado::setUp()
 {
     estado = new Estado();
-    estado_teste = SUCESSO; // inicial
+    estado_teste = SUCESSO;
 }
 
 void TUEstado::tearDown()
@@ -182,7 +252,7 @@ void TUEstado::testarCenarioSucesso()
 
         if (estado->getEstado().compare(ESTADO_VALIDO) != 0)
         {
-            cout << "TUEstado::testarCenarioSucesso falhou!" << endl;
+            cout << "TUEstado::testarCenarioSucesso falhou! ESTADO VALIDO" << endl;
             estado_teste = FALHA;
         }
     }
@@ -199,7 +269,7 @@ void TUEstado::testarCenarioFalha()
         estado->setEstado(ESTADO_INVALIDO);
 
         estado_teste = FALHA;
-        cout << "TUEstado::testarCenarioFalha falhou! 1" << endl;
+        cout << "TUEstado::testarCenarioFalha falhou! ESTADO INVALIDO" << endl;
 
     }
     catch(invalid_argument excecao)
@@ -207,7 +277,7 @@ void TUEstado::testarCenarioFalha()
         if (estado->getEstado().compare(ESTADO_INVALIDO) == 0)
         {
             estado_teste = FALHA;
-            cout << "TUEstado::testarCenarioFalha falhou! 2" << endl;
+            cout << "TUEstado::testarCenarioFalha falhou! CATCH" << endl;
         }
         return;
     }
@@ -222,4 +292,5 @@ int TUEstado::run()
 
     return estado_teste;
 }
+
 
