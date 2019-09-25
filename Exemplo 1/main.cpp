@@ -21,6 +21,7 @@ int main()
     TUCodigoCarona teste_codigo_carona;
     TUCodigoReserva teste_codigo_reserva;
     TUCidade teste_cidade;
+    TUData teste_data;
     TUDuracao teste_duracao;
     TUEstado teste_estado;
     TUPreco teste_preco;
@@ -96,6 +97,18 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUCidade::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE DATA: ";
+    // run teste de Data
+    switch(teste_data.run())
+    {
+    case TUData::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUData::FALHA:
         cout << "FALHA!" << endl;
         break;
     }

@@ -223,6 +223,98 @@ void Cidade::setCidade(string nova_cidade)
     }
 }
 
+// Metodos da classe Data - 6 caracteres
+// Formato: DD/MM/AA onde 1 <= MM <= 12, 00 <= AA <= 99, 1 <= DD <= 31
+// Deve se considerar anos bissextos
+// Suposição de que nao serao criadas datas para o seculo passado
+// Ao se declarar o ano como "99", consideramos 2099.
+// Entrada: 251298 se queremos expressar 25/12/2098
+// No output final se fara print com as divisoes
+
+void Data::setData(string nova_data)
+{
+    int data_int = 0;
+
+    data_int = ( (nova_data[5]-48) + ( (nova_data[4]-48)*10 ) + ( (nova_data[3]-48)*100 )
+    + ( (nova_data[2]-48)*1000 ) + ( (nova_data[1]-48)*10000) + ((nova_data[0]-48)*100000) );
+
+    validar(data_int);
+
+    int k;
+
+    for(k = 0; k < 6; k++)
+    {
+        //copia a nova entrada e define seu limite
+        data[k] = nova_data[k];
+    }
+
+    data[6] = '\0';
+}
+
+void Data::validar(int data_int)
+{
+    // cout << "DATA_INT: " << data_int << endl;
+
+    int SUCESSO = 0;
+
+    int num_dia = 0;
+    int num_mes = 0;
+    int num_ano = 0;
+
+    int ano_validar_bissexto = 0;
+    int fevereiro = 2;
+    int limite_dias_fevereiro_ano_bissexto = 29;
+
+    num_ano = data_int%100;
+    // cout << "NUM_ANO: " << num_ano << endl;
+    data_int = data_int/100;
+
+    num_mes = data_int % 100;
+    // cout << "NUM_MES: " << num_mes << endl;
+    data_int = data_int/100;
+
+    num_dia = data_int % 100;
+    // cout << "NUM_DIA: " << num_dia << endl;
+    data_int = data_int/100;
+
+    if((num_dia > 31) || (num_dia <= 0))
+    {
+        SUCESSO = 1;
+    }
+
+    if((num_mes > 12) || (num_mes <= 0))
+    {
+        SUCESSO = 1;
+    }
+
+    if((num_ano > 99) || (num_ano <= 0))
+    {
+        // ano não pode ser 0, no caso, ano 2000 < ano 2099 (caso de evento passado)
+        SUCESSO = 1;
+    }
+
+    // adiciona 2000 para termos o numero no formato completo
+    // (temos numero 19, 2000 + 19 = 2019, um ano expresso por inteiro)
+    ano_validar_bissexto = num_ano + 2000;
+
+    if((ano_validar_bissexto % 4 == 0) && (ano_validar_bissexto % 100 != 0))
+    {
+        //validamos ano bissexto
+        //TEMOS UM ANO BISSEXTO!
+        if((num_mes == fevereiro) && (num_dia > limite_dias_fevereiro_ano_bissexto))
+        {
+            //avisamos formato invalido de ano bissexto
+            SUCESSO = 1;
+        }
+    }
+
+    if(SUCESSO != 0)
+    {
+        throw invalid_argument("Data de evento invalida");
+    }
+
+}
+
 // Metodos da classe Duracao - 1 a 48
 
 const int Duracao::DURACAO_MIN = 1;

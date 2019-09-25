@@ -173,6 +173,7 @@ void TUCodigoBanco::setUp()
     codigo_banco = new CodigoBanco();
     estado = SUCESSO;
 }
+
 void TUCodigoBanco::tearDown()
 {
     delete codigo_banco;
@@ -237,6 +238,7 @@ void TUCodigoCarona::setUp()
     codigo_carona = new CodigoCarona();
     estado = SUCESSO;
 }
+
 void TUCodigoCarona::tearDown()
 {
     delete codigo_carona;
@@ -301,6 +303,7 @@ void TUCodigoReserva::setUp()
     codigo_reserva = new CodigoReserva();
     estado = SUCESSO;
 }
+
 void TUCodigoReserva::tearDown()
 {
     delete codigo_reserva;
@@ -364,6 +367,7 @@ void TUCidade::setUp()
     cidade = new Cidade();
     estado = SUCESSO;
 }
+
 void TUCidade::tearDown()
 {
     delete cidade;
@@ -412,6 +416,70 @@ void TUCidade::testarCenarioFalha()
 }
 
 int TUCidade::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
+// Metodos testes da classe Data
+
+void TUData::setUp()
+{
+    data = new Data();
+    estado = SUCESSO;
+}
+
+void TUData::tearDown()
+{
+    delete data;
+}
+
+void TUData::testarCenarioSucesso()
+{
+    try
+    {
+        data->setData(VALOR_VALIDO);
+        // cout << "Data valida: " << data->getData() << endl;
+
+        if (data->getData().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUData::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUData::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUData::testarCenarioFalha()
+{
+    try
+    {
+        data->setData(VALOR_INVALIDO);
+        cout << "TUData::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (data->getData().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUData::testarCenarioFalha falhou! CATCH" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUData::run()
 {
     setUp();
     testarCenarioSucesso();

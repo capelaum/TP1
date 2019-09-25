@@ -112,10 +112,10 @@
 	"testes.h"
 	<iostream>
 
-1569450158 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\dominios.cpp
+1569452995 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\dominios.cpp
 	"dominios.h"
 
-1569450337 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\dominios.h
+1569452260 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\dominios.h
 	<iostream>
 	<stdexcept>
 	<string>
@@ -129,14 +129,14 @@
 	"dominios.h"
 	<string>
 
-1569449756 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\testes.cpp
+1569452362 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\testes.cpp
 	"testes.h"
 	<iostream>
 
-1569449897 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\testes.h
+1569452544 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\testes.h
 	"dominios.h"
 
-1569449825 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\main.cpp
+1569452124 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp1_t1\exemplo 1\main.cpp
 	<iostream>
 	"dominios.h"
 	"entidades.h"

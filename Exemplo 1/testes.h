@@ -170,6 +170,32 @@ public:
     int run();
 };
 //==================================================================================
+// Teste Unitario para Data
+
+class TUData
+{
+private:
+
+    const string VALOR_VALIDO = "291239";
+    const string VALOR_INVALIDO = "451389";
+
+    Data *data;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+//==================================================================================
 // Teste Unitario para Classe Duracao
 
 class TUDuracao
