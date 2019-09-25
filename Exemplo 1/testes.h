@@ -11,6 +11,7 @@ class TUAssento
 {
 private:
 
+    // Definições de constantes para evitar numeros mágicos
     const string DIANTEIRO_VALIDO = "D";
     const string TRASEIRO_VALIDO  = "T";
 
@@ -20,8 +21,10 @@ private:
     // Referência (ponteiro) para o objeto a ser testado
     Assento* assento;
 
+    // Estado do teste.
     int estado;
 
+    // Declarações de métodos.
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
@@ -29,6 +32,7 @@ private:
 
 public:
 
+    // Declarações de métodos.
     const static int SUCESSO =  0;
     const static int FALHA   = -1;
 
@@ -69,9 +73,61 @@ private:
 
     // Definições de constantes para evitar numeros mágicos
     const string VALOR_VALIDO = "200";
-    const string VALOR_INVALIDO = "-40";
+    const string VALOR_INVALIDO = "-55";
 
     CodigoBanco *codigo_banco;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+//==================================================================================
+// Teste Unitario para CodigoCarona
+
+class TUCodigoCarona
+{
+private:
+
+    const string VALOR_VALIDO = "2000";
+    const string VALOR_INVALIDO = "-555";
+
+    CodigoCarona *codigo_carona;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+//==================================================================================
+// Teste Unitario para CodigoReserva
+
+class TUCodigoReserva
+{
+private:
+
+    const string VALOR_VALIDO = "20000";
+    const string VALOR_INVALIDO = "-5555";
+
+    CodigoReserva *codigo_reserva;
 
     int estado;
 
@@ -94,25 +150,19 @@ class TUEstado
 {
 private:
 
-    // Definições de constantes para evitar valorses mágicos
     const string ESTADO_VALIDO = "DF";
     const string ESTADO_INVALIDO = "KK";
 
-    // Referência (ponteiro) para o objeto a ser testado
     Estado *estado;
 
-    // Estado do teste.
     int estado_teste;
 
-    // Declarações de métodos.
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
 
 public:
-
-    // Definições de constantes para reportar resultado do teste.
 
     const static int SUCESSO =  0;
     const static int FALHA   = -1;

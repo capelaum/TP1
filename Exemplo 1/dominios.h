@@ -4,6 +4,8 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
+#include <algorithm> // for std::find
+#include <iterator> // for std::begin, std::end
 
 using namespace std;
 
@@ -20,7 +22,6 @@ private:
     void validar(string);
 
 public:
-
     void setAssento (string);
 
     string getAssento() const
@@ -42,7 +43,6 @@ private:
     void validar(string);
 
 public:
-
     void setBagagem (string);
 
     string getBagagem() const
@@ -61,11 +61,9 @@ private:
     const static int MENOR_VALOR_VALIDO;
     const static int MAIOR_VALOR_VALIDO;
 
-    // Metodo responsavel por validacao.
     void validar(string);
 
 public:
-    // Metodos de acesso.
     void setCodigoBanco(string);
 
     string getCodigoBanco() const
@@ -83,11 +81,9 @@ private:
     const static int MENOR_VALOR_VALIDO;
     const static int MAIOR_VALOR_VALIDO;
 
-    // Metodo responsavel por validacao.
-    void validar(string);  //throw (invalid_argument) -> desnecessario na declaracao
+    void validar(string);
 
 public:
-    // Metodos de acesso.
     void setCodigoCarona(string);
 
     string getCodigoCarona() const
@@ -105,11 +101,9 @@ private:
     const static int MENOR_VALOR_VALIDO;
     const static int MAIOR_VALOR_VALIDO;
 
-    // Metodo responsavel por validacao.
-    void validar(string);  //throw (invalid_argument) -> desnecessario na declaracao
+    void validar(string);
 
 public:
-    // Metodos de acesso.
     void setCodigoReserva(string);
 
     string getCodigoReserva() const

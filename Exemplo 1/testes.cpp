@@ -230,6 +230,134 @@ int TUCodigoBanco::run()
     return estado;
 }
 //========================================================================
+// Metodos testes da classe CodigoCarona
+
+void TUCodigoCarona::setUp()
+{
+    codigo_carona = new CodigoCarona();
+    estado = SUCESSO;
+}
+void TUCodigoCarona::tearDown()
+{
+    delete codigo_carona;
+}
+
+void TUCodigoCarona::testarCenarioSucesso()
+{
+    try
+    {
+        codigo_carona->setCodigoCarona(VALOR_VALIDO);
+        // cout << "Codigo de Carona valido: " << codigo_carona->getCodigoCarona() << endl;
+
+        if (codigo_carona->getCodigoCarona().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUCodigoCarona::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUCodigoCarona::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCodigoCarona::testarCenarioFalha()
+{
+    try
+    {
+        codigo_carona->setCodigoCarona(VALOR_INVALIDO);
+        cout << "Codigo de Carona invalido: " << codigo_carona->getCodigoCarona() << endl;
+        cout << "TUCodigoCarona::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (codigo_carona->getCodigoCarona().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUCodigoCarona::testarCenarioFalha falhou! CATCH" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUCodigoCarona::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
+// Metodos testes da classe CodigoReserva
+
+void TUCodigoReserva::setUp()
+{
+    codigo_reserva = new CodigoReserva();
+    estado = SUCESSO;
+}
+void TUCodigoReserva::tearDown()
+{
+    delete codigo_reserva;
+}
+
+void TUCodigoReserva::testarCenarioSucesso()
+{
+    try
+    {
+        codigo_reserva->setCodigoReserva(VALOR_VALIDO);
+        // cout << "Codigo de Reserva valido: " << codigo_reserva->getCCodigoReserva() << endl;
+
+        if (codigo_reserva->getCodigoReserva().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUCodigoReserva::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUCodigoReserva::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCodigoReserva::testarCenarioFalha()
+{
+    try
+    {
+        codigo_reserva->setCodigoReserva(VALOR_INVALIDO);
+        cout << "Codigo de Reserva invalido: " << codigo_reserva->getCodigoReserva() << endl;
+        cout << "TUCodigoReserva::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (codigo_reserva->getCodigoReserva().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUCodigoReserva::testarCenarioFalha falhou! CATCH" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUCodigoReserva::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
 // Metodos testes da classe Estado
 
 void TUEstado::setUp()

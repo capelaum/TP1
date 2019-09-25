@@ -1,6 +1,3 @@
-#include <algorithm> // for std::find
-#include <iterator> // for std::begin, std::end
-
 #include "dominios.h"
 
 // Definicoes de metodos das classes de Dominio
@@ -65,7 +62,8 @@ const int CodigoBanco::MAIOR_VALOR_VALIDO = 999;
 void CodigoBanco::validar(string Codigo)
 {
 
-    if(Codigo.size() != QUANTIDADE_NUMEROS){
+    if(Codigo.size() != QUANTIDADE_NUMEROS)
+    {
         // cout << "Validar Codigo Banco falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
         throw invalid_argument("Argumento invalido.");
@@ -73,11 +71,12 @@ void CodigoBanco::validar(string Codigo)
 
     int x = stoi(Codigo);
 
-        if( x < MENOR_VALOR_VALIDO || x > MAIOR_VALOR_VALIDO){
-            // cout << "Validar Codigo Banco falhou!" << endl;
-            // cout << "Valor invalido: " << Codigo << endl;
-            throw invalid_argument("Argumento invalido.");
-        }
+    if( x < MENOR_VALOR_VALIDO || x > MAIOR_VALOR_VALIDO)
+    {
+        // cout << "Validar Codigo Banco falhou!" << endl;
+        // cout << "Valor invalido: " << Codigo << endl;
+        throw invalid_argument("Argumento invalido.");
+    }
 
 }
 
@@ -90,20 +89,23 @@ void CodigoBanco::setCodigoBanco(string CodigoBanco)
 //Metodos da classe CodigoCarona - XXXX - X de 0 a 9
 const int CodigoCarona::QUANTIDADE_NUMEROS = 4;
 const int CodigoCarona::MENOR_VALOR_VALIDO = 0;
-const int CodigoCarona::MAIOR_VALOR_VALIDO = 9;
+const int CodigoCarona::MAIOR_VALOR_VALIDO = 9999;
 
 void CodigoCarona::validar(string Codigo)
 {
-    if(Codigo.size() > CodigoCarona::QUANTIDADE_NUMEROS ||
-        Codigo.size() == 0){
+    if(Codigo.size() != QUANTIDADE_NUMEROS){
+        // cout << "Validar Codigo Carona falhou!" << endl;
+        // cout << "Valor invalido: " << Codigo << endl;
         throw invalid_argument("Argumento invalido.");
     }
-    int i;
-    for(i=0; i<CodigoCarona::QUANTIDADE_NUMEROS; i++){
-        int x = stoi(Codigo[i]+"");
-        if( x < 0 || x > 9){
-            throw invalid_argument("Argumento invalido.");
-        }
+
+    int x = stoi(Codigo);
+
+    if( x < MENOR_VALOR_VALIDO || x > MAIOR_VALOR_VALIDO)
+    {
+        // cout << "Validar Codigo Carona falhou!" << endl;
+        // cout << "Valor invalido: " << Codigo << endl;
+        throw invalid_argument("Argumento invalido.");
     }
 }
 
@@ -116,20 +118,23 @@ void CodigoCarona::setCodigoCarona(string CodigoCarona)
 //Metodos da classe CodigoReserva - XXXXX - X de 0 a 9
 const int CodigoReserva::QUANTIDADE_NUMEROS = 5;
 const int CodigoReserva::MENOR_VALOR_VALIDO = 0;
-const int CodigoReserva::MAIOR_VALOR_VALIDO = 9;
+const int CodigoReserva::MAIOR_VALOR_VALIDO = 99999;
 
 void CodigoReserva::validar(string Codigo)
 {
-    if(Codigo.size() > CodigoReserva::QUANTIDADE_NUMEROS ||
-        Codigo.size() == 0){
+    if(Codigo.size() != QUANTIDADE_NUMEROS){
+        // cout << "Validar Codigo Reserva falhou!" << endl;
+        // cout << "Valor invalido: " << Codigo << endl;
         throw invalid_argument("Argumento invalido.");
     }
-    int i;
-    for(i=0; i<CodigoReserva::QUANTIDADE_NUMEROS; i++){
-        int x = stoi(Codigo[i]+"");
-        if( x < 0 || x > 9){
-            throw invalid_argument("Argumento invalido.");
-        }
+
+    int x = stoi(Codigo);
+
+    if( x < MENOR_VALOR_VALIDO || x > MAIOR_VALOR_VALIDO)
+    {
+        // cout << "Validar Codigo Reserva falhou!" << endl;
+        // cout << "Valor invalido: " << Codigo << endl;
+        throw invalid_argument("Argumento invalido.");
     }
 }
 

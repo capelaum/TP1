@@ -18,6 +18,8 @@ int main()
     TUAssento teste_assento;
     TUBagagem teste_bagagem;
     TUCodigoBanco teste_codigo_banco;
+    TUCodigoCarona teste_codigo_carona;
+    TUCodigoReserva teste_codigo_reserva;
     TUEstado teste_estado;
 
     cout << "--------->TESTES DE DOMINIOS<---------" << endl;
@@ -54,6 +56,30 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUCodigoBanco::FALHA  :
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE CODIGO DE CARONA: ";
+    // run teste de Codigo de Carona
+    switch(teste_codigo_carona.run())
+    {
+    case TUCodigoCarona::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUCodigoCarona::FALHA  :
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE CODIGO DE RESERVA: ";
+    // run teste de Codigo de Reserva
+    switch(teste_codigo_reserva.run())
+    {
+    case TUCodigoReserva::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUCodigoReserva::FALHA  :
         cout << "FALHA!" << endl;
         break;
     }
