@@ -224,51 +224,32 @@ void Cidade::setCidade(string nova_cidade)
     }
 }
 
-// Metodos da classe CPF XXX.XXX.XXX-XX
+// Metodos da classe CPF XXXXXXXXX-XX
 
-// Checar se o numero tem 9 digitos
-// suponho que a entrada eh um numero sem pontos e sem barra
+// Checar se o CPF tem 12 digitos
+// suponho que a entrada eh um numero sem pontos mas com separador
 
-const int CPF::QUANTIDADE_NUMEROS = 11;
-
+const int CPF::TAMANHO = 12;
 
 void CPF::validar (string cpf)
 {
-
-	const int QUANTIDADE_NUMEROS = 12;
+    int i = 0;
 
 	// checa o tamanho da string
-    if(cpf.size() != QUANTIDADE_NUMEROS)
-    {
-        cout << "Validar CPF falhou! tamanho" << endl;
-        cout << "Valor invalido: " << cpf << endl;
+    if(cpf.size() != TAMANHO)
         throw invalid_argument("CPF invalido.");
-    }
 
     // checa se tem '-' na posicao correta
     if (cpf[9] != '-')
-    {
-        cout << "Validar CPF falhou! separador '-'" << endl;
-        cout << "Valor invalido: " << cpf << endl;
         throw invalid_argument("CPF invalido.");
 
-    }
-
-	int i = 0;
-
     // checa se possui apenas numeros
-    for(i=0; i < QUANTIDADE_NUMEROS; i++)
+    for(i = 0; i < TAMANHO; i++)
     {
         if( isdigit(cpf[i]) == false )
         {
             if (i != 9)
-            {
-                cout << "Validar CPF falhou! n possui apenas numeros" << endl;
-                cout << "Valor invalido: " << cpf << endl;
                 throw invalid_argument("CPF invalido.");
-            }
-
-
         }
     }
 
@@ -496,6 +477,84 @@ void Estado::setEstado(string Estado)
 {
     Estado::validar(Estado);
     this->Estado = Estado;
+}
+
+// Metodos da classe Conta - XXXXXX-Y - 0 a 9
+// Digito verificador Y - algoritmo de Luhn
+
+const int Conta::TAMANHO = 8;
+
+void Conta::validar(string Conta)
+{
+    // checa tamanho
+    if(Conta.size() != TAMANHO)
+	{
+		throw invalid_argument("Conta invalida.");
+	}
+
+    // checa se tem '-' na posicao correta
+    if (Conta[6] != '-')
+	{
+		throw invalid_argument("Conta invalida.");
+	}
+
+    int i = 0;
+
+    // checa se possui apenas numeros
+    for(i = 0; i < TAMANHO; i++)
+    {
+        if( isdigit(Conta[i]) == false )
+        {
+            if (i != 6)
+            {
+                throw invalid_argument("Conta invalida.");
+            }
+        }
+    }
+
+	// aplicando algoritmo de Luhn
+
+	int peso = 0, soma = 0;
+	int resto = 0, quociente = 0;
+
+	// indices pares tem peso 1
+	for(i = 0; i < 6; )
+	{
+		peso = (Conta[i] - '0');
+		soma += peso;
+		i = i+2;
+	}
+
+	// indices impares tem peso 2
+	for(i = 1; i < 6; )
+	{
+		peso = (Conta[i] - '0')*2;
+
+		if(peso > 9)
+		{
+			quociente = peso/10;
+			resto = peso%10;
+			peso = resto + quociente;
+		}
+
+		soma += peso;
+		i = i+2;
+	}
+
+	resto = soma%10;
+	int digito_verificador = 10 - resto;
+
+	if (Conta[7] - '0' != digito_verificador)
+	{
+		throw invalid_argument("Conta invalida, digito verificador invalido!");
+	}
+
+}
+
+void Conta::setConta(string Conta)
+{
+    validar(Conta);
+    this->Conta = Conta;
 }
 
 // Metodos da classe Preco - 1,00 a 5000,00

@@ -678,7 +678,69 @@ int TUEstado::run()
 
     return estado_teste;
 }
+//========================================================================
+// Metodos testes da classe Conta
 
+void TUConta::setUp()
+{
+    conta = new Conta();
+    estado = SUCESSO;
+}
+
+void TUConta::tearDown()
+{
+    delete conta;
+}
+
+void TUConta::testarCenarioSucesso()
+{
+    try
+    {
+        conta->setConta(CONTA_VALIDA);
+        // cout << "Conta valida: " << conta->getConta() << endl;
+
+        if (conta->getConta().compare(CONTA_VALIDA) != 0)
+        {
+            cout << "TUConta::testarCenarioSucesso falhou! CONTA VALIDA" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUConta::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUConta::testarCenarioFalha()
+{
+    try
+    {
+        conta->setConta(CONTA_INVALIDA);
+        cout << "TUCPF::testarCenarioFalha falhou! CONTA INVALIDO" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao)
+    {
+        if (conta->getConta().compare(CONTA_INVALIDA) == 0)
+        {
+            cout << "TUConta::testarCenarioFalha falhou! CATCH" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUConta::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
 //========================================================================
 // Metodos testes da classe Preco
 

@@ -135,7 +135,7 @@ class CPF
 private:
     string cpf;
 
-    const static int QUANTIDADE_NUMEROS;
+    const static int TAMANHO;
 
     void validar(string);
 
@@ -204,6 +204,24 @@ public:
     string getEstado() const
     {
         return Estado;
+    }
+};
+
+class Conta
+{
+private:
+    string Conta;
+
+    const static int TAMANHO;
+
+    void validar(string);
+
+public:
+    void setConta(string);
+
+    string getConta() const
+    {
+        return Conta;
     }
 };
 

@@ -274,6 +274,32 @@ public:
     int run(); //
 };
 //==================================================================================
+// Teste Unitario para Classe Conta
+
+class TUConta
+{
+private:
+
+    const string CONTA_VALIDA = "261533-4";
+    const string CONTA_INVALIDA = "261533-7";
+
+    Conta *conta;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+//==================================================================================
 // Teste Unitario para Classe Preco
 
 class TUPreco

@@ -25,6 +25,7 @@ int main()
     TUData teste_data;
     TUDuracao teste_duracao;
     TUEstado teste_estado;
+    TUConta teste_conta;
     TUPreco teste_preco;
     TUVagas teste_vagas;
 
@@ -146,6 +147,18 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUEstado::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE NUMERO DE CONTA: " ;
+    // run teste de Conta
+    switch(teste_conta.run())
+    {
+    case TUConta::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUConta::FALHA:
         cout << "FALHA!" << endl;
         break;
     }
