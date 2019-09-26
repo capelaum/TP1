@@ -115,7 +115,6 @@ public:
 class Cidade
 {
 private:
-
     const static int TAMANHO_ESPERADO = 10;
 
     char cidade[TAMANHO_ESPERADO+1];
@@ -134,21 +133,19 @@ public:
 class CPF
 {
 private:
-    long long int num_cpf;
+    string cpf;
 
-    // temos que checar se o numero tem 9 digitos
-    // suponho que a entrada é um numero sem pontos e sem barra
+    const static int QUANTIDADE_NUMEROS;
 
-    void validar(long long int);
+    void validar(string);
 
 public:
 
-    void setCPF (long long int);
+    void setCPF (string);
 
-    long long int getCPF ()
+    string getCPF() const
     {
-        // cout << num_cpf << endl;
-        return num_cpf;
+        return cpf;
     }
 };
 

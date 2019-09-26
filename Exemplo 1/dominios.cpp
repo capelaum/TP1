@@ -146,6 +146,7 @@ void CodigoReserva::setCodigoReserva(string CodigoReserva)
 // pelo menos 1 caractere eh letra
 // nao ha espacos seguidos
 // antes de ponto ha uma letra
+
 void Cidade::validar(string nova_cidade)
 {
 
@@ -221,6 +222,142 @@ void Cidade::setCidade(string nova_cidade)
         this->cidade[k] = nova_cidade[k];
         k++;
     }
+}
+
+// Metodos da classe CPF XXX.XXX.XXX-XX
+
+// Checar se o numero tem 9 digitos
+// suponho que a entrada eh um numero sem pontos e sem barra
+
+const int CPF::QUANTIDADE_NUMEROS = 11;
+
+
+void CPF::validar (string cpf)
+{
+
+	const int QUANTIDADE_NUMEROS = 12;
+
+	// checa o tamanho da string
+    if(cpf.size() != QUANTIDADE_NUMEROS)
+    {
+        cout << "Validar CPF falhou! tamanho" << endl;
+        cout << "Valor invalido: " << cpf << endl;
+        throw invalid_argument("CPF invalido.");
+    }
+
+    // checa se tem '-' na posicao correta
+    if (cpf[9] != '-')
+    {
+        cout << "Validar CPF falhou! separador '-'" << endl;
+        cout << "Valor invalido: " << cpf << endl;
+        throw invalid_argument("CPF invalido.");
+
+    }
+
+	int i = 0;
+
+    // checa se possui apenas numeros
+    for(i=0; i < QUANTIDADE_NUMEROS; i++)
+    {
+        if( isdigit(cpf[i]) == false )
+        {
+            if (i != 9)
+            {
+                cout << "Validar CPF falhou! n possui apenas numeros" << endl;
+                cout << "Valor invalido: " << cpf << endl;
+                throw invalid_argument("CPF invalido.");
+            }
+
+
+        }
+    }
+
+    // checa os digitos verificadores
+
+	// digito verificador 1
+    int digito_verficador_1;
+
+    int soma = 0, peso = 0;
+
+	int j = 10;
+
+    while(j > 1)
+    {
+		for(i = 0; i < 9; i++)
+		{
+        	peso = (cpf[i] -'0')*j;
+			soma += peso;
+			j--;
+		}
+
+    }
+
+	int quociente = soma/11;
+	int resto = soma%11;
+
+	if (resto < 2)
+	{
+		digito_verficador_1 = 0;
+	}else
+	{
+		digito_verficador_1 = 11 - resto;
+	}
+
+	// cout << "digito verificador 1: " << digito_verficador_1 << endl;
+
+	if ( (cpf[10] - '0') != digito_verficador_1)
+	{
+		// cout << "Validar CPF falhou! digito verificador 1 invalido" << endl;
+        // cout << "CPF invalido: " << cpf << endl;
+        throw invalid_argument("CPF invalido.");
+	}
+
+	// checa digito verificador 2
+
+	j = 11;
+    soma = 0; // zera soma
+
+	while(j > 1)
+    {
+		for(i = 0; i < 11; i++)
+		{
+			if (i != 9)
+			{
+        		peso = (cpf[i] -'0')*j;
+				soma += peso;
+				j--;
+			}
+		}
+
+    }
+
+    int digito_verficador_2;
+	int quociente2 = soma/11;
+	int resto2 = soma%11;
+
+	if (resto2 < 2)
+	{
+		digito_verficador_2 = 0;
+	}else
+	{
+		digito_verficador_2 = 11 - resto;
+	}
+
+	// cout << "digito verificador 2: " << digito_verficador_2 << endl;
+
+	if ( (cpf[11] - '0') != digito_verficador_2)
+	{
+		// cout << "Validar CPF falhou! digito verificador 2 invalido" << endl;
+        // cout << "CPF invalido: " << cpf << endl;
+        throw invalid_argument("CPF invalido.");
+	}
+
+}
+
+void CPF::setCPF (string cpf)
+{
+    validar(cpf);
+    this->cpf = cpf;
 }
 
 // Metodos da classe Data - 6 caracteres

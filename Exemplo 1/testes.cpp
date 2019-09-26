@@ -425,6 +425,69 @@ int TUCidade::run()
     return estado;
 }
 //========================================================================
+// Metodos testes da classe CPF
+
+void TUCPF::setUp()
+{
+    cpf = new CPF();
+    estado = SUCESSO;
+}
+
+void TUCPF::tearDown()
+{
+    delete cpf;
+}
+
+void TUCPF::testarCenarioSucesso()
+{
+    try
+    {
+        cpf->setCPF(CPF_VALIDO);
+        // cout << "CPF valido: " << cpf->getCPF() << endl;
+
+        if (cpf->getCPF().compare(CPF_VALIDO) != 0)
+        {
+            cout << "TUCPF::testarCenarioSucesso falhou! CPF VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUCPF::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUCPF::testarCenarioFalha()
+{
+    try
+    {
+        cpf->setCPF(CPF_INVALIDO);
+        cout << "TUCPF::testarCenarioFalha falhou! CPF INVALIDO" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao)
+    {
+        if (cpf->getCPF().compare(CPF_INVALIDO) == 0)
+        {
+            cout << "TUCPF::testarCenarioFalha falhou! CATCH" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUCPF::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
 // Metodos testes da classe Data
 
 void TUData::setUp()

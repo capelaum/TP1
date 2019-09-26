@@ -170,6 +170,32 @@ public:
     int run();
 };
 //==================================================================================
+// Teste Unitario para CPF
+
+class TUCPF
+{
+private:
+
+    const string CPF_VALIDO = "047130041-11";
+    const string CPF_INVALIDO = "047130041-77";
+
+    CPF *cpf;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run();
+};
+//==================================================================================
 // Teste Unitario para Data
 
 class TUData

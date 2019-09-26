@@ -21,6 +21,7 @@ int main()
     TUCodigoCarona teste_codigo_carona;
     TUCodigoReserva teste_codigo_reserva;
     TUCidade teste_cidade;
+    TUCPF teste_CPF;
     TUData teste_data;
     TUDuracao teste_duracao;
     TUEstado teste_estado;
@@ -97,6 +98,18 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUCidade::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE CPF: ";
+    // run teste de CPF
+    switch(teste_CPF.run())
+    {
+    case TUCPF::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUCPF::FALHA:
         cout << "FALHA!" << endl;
         break;
     }
