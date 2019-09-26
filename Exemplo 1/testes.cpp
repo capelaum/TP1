@@ -906,7 +906,6 @@ void TUSenha::testarCenarioFalha()
     try
     {
         senha->setSenha(SENHA_INVALIDA);
-
         cout << "TUSenha::testarCenarioFalha falhou! SENHA INVALIDA" << endl;
         estado = FALHA;
 

@@ -359,7 +359,7 @@ class TUSenha
 private:
 
     const string SENHA_VALIDA = "A#$45";
-    const string SENHA_INVALIDA = "A##A*";
+    const string SENHA_INVALIDA = "A#BCD";
 
     Senha *senha;
 

@@ -692,6 +692,7 @@ void Senha::validar(string Senha)
 
 	}
 
+    // checa se ha caracteres repetidos
     map<char,int> contarletras;
 
     for (i = 0; i < TAMANHO; i++)
@@ -706,6 +707,34 @@ void Senha::validar(string Senha)
 			throw invalid_argument("Senha invalida, possui caractere repetido");
 		}
 	}
+
+    bool tem_letra = false;
+    bool tem_numero = false;
+
+    // checa se ha pelo menos uma letra ou numero
+    for(i = 0; i < TAMANHO; i++)
+	{
+		if(isdigit(Senha[i]) == true)
+		{
+		    tem_letra = true;
+		}
+
+		if(isalpha(Senha[i]) == true)
+		{
+            tem_numero = true;
+		}
+
+	}
+
+    if(tem_numero == false)
+    {
+        throw invalid_argument("Senha invalida, nao tem numero");
+    }
+
+    if(tem_letra == false)
+    {
+        throw invalid_argument("Senha invalida, nao tem letra");
+    }
 
 }
 
