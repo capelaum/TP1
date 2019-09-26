@@ -273,7 +273,6 @@ void CPF::validar (string cpf)
 
     }
 
-	int quociente = soma/11;
 	int resto = soma%11;
 
 	if (resto < 2)
@@ -313,7 +312,6 @@ void CPF::validar (string cpf)
     }
 
     int digito_verficador_2;
-	int quociente2 = soma/11;
 	int resto2 = soma%11;
 
 	if (resto2 < 2)
@@ -477,6 +475,84 @@ void Estado::setEstado(string Estado)
 {
     Estado::validar(Estado);
     this->Estado = Estado;
+}
+
+// Metodos da classe Agencia - XXXX-Y - 0 a 9
+// Digito verificador Y - algoritmo de Luhn
+
+const int Agencia::TAMANHO = 6;
+
+void Agencia::validar(string Agencia)
+{
+    // checa tamanho
+    if(Agencia.size() != TAMANHO)
+	{
+		throw invalid_argument("Agencia invalida.");
+	}
+
+    // checa se tem '-' na posicao correta
+    if (Agencia[4] != '-')
+	{
+		throw invalid_argument("Agencia invalida.");
+	}
+
+    int i = 0;
+
+    // checa se possui apenas numeros
+    for(i = 0; i < TAMANHO; i++)
+    {
+        if( isdigit(Agencia[i]) == false )
+        {
+            if (i != 4)
+            {
+                throw invalid_argument("Agencia invalida.");
+            }
+        }
+    }
+
+	// aplicando algoritmo de Luhn
+
+	int peso = 0, soma = 0;
+	int resto = 0, quociente = 0;
+
+	// indices pares tem peso 1
+	for(i = 0; i < 4; )
+	{
+		peso = (Agencia[i] - '0');
+		soma += peso;
+		i = i+2;
+	}
+
+	// indices impares tem peso 2
+	for(i = 1; i < 4; )
+	{
+		peso = (Agencia[i] - '0')*2;
+
+		if(peso > 9)
+		{
+			quociente = peso/10;
+			resto = peso%10;
+			peso = resto + quociente;
+		}
+
+		soma += peso;
+		i = i+2;
+	}
+
+	resto = soma%10;
+	int digito_verificador = 10 - resto;
+
+	if (Agencia[5] - '0' != digito_verificador)
+	{
+		throw invalid_argument("Agencia invalida, digito verificador invalido!");
+	}
+
+}
+
+void Agencia::setAgencia(string Agencia)
+{
+    validar(Agencia);
+    this->Agencia = Agencia;
 }
 
 // Metodos da classe Conta - XXXXXX-Y - 0 a 9

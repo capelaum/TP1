@@ -274,6 +274,32 @@ public:
     int run(); //
 };
 //==================================================================================
+// Teste Unitario para Classe Agencia
+
+class TUAgencia
+{
+private:
+
+    const string AGENCIA_VALIDA = "3590-7";
+    const string AGENCIA_INVALIDA = "2615-7";
+
+    Agencia *agencia;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+//==================================================================================
 // Teste Unitario para Classe Conta
 
 class TUConta

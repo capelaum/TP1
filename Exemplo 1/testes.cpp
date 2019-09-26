@@ -679,6 +679,69 @@ int TUEstado::run()
     return estado_teste;
 }
 //========================================================================
+// Metodos testes da classe Agencia
+
+void TUAgencia::setUp()
+{
+    agencia = new Agencia();
+    estado = SUCESSO;
+}
+
+void TUAgencia::tearDown()
+{
+    delete agencia;
+}
+
+void TUAgencia::testarCenarioSucesso()
+{
+    try
+    {
+        agencia->setAgencia(AGENCIA_VALIDA);
+        // cout << "Agencia valida: " << agencia->getAgencia() << endl;
+
+        if (agencia->getAgencia().compare(AGENCIA_VALIDA) != 0)
+        {
+            cout << "TUAgencia::testarCenarioSucesso falhou! AGENCIA VALIDA" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUAgencia::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUAgencia::testarCenarioFalha()
+{
+    try
+    {
+        agencia->setAgencia(AGENCIA_INVALIDA);
+        cout << "TUAgencia::testarCenarioFalha falhou! AGENCIA INVALIDO" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao)
+    {
+        if (agencia->getAgencia().compare(AGENCIA_INVALIDA) == 0)
+        {
+            cout << "TUAgencia::testarCenarioFalha falhou! CATCH" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUAgencia::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
 // Metodos testes da classe Conta
 
 void TUConta::setUp()
@@ -717,7 +780,7 @@ void TUConta::testarCenarioFalha()
     try
     {
         conta->setConta(CONTA_INVALIDA);
-        cout << "TUCPF::testarCenarioFalha falhou! CONTA INVALIDO" << endl;
+        cout << "TUConta::testarCenarioFalha falhou! CONTA INVALIDO" << endl;
         estado = FALHA;
     }
     catch(invalid_argument excecao)

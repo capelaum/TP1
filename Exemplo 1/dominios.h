@@ -207,6 +207,24 @@ public:
     }
 };
 
+class Agencia
+{
+private:
+    string Agencia;
+
+    const static int TAMANHO;
+
+    void validar(string);
+
+public:
+    void setAgencia(string);
+
+    string getAgencia() const
+    {
+        return Agencia;
+    }
+};
+
 class Conta
 {
 private:
