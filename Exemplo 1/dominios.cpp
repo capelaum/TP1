@@ -659,6 +659,61 @@ void Preco::setPreco(string Preco)
     this->Preco = Preco;
 }
 
+// Metodos da classe Senha - XXXXX - (a-z ou A-Z, 0 a 9, #,$,%,&)
+// Pelo menos uma letra e um digito
+// Nao pode haver caracteres repetidos
+
+const int Senha::TAMANHO = 5;
+
+void Senha::validar(string Senha)
+{
+
+	// checa tamanho
+    if(Senha.size() != TAMANHO)
+	{
+		throw invalid_argument("Senha invalida. TAMANHO");
+	}
+
+	int i = 0;
+
+	for(i = 0; i < TAMANHO; i++)
+	{
+		// checa se possui apenas letras ou numeros
+		if(isalnum(Senha[i]) == false)
+		{
+			// se nao for letra ou numero, pode ser um dos simblos #,$,%,&
+			if (Senha[i] != '#' && Senha[i] != '$' && Senha[i] != '%' && Senha[i] != '&')
+            {
+				// cout << "Senha possui caractere invalido: " << Senha[i] << endl;
+				throw invalid_argument("Senha invalida, possui caractere invalido");
+
+			}
+		}
+
+	}
+
+    map<char,int> contarletras;
+
+    for (i = 0; i < TAMANHO; i++)
+        contarletras[Senha[i]]++;
+
+    for (map<char, int>::iterator it = contarletras.begin(); it != contarletras.end(); ++it)
+	{
+		if(it->second != 1)
+		{
+			// cout << "caractere repetido: ";
+			// cout << it->first << ": " << it->second << endl;
+			throw invalid_argument("Senha invalida, possui caractere repetido");
+		}
+	}
+
+}
+
+void Senha::setSenha(string Senha)
+{
+    validar(Senha);
+    this->Senha = Senha;
+}
 // Metodos da classe Vagas - 0 a 4
 
 const int Vagas::VAGAS_MIN = 0;

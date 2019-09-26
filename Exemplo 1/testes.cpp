@@ -843,7 +843,7 @@ void TUPreco::testarCenarioFalha()
     {
         preco->setPreco(VALOR_INVALIDO);
 
-        cout << "TUDPreco::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        cout << "TUPreco::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
         estado = FALHA;
 
     }
@@ -851,7 +851,7 @@ void TUPreco::testarCenarioFalha()
     {
         if (preco->getPreco().compare(VALOR_INVALIDO) == 0)
         {
-            cout << "TUDuracao::testarCenarioFalha falhou! CATCH VALOR INVALIDO" << endl;
+            cout << "TUPreco::testarCenarioFalha falhou! CATCH VALOR INVALIDO" << endl;
             estado = FALHA;
         }
 
@@ -860,6 +860,70 @@ void TUPreco::testarCenarioFalha()
 }
 
 int TUPreco::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
+// Metodos testes da classe Senha
+
+void TUSenha::setUp()
+{
+    senha = new Senha();
+    estado = SUCESSO;
+}
+
+void TUSenha::tearDown()
+{
+    delete senha;
+}
+
+void TUSenha::testarCenarioSucesso()
+{
+    try
+    {
+        senha->setSenha(SENHA_VALIDA);
+
+        if (senha->getSenha().compare(SENHA_VALIDA) != 0)
+        {
+            cout << "TUSenha::testarCenarioSucesso falhou! SENHA VALIDA" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUSenha::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUSenha::testarCenarioFalha()
+{
+    try
+    {
+        senha->setSenha(SENHA_INVALIDA);
+
+        cout << "TUSenha::testarCenarioFalha falhou! SENHA INVALIDA" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (senha->getSenha().compare(SENHA_INVALIDA) == 0)
+        {
+            cout << "TUSenha::testarCenarioFalha falhou! CATCH SENHA INVALIDA" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUSenha::run()
 {
     setUp();
     testarCenarioSucesso();

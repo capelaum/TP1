@@ -352,6 +352,32 @@ public:
     int run(); //
 };
 //==================================================================================
+// Teste Unitario para Classe Senha
+
+class TUSenha
+{
+private:
+
+    const string SENHA_VALIDA = "A#$45";
+    const string SENHA_INVALIDA = "A##A*";
+
+    Senha *senha;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+//==================================================================================
 // Teste Unitario para Classe Vagas
 
 class TUVagas

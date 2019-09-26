@@ -6,6 +6,7 @@
 #include <string>
 #include <algorithm> // for std::find
 #include <iterator> // for std::begin, std::end
+#include <map>
 
 using namespace std;
 
@@ -262,6 +263,24 @@ public:
         return Preco;
     }
 
+};
+
+class Senha
+{
+private:
+    string Senha;
+
+    const static int TAMANHO;
+
+    void validar(string);
+
+public:
+    void setSenha(string);
+
+    string getSenha() const
+    {
+        return Senha;
+    }
 };
 
 class Vagas
