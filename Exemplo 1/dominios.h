@@ -208,6 +208,24 @@ public:
     }
 };
 
+class Email
+{
+private:
+    string Email;
+
+    const static int TAMANHO_MAX;
+
+    void validar(string);
+
+public:
+    void setEmail(string);
+
+    string getEmail() const
+    {
+        return Email;
+    }
+};
+
 class Agencia
 {
 private:

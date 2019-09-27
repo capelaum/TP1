@@ -679,6 +679,69 @@ int TUEstado::run()
     return estado_teste;
 }
 //========================================================================
+// Metodos testes da classe Email
+
+void TUEmail::setUp()
+{
+    email = new Email();
+    estado = SUCESSO;
+}
+
+void TUEmail::tearDown()
+{
+    delete email;
+}
+
+void TUEmail::testarCenarioSucesso()
+{
+    try
+    {
+        email->setEmail(EMAIL_VALIDO);
+        // cout << "Email valido: " << email->getEmail() << endl;
+
+        if (email->getEmail().compare(EMAIL_VALIDO) != 0)
+        {
+            cout << "TUEmail::testarCenarioSucesso falhou! AGENCIA VALIDA" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUEmail::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUEmail::testarCenarioFalha()
+{
+    try
+    {
+        email->setEmail(EMAIL_INVALIDO);
+        cout << "TUEmail::testarCenarioFalha falhou! EMAIL INVALIDO" << endl;
+        estado = FALHA;
+    }
+    catch(invalid_argument excecao)
+    {
+        if (email->getEmail().compare(EMAIL_INVALIDO) == 0)
+        {
+            cout << "TUEmail::testarCenarioFalha falhou! CATCH" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUEmail::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+//========================================================================
 // Metodos testes da classe Agencia
 
 void TUAgencia::setUp()
@@ -995,5 +1058,3 @@ int TUVagas::run()
 
     return estado;
 }
-
-

@@ -274,6 +274,32 @@ public:
     int run(); //
 };
 //==================================================================================
+// Teste Unitario para Classe Email
+
+class TUEmail
+{
+private:
+
+    const string EMAIL_VALIDO = "capelaum@gmail.com";
+    const string EMAIL_INVALIDO = "capelaum@gmail..com@";
+
+    Email *email;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+//==================================================================================
 // Teste Unitario para Classe Agencia
 
 class TUAgencia

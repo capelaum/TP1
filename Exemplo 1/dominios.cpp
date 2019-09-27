@@ -477,6 +477,89 @@ void Estado::setEstado(string Estado)
     this->Estado = Estado;
 }
 
+// Metodos da classe Email - 1 a 20 caracteres - a-z ou ponto '.'
+// Formato: local@dominio.com
+// local nao pode iniciar nem terminar com ponto
+// dominio nao pode iniciar com ponto
+// nao pode haver pontos em sequencia
+
+const int Email::TAMANHO_MAX = 20;
+
+void Email::validar(string Email)
+{
+	int i = 0;
+
+	// checa tamanho
+    if(Email.size() > TAMANHO_MAX)
+	{
+		throw invalid_argument("Email invalido. Tamanho invalido!");
+	}
+
+	// checa se local comeca com ponto
+	if(Email[0] == '.' || Email[0] == '@')
+	{
+		throw invalid_argument("Email invalido. Local comeca com ponto ou arroba!");
+	}
+
+	// checa se arroba ou ponto esta no final
+	if(Email[Email.size()-1] == '@' || Email[Email.size()-1] == '.')
+	{
+		throw invalid_argument("Email invalido. Ponto ou arroba no final!");
+	}
+
+	// checa caracteres - letra a-z ou ponto
+	for(i = 0; i < Email.size(); i++)
+	{
+		// checa se possui ponto repetido ou irregular
+		if(isalpha(Email[i]) == false)
+		{
+			if (Email[i] == '@' || Email[i] == '.')
+			{
+				if(Email[i-1] == '.' || Email[i+1] == '.')
+				{
+					throw invalid_argument("Email invalido. Ponto irregular!");
+				}
+			}
+
+		}
+
+		// checa se tem numeros
+		if(isdigit(Email[i]))
+		{
+			throw invalid_argument("Email invalido. Possui numero!");
+		}
+
+		// checa se tem letra maiuscula
+		if(isupper(Email[i]))
+		{
+			throw invalid_argument("Email invalido. Possui letra maiuscula!");
+		}
+	}
+
+	int conta_arroba = 0;
+	// checa se possui '@' mais de uma vez
+	for(i = 0; i < Email.size(); i++)
+	{
+		if(Email[i] == '@')
+		{
+			conta_arroba++;
+		}
+
+	}
+
+	if(conta_arroba > 1 || conta_arroba == 0)
+	{
+		throw invalid_argument("Email invalido. Nao Possui ou tem mais de 1 arroba!");
+	}
+
+}
+
+void Email::setEmail(string Email)
+{
+    validar(Email);
+    this->Email = Email;
+}
+
 // Metodos da classe Agencia - XXXX-Y - 0 a 9
 // Digito verificador Y - algoritmo de Luhn
 
@@ -743,6 +826,7 @@ void Senha::setSenha(string Senha)
     validar(Senha);
     this->Senha = Senha;
 }
+
 // Metodos da classe Vagas - 0 a 4
 
 const int Vagas::VAGAS_MIN = 0;
