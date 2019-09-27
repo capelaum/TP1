@@ -143,3 +143,35 @@
 	"entidades.h"
 	"testes.h"
 
+1569567080 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\dominios.cpp
+	"dominios.h"
+
+1569565798 c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\dominios.h
+	<iostream>
+	<stdexcept>
+	<string>
+	<algorithm>
+	<iterator>
+	<map>
+	<ctype.h>
+
+1569559424 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\entidades.cpp
+	"entidades.h"
+
+1569559424 c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\entidades.h
+	"dominios.h"
+	<string>
+
+1569567974 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1569567586 c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\testes.h
+	"dominios.h"
+
+1569567863 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\testes.cpp
+	"testes.h"
+	<iostream>
+

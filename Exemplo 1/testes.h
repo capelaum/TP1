@@ -431,6 +431,59 @@ public:
 };
 
 //==================================================================================
+// Teste Unitario para Classe Telefone
+
+class TUTelefone
+{
+private:
+
+    const string VALOR_VALIDO = "55-61-982217987";
+    const string VALOR_INVALIDO = "00-00-000000000";
+
+    Telefone *telefone;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+
+//==================================================================================
+// Teste Unitario para Classe Telefone
+
+class TUNome
+{
+private:
+
+    const string VALOR_VALIDO = "Jose da Silva";
+    const string VALOR_INVALIDO = "Nome .Errado";
+
+    Nome *nome;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+//==================================================================================
 
 #endif // TESTES_H_INCLUDED
 

@@ -7,6 +7,7 @@
 #include <algorithm> // for std::find
 #include <iterator> // for std::begin, std::end
 #include <map>
+#include <ctype.h>
 
 using namespace std;
 
@@ -320,6 +321,45 @@ public:
         return Vagas;
     }
 
+};
+
+class Telefone
+{
+private:
+
+    string Telefone;
+
+    const static unsigned int TAMANHO;
+
+    void validar(string);
+
+public:
+    void setTelefone(string);
+
+    string getTelefone()
+    {
+        return Telefone;
+    }
+};
+
+class Nome
+{
+private:
+
+    string Nome;
+
+    const static unsigned int TAMANHO_MAX;
+    const static unsigned int TAMANHO_MIN;
+
+    void validar(string);
+
+public:
+    void setNome(string);
+
+    string getNome()
+    {
+        return Nome;
+    }
 };
 
 #endif // DOMINIOS_H_INCLUDED

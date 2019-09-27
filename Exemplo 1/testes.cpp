@@ -1058,3 +1058,133 @@ int TUVagas::run()
 
     return estado;
 }
+
+//========================================================================
+// Metodos testes da classe Telefone
+
+void TUTelefone::setUp()
+{
+    telefone = new Telefone();
+    estado = SUCESSO;
+}
+
+void TUTelefone::tearDown()
+{
+    delete telefone;
+}
+
+void TUTelefone::testarCenarioSucesso()
+{
+    try
+    {
+        telefone->setTelefone(VALOR_VALIDO);
+
+        if (telefone->getTelefone().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUTelefone::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUTelefone::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUTelefone::testarCenarioFalha()
+{
+    try
+    {
+        telefone->setTelefone(VALOR_INVALIDO);
+
+        cout << "TUTelefone::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (telefone->getTelefone().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUTelefone::testarCenarioFalha falhou! CATCH VALOR INVALIDO" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUTelefone::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}
+
+//========================================================================
+// Metodos testes da classe Nome
+
+void TUNome::setUp()
+{
+    nome = new Nome();
+    estado = SUCESSO;
+}
+
+void TUNome::tearDown()
+{
+    delete nome;
+}
+
+void TUNome::testarCenarioSucesso()
+{
+    try
+    {
+        nome->setNome(VALOR_VALIDO);
+
+        if (nome->getNome().compare(VALOR_VALIDO) != 0)
+        {
+            cout << "TUNome::testarCenarioSucesso falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUNome::testarCenarioSucesso falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+void TUNome::testarCenarioFalha()
+{
+    try
+    {
+        nome->setNome(VALOR_INVALIDO);
+
+        cout << "TUNome::testarCenarioFalha falhou! VALOR INVALIDO" << endl;
+        estado = FALHA;
+
+    }
+    catch(invalid_argument excecao)
+    {
+        if (nome->getNome().compare(VALOR_INVALIDO) == 0)
+        {
+            cout << "TUNome::testarCenarioFalha falhou! CATCH VALOR INVALIDO" << endl;
+            estado = FALHA;
+        }
+
+        return;
+    }
+}
+
+int TUNome::run()
+{
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+
+    return estado;
+}

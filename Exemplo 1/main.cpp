@@ -31,6 +31,8 @@ int main()
     TUPreco teste_preco;
     TUSenha teste_senha;
     TUVagas teste_vagas;
+    TUNome teste_nome;
+    TUTelefone teste_telefone;
 
     cout << "--------->TESTES DE DOMINIOS<---------" << endl;
 
@@ -222,6 +224,30 @@ int main()
         cout << "SUCESSO!" << endl;
         break;
     case TUVagas::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE TELEFONE: " ;
+    // run teste de Telefone
+    switch(teste_telefone.run())
+    {
+    case TUTelefone::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUTelefone::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE NOME: " ;
+    // run teste de Nome
+    switch(teste_nome.run())
+    {
+    case TUNome::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUNome::FALHA:
         cout << "FALHA!" << endl;
         break;
     }
