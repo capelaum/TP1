@@ -848,7 +848,6 @@ void Telefone::validar(string Telefone)
     {
         throw invalid_argument ("Argumento invalido.");
     }
-
 }
 
 void Telefone::setTelefone(string Telefone)
