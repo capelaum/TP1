@@ -560,6 +560,85 @@ void Email::setEmail(string Email)
     this->Email = Email;
 }
 
+//Metodos da classe Nome
+
+const unsigned int Nome::TAMANHO_MIN = 1;
+const unsigned int Nome::TAMANHO_MAX = 20;
+
+void Nome::validar(string Nome)
+{
+    if( Nome.size() <  Nome::TAMANHO_MIN || Nome.size() > Nome::TAMANHO_MAX)
+    {
+        throw invalid_argument ("Argumento invalido.");
+    }
+
+    bool naoTemLetra = true;
+    for(unsigned int i = 0; i < Nome.size(); i++)
+    {
+        bool temLetra = isalpha(Nome[i]);
+        if(temLetra)
+        {
+            naoTemLetra = false;
+            break;
+        }
+    }
+
+    bool nemTodosCaracteresValidos = false; // caracteres sao letras, espaços ou pontos
+    for(unsigned int i = 0; i < Nome.size(); i++)
+    {
+        bool invalido = !(isalpha(Nome[i]) || Nome[i] == ' ' || Nome[i] == '.');
+        if(invalido)
+        {
+            nemTodosCaracteresValidos = true;
+            break;
+        }
+    }
+
+    bool temPontoSemLetraAntes = false;
+    for(unsigned int i = 0; i < Nome.size(); i++)
+    {
+        if(Nome[i] == '.')
+        {
+            if( i == 0 )
+            {
+                temPontoSemLetraAntes = true;
+                break;
+            }
+            else if( !isalpha(Nome[i-1]) )
+            {
+                temPontoSemLetraAntes = true;
+                break;
+            }
+        }
+    }
+
+    bool temEspacosEmSequencia = false;
+    for(unsigned int i = 0; i < Nome.size(); i++)
+    {
+        if(Nome[i] == ' ' && (i != Nome.size() - 1))
+        {
+            if(Nome[i+1] == ' ')
+            {
+                temEspacosEmSequencia = true;
+                break;
+            }
+        }
+    }
+
+    if(naoTemLetra || nemTodosCaracteresValidos ||
+       temPontoSemLetraAntes || temEspacosEmSequencia)
+    {
+        throw invalid_argument ("Argumento invalido.");
+    }
+
+}
+
+void Nome::setNome(string Nome)
+{
+    validar(Nome);
+    this->Nome = Nome;
+}
+
 // Metodos da classe Agencia - XXXX-Y - 0 a 9
 // Digito verificador Y - algoritmo de Luhn
 
@@ -742,6 +821,42 @@ void Preco::setPreco(string Preco)
     this->Preco = Preco;
 }
 
+//Metodos da classe Telefone XX-YY-ZZZZZZZZZ
+
+const unsigned int Telefone::TAMANHO = 15;//Tamanho da string Telefone
+
+void Telefone::validar(string Telefone)
+{
+    if(Telefone.size() != Telefone::TAMANHO || // Telefone deve ter 15 caracteres
+       (Telefone[2] != '-' || Telefone[5] != '-')) // Telefone seque o formato XX-YY-ZZZZZZZZZ
+    {
+        throw invalid_argument ("Argumento invalido.");
+    }
+    string xx = {Telefone[0],Telefone[1]};
+    string yy = {Telefone[3],Telefone[4]};
+    string zz = {Telefone[6],Telefone[7],Telefone[8],
+        Telefone[9],Telefone[10],Telefone[11],
+        Telefone[12],Telefone[13],Telefone[14]};
+
+    int xx_int = stoi(xx);
+    int yy_int = stoi(yy);
+    int zz_int = stoi(zz);
+
+    if( (xx_int <= 0 || xx_int > 99) ||
+        (yy_int <= 0 || yy_int > 99) ||
+        (zz_int <= 0 || zz_int > 999999999))
+    {
+        throw invalid_argument ("Argumento invalido.");
+    }
+
+}
+
+void Telefone::setTelefone(string Telefone)
+{
+    validar(Telefone);
+    this->Telefone = Telefone;
+}
+
 // Metodos da classe Senha - XXXXX - (a-z ou A-Z, 0 a 9, #,$,%,&)
 // Pelo menos uma letra e um digito
 // Nao pode haver caracteres repetidos
@@ -853,117 +968,3 @@ void Vagas::setVagas(string Vagas)
     this->Vagas = Vagas;
 }
 
-//Metodos da classe Telefone XX-YY-ZZZZZZZZZ
-
-const unsigned int Telefone::TAMANHO = 15;//Tamanho da string Telefone
-
-void Telefone::validar(string Telefone)
-{
-    if(Telefone.size() != Telefone::TAMANHO || // Telefone deve ter 15 caracteres
-       (Telefone[2] != '-' || Telefone[5] != '-')) // Telefone seque o formato XX-YY-ZZZZZZZZZ
-    {
-        throw invalid_argument ("Argumento invalido.");
-    }
-    string xx = {Telefone[0],Telefone[1]};
-    string yy = {Telefone[3],Telefone[4]};
-    string zz = {Telefone[6],Telefone[7],Telefone[8],
-        Telefone[9],Telefone[10],Telefone[11],
-        Telefone[12],Telefone[13],Telefone[14]};
-
-    int xx_int = stoi(xx);
-    int yy_int = stoi(yy);
-    int zz_int = stoi(zz);
-
-    if( (xx_int <= 0 || xx_int > 99) ||
-        (yy_int <= 0 || yy_int > 99) ||
-        (zz_int <= 0 || zz_int > 999999999))
-    {
-        throw invalid_argument ("Argumento invalido.");
-    }
-
-}
-
-void Telefone::setTelefone(string Telefone)
-{
-    validar(Telefone);
-    this->Telefone = Telefone;
-}
-
-//Metodos da classe Nome
-
-const unsigned int Nome::TAMANHO_MIN = 1;
-const unsigned int Nome::TAMANHO_MAX = 20;
-
-void Nome::validar(string Nome)
-{
-    if( Nome.size() <  Nome::TAMANHO_MIN || Nome.size() > Nome::TAMANHO_MAX)
-    {
-        throw invalid_argument ("Argumento invalido.");
-    }
-
-    bool naoTemLetra = true;
-    for(unsigned int i = 0; i < Nome.size(); i++)
-    {
-        bool temLetra = isalpha(Nome[i]);
-        if(temLetra)
-        {
-            naoTemLetra = false;
-            break;
-        }
-    }
-
-    bool nemTodosCaracteresValidos = false; // caracteres sao letras, espaços ou pontos
-    for(unsigned int i = 0; i < Nome.size(); i++)
-    {
-        bool invalido = !(isalpha(Nome[i]) || Nome[i] == ' ' || Nome[i] == '.');
-        if(invalido)
-        {
-            nemTodosCaracteresValidos = true;
-            break;
-        }
-    }
-
-    bool temPontoSemLetraAntes = false;
-    for(unsigned int i = 0; i < Nome.size(); i++)
-    {
-        if(Nome[i] == '.')
-        {
-            if( i == 0 )
-            {
-                temPontoSemLetraAntes = true;
-                break;
-            }
-            else if( !isalpha(Nome[i-1]) )
-            {
-                temPontoSemLetraAntes = true;
-                break;
-            }
-        }
-    }
-
-    bool temEspacosEmSequencia = false;
-    for(unsigned int i = 0; i < Nome.size(); i++)
-    {
-        if(Nome[i] == ' ' && (i != Nome.size() - 1))
-        {
-            if(Nome[i+1] == ' ')
-            {
-                temEspacosEmSequencia = true;
-                break;
-            }
-        }
-    }
-
-    if(naoTemLetra || nemTodosCaracteresValidos ||
-       temPontoSemLetraAntes || temEspacosEmSequencia)
-    {
-        throw invalid_argument ("Argumento invalido.");
-    }
-
-}
-
-void Nome::setNome(string Nome)
-{
-    validar(Nome);
-    this->Nome = Nome;
-}
