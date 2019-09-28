@@ -9,26 +9,26 @@ using namespace std;
 // Definir atributos como objetos de classes de dominios
 // Fazer um set e get para cada atributo
 
-// Declaracao de classe.
+// Declaracao de classes de Entidades
 
-class Projeto
+class Usuario
 {
 
 private:
 
-    Assento assento;
+    Nome nome;
+    Telefone telefone;
+    Email email;
+    Senha senha;
+    CPF cpf;
 
 public:
 
-    void setAssento(const Assento &assento)
-    {
-        this->assento = assento;
-    }
+    void setUsuario (string nome, string telefone, string email,
+        string senha, string cpf);
 
-    Assento getAssento() const
-    {
-        return assento;
-    }
+    void getUsuario(Nome *nome, Telefone *telefone,
+        Email *email, Senha *senha, CPF *cpf);
 
 };
 
