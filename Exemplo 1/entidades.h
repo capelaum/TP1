@@ -24,12 +24,55 @@ private:
 
 public:
 
-    void setUsuario (string nome, string telefone, string email,
-        string senha, string cpf);
+    void setNome(const Nome &nome)
+    {
+        this->nome = nome;
+    }
 
-    void getUsuario(Nome *nome, Telefone *telefone,
-        Email *email, Senha *senha, CPF *cpf);
+    Nome getNome() const
+    {
+        return nome;
+    }
 
+    void setTelefone(const Telefone &telefone)
+    {
+        this->telefone = telefone;
+    }
+
+    Telefone getTelefone() const
+    {
+        return telefone;
+    }
+
+    void setEmail(const Email &email)
+    {
+        this->email = email;
+    }
+
+    Email getEmail() const
+    {
+        return email;
+    }
+
+    void setSenha(const Senha &senha)
+    {
+        this->senha = senha;
+    }
+
+    Senha getSenha() const
+    {
+        return senha;
+    }
+
+    void setCPF(const CPF &cpf)
+    {
+        this->cpf = cpf;
+    }
+
+    CPF getCPF() const
+    {
+        return cpf;
+    }
 };
 
 #endif // ENTIDADES_H_INCLUDED

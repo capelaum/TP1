@@ -9,6 +9,8 @@
     Especificar o que falhou
     Testes unitarios para cada classe
 */
+
+// TESTES UNITARIOS DE DOMINIOS
 //========================================================================
 // Metodos testes da classe Assento
 
@@ -1186,4 +1188,13 @@ int TUVagas::run()
 
     return estado;
 }
+
+// TESTES UNITARIOS DE ENTIDADES
+//========================================================================
+// Metodos testes da classe Usuario
+
+// Testes de entidades
+// Faz um set e get e verifica se correspondem
+// verifica valor do objeto de codigo: if( obj.getcodigo().getvalor() )
+
 

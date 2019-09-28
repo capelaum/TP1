@@ -15,6 +15,8 @@ using namespace std;
 
 int main()
 {
+    cout << "--------->TESTES DE DOMINIOS<---------" << endl;
+
     TUAssento teste_assento;
     TUBagagem teste_bagagem;
     TUCodigoBanco teste_codigo_banco;
@@ -33,8 +35,6 @@ int main()
     TUVagas teste_vagas;
     TUNome teste_nome;
     TUTelefone teste_telefone;
-
-    cout << "--------->TESTES DE DOMINIOS<---------" << endl;
 
     cout << "TESTE DE ASSENTO: " ;
     // run teste de Assento
@@ -251,6 +251,9 @@ int main()
         cout << "FALHA!" << endl;
         break;
     }
+
+    cout << "--------->TESTES DE ENTIDADES<---------" << endl;
+
 
     return 0;
 }
