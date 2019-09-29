@@ -7,20 +7,50 @@
 
 void Usuario::setNome(Nome *nome)
 {
-    nome.setNome(nome);
-
-    // Telefone.setTelefone(telefone);
-    // Email.setEmail(email);
-    // Senha.setSenha(senha);
-    // CPF.setCPF(cpf);
+    this->nome = nome;
 }
 
-void getNome()
+Nome Usuario::getNome()
 {
-    nome->setNome(this->nome.getNome());
+    return *this->nome;
+}
 
-    //telefone->setTelefone(this->Telefone.getTelefone());
-    //email->setEmail(this->Email.getEmail());
-    //senha->setSenha(this->Senha.getSenha());
-    //cpf->setCPF(this->CPF.getCPF());
+void Usuario::setTelefone(Telefone *telefone)
+{
+    this->telefone = telefone;
+}
+
+Telefone Usuario::getTelefone()
+{
+    return *this->telefone;
+}
+
+void Usuario::setEmail(Email *email)
+{
+    this->email = email;
+}
+
+Email Usuario::getEmail()
+{
+    return *this->email;
+}
+
+void Usuario::setSenha(Senha *senha)
+{
+    this->senha = senha;
+}
+
+Senha Usuario::getSenha()
+{
+    return *this->senha;
+}
+
+void Usuario::setCPF(CPF *cpf)
+{
+    this->cpf = cpf;
+}
+
+CPF Usuario::getCPF()
+{
+    return *this->cpf;
 }

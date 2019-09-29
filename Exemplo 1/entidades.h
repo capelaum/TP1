@@ -16,63 +16,33 @@ class Usuario
 
 private:
 
-    Nome nome;
-    Telefone telefone;
-    Email email;
-    Senha senha;
-    CPF cpf;
+    Nome *nome;
+    Telefone *telefone;
+    Email *email;
+    Senha *senha;
+    CPF *cpf;
 
 public:
 
-    void setNome(const Nome &nome)
-    {
-        this->nome = nome;
-    }
+    void setNome(Nome *nome);
 
-    Nome getNome() const
-    {
-        return nome;
-    }
+    Nome getNome();
 
-    void setTelefone(const Telefone &telefone)
-    {
-        this->telefone = telefone;
-    }
+    void setTelefone(Telefone *telefone);
 
-    Telefone getTelefone() const
-    {
-        return telefone;
-    }
+    Telefone getTelefone();
 
-    void setEmail(const Email &email)
-    {
-        this->email = email;
-    }
+    void setEmail(Email* email);
 
-    Email getEmail() const
-    {
-        return email;
-    }
+    Email getEmail();
 
-    void setSenha(const Senha &senha)
-    {
-        this->senha = senha;
-    }
+    void setSenha(Senha* senha);
 
-    Senha getSenha() const
-    {
-        return senha;
-    }
+    Senha getSenha();
 
-    void setCPF(const CPF &cpf)
-    {
-        this->cpf = cpf;
-    }
+    void setCPF(CPF *cpf);
 
-    CPF getCPF() const
-    {
-        return cpf;
-    }
+    CPF getCPF();
 };
 
 #endif // ENTIDADES_H_INCLUDED
