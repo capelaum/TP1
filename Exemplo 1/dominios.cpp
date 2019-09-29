@@ -720,9 +720,9 @@ void Agencia::setAgencia(string Agencia)
 // Metodos da classe Conta - XXXXXX-Y - 0 a 9
 // Digito verificador Y - algoritmo de Luhn
 
-const int Conta::TAMANHO = 8;
+const int NumeroConta::TAMANHO = 8;
 
-void Conta::validar(string Conta)
+void NumeroConta::validar(string Conta)
 {
     // checa tamanho
     if(Conta.size() != TAMANHO)
@@ -789,7 +789,7 @@ void Conta::validar(string Conta)
 
 }
 
-void Conta::setConta(string Conta)
+void NumeroConta::setConta(string Conta)
 {
     validar(Conta);
     this->Conta = Conta;

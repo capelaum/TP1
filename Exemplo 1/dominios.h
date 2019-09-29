@@ -265,7 +265,7 @@ public:
     }
 };
 
-class Conta
+class NumeroConta
 {
 private:
     string Conta;

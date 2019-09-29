@@ -361,7 +361,7 @@ private:
     const string CONTA_VALIDA = "261533-4";
     const string CONTA_INVALIDA = "261533-7";
 
-    Conta *conta;
+    NumeroConta *conta;
 
     int estado;
 

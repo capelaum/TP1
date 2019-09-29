@@ -875,7 +875,7 @@ int TUAgencia::run()
 
 void TUConta::setUp()
 {
-    conta = new Conta();
+    conta = new NumeroConta();
     estado = SUCESSO;
 }
 
