@@ -875,7 +875,7 @@ int TUAgencia::run()
     return estado;
 }
 //========================================================================
-// Metodos testes da classe Conta
+// Metodos testes da classe NumeroConta
 
 void TUNumeroConta::setUp()
 {
@@ -913,7 +913,7 @@ void TUNumeroConta::testarCenarioFalha()
     try
     {
         conta->setConta(CONTA_INVALIDA);
-        cout << "TUConta::testarCenarioFalha falhou! CONTA INVALIDO" << endl;
+        cout << "TUConta::testarCenarioFalha falhou! CONTA INVALIDA" << endl;
         estado = FALHA;
     }
     catch(invalid_argument excecao)
@@ -1195,13 +1195,9 @@ int TUVagas::run()
 
 // TESTES UNITARIOS DE ENTIDADES
 //========================================================================
-// Metodos testes da classe Usuario
-
 // Testes de entidades
 // Faz um set e get e verifica se correspondem
-// verifica valor do objeto de codigo: if( obj.getcodigo().getvalor() )
-
-
+// Verifica valor do objeto de codigo: if( obj.getcodigo().getvalor() )
 //========================================================================
 // Metodos testes da classe USUARIO
 
@@ -1214,7 +1210,6 @@ void TUUsuario::setUp()
 
 void TUUsuario::tearDown()
 {
-
     delete usuario;
 }
 
@@ -1288,7 +1283,6 @@ void TUCarona::setUp()
 
 void TUCarona::tearDown()
 {
-
     delete carona;
 }
 
@@ -1389,7 +1383,6 @@ void TUReserva::setUp()
 
 void TUReserva::tearDown()
 {
-
     delete reserva;
 }
 
@@ -1448,7 +1441,6 @@ void TUConta::setUp()
 
 void TUConta::tearDown()
 {
-
     delete conta;
 }
 

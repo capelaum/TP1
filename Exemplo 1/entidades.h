@@ -501,7 +501,7 @@ public:
     /**
      * Obt&eacute;m o C&oacute;digo de Banco da Conta
      *
-     * @return string
+     * @return CodigoBanco*
      *
      */
     CodigoBanco* getBanco();
@@ -516,7 +516,7 @@ public:
     /**
      * Obt&eacute;m a Ag&ecirc;ncia da Conta
      *
-     * @return string
+     * @return Agencia*
      *
      */
     Agencia* getAgencia();
@@ -531,7 +531,7 @@ public:
     /**
      * Obt&eacute;m o N&uacute;mero da Conta
      *
-     * @return string
+     * @return NumeroConta*
      *
      */
     NumeroConta* getNumero();
