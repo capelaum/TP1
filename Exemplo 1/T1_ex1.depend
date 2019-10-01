@@ -177,10 +177,10 @@
 	"testes.h"
 	<iostream>
 
-1569898608 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\dominios.cpp
+1569899077 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\dominios.cpp
 	"dominios.h"
 
-1569899026 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\dominios.h
+1569899589 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\dominios.h
 	<iostream>
 	<stdexcept>
 	<string>
@@ -189,24 +189,24 @@
 	<map>
 	<ctype.h>
 
-1569897439 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\entidades.cpp
+1569899206 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\entidades.cpp
 	"entidades.h"
 
-1569897439 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\entidades.h
+1569902310 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\entidades.h
 	"dominios.h"
 	<string>
 
-1569897439 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\main.cpp
+1569902673 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\main.cpp
 	<iostream>
 	"dominios.h"
 	"entidades.h"
 	"testes.h"
 
-1569898675 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\testes.h
+1569900242 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\testes.h
 	"dominios.h"
 	"entidades.h"
 
-1569897439 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\testes.cpp
+1569899144 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\testes.cpp
 	"testes.h"
 	<iostream>
 

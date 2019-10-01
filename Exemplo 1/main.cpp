@@ -27,7 +27,7 @@ using namespace std;
 
 int main()
 {
-    cout << "--------->TESTES DE DOMINIOS<---------" << endl;
+    cout << "--------->TESTES DE DOMINIOS<---------\n" << endl;
 
     TUAssento teste_assento;
     TUBagagem teste_bagagem;
@@ -53,7 +53,7 @@ int main()
     TUReserva teste_reserva;
     TUConta teste_conta_entidade;
 
-    cout << "TESTE DE ASSENTO: " ;
+    cout << "TESTE DE ASSENTO:           " ;
     // run teste de Assento
     switch(teste_assento.run())
     {
@@ -65,7 +65,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE BAGAGEM: " ;
+    cout << "TESTE DE BAGAGEM:           " ;
     // run teste de Bagagem
     switch(teste_bagagem.run())
     {
@@ -77,7 +77,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE CODIGO DE BANCO: ";
+    cout << "TESTE DE CODIGO DE BANCO:   ";
     // run teste de Codigo de Banco
     switch(teste_codigo_banco.run())
     {
@@ -89,7 +89,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE CODIGO DE CARONA: ";
+    cout << "TESTE DE CODIGO DE CARONA:  ";
     // run teste de Codigo de Carona
     switch(teste_codigo_carona.run())
     {
@@ -113,7 +113,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE CIDADE: ";
+    cout << "TESTE DE CIDADE:            ";
     // run teste de Cidade
     switch(teste_cidade.run())
     {
@@ -125,7 +125,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE CPF: ";
+    cout << "TESTE DE CPF:               ";
     // run teste de CPF
     switch(teste_CPF.run())
     {
@@ -137,7 +137,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE DATA: ";
+    cout << "TESTE DE DATA:              ";
     // run teste de Data
     switch(teste_data.run())
     {
@@ -149,7 +149,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE DURACAO: " ;
+    cout << "TESTE DE DURACAO:           ";
     // run teste de Duracao
     switch(teste_duracao.run())
     {
@@ -161,7 +161,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE ESTADO: " ;
+    cout << "TESTE DE ESTADO:            ";
     // run teste de Estado
     switch(teste_estado.run())
     {
@@ -173,7 +173,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE EMAIL: " ;
+    cout << "TESTE DE EMAIL:             ";
     // run teste de Email
     switch(teste_email.run())
     {
@@ -185,7 +185,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE NOME: " ;
+    cout << "TESTE DE NOME:              ";
     // run teste de Nome
     switch(teste_nome.run())
     {
@@ -197,7 +197,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE NUMERO DE AGENCIA: " ;
+    cout << "TESTE DE NUMERO DE AGENCIA: ";
     // run teste de Agencia
     switch(teste_agencia.run())
     {
@@ -209,7 +209,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE NUMERO DE CONTA: " ;
+    cout << "TESTE DE NUMERO DE CONTA:   ";
     // run teste de Conta
     switch(teste_conta.run())
     {
@@ -221,7 +221,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE PRECO: " ;
+    cout << "TESTE DE PRECO:             ";
     // run teste de Preco
     switch(teste_preco.run())
     {
@@ -233,7 +233,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE TELEFONE: " ;
+    cout << "TESTE DE TELEFONE:          ";
     // run teste de Telefone
     switch(teste_telefone.run())
     {
@@ -245,7 +245,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE SENHA: " ;
+    cout << "TESTE DE SENHA:             ";
     // run teste de Senha
     switch(teste_senha.run())
     {
@@ -257,7 +257,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE VAGAS: " ;
+    cout << "TESTE DE VAGAS:             ";
     // run teste de Vagas
     switch(teste_vagas.run())
     {
@@ -269,7 +269,7 @@ int main()
         break;
     }
 
-    cout << "--------->TESTES DE ENTIDADES<---------" << endl;
+    cout << "\n--------->TESTES DE ENTIDADES<---------\n" << endl;
 
     cout << "TESTE DE USUARIO: " ;
     // run teste de Usuario
@@ -283,7 +283,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE CARONA: " ;
+    cout << "TESTE DE CARONA:  " ;
     // run teste de Carona
     switch(teste_carona.run())
     {
@@ -307,7 +307,7 @@ int main()
         break;
     }
 
-    cout << "TESTE DE CONTA: " ;
+    cout << "TESTE DE CONTA:   " ;
     // run teste de Conta
     switch(teste_conta_entidade.run())
     {

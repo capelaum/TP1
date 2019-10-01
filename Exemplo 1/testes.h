@@ -536,7 +536,7 @@ private:
     const string CIDADE_DESTINO_VALIDA = "Chapadinha";
     const string ESTADO_ORIGEM_VALIDO = "GO";
     const string ESTADO_DESTINO_VALIDO = "MA";
-    const string DATA_VALIDA = "021199";
+    const string DATA_VALIDA = "28/02/2099";
     const string DURACAO_VALIDA = "20";
     const string VAGAS_VALIDAS = "3";
     const string PRECO_VALIDO = "200,00";
