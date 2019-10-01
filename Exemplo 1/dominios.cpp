@@ -9,20 +9,20 @@
 const string Assento::Dianteiro = "D";
 const string Assento::Traseiro = "T";
 
-void Assento::validar(string Assento)
+void Assento::validar(string assento)
 {
     // Se a string assento passada for diferente de D e T
-    if ( (Assento.compare(Dianteiro) != 0) && (Assento.compare(Traseiro) != 0) )
+    if ( (assento.compare(Dianteiro) != 0) && (assento.compare(Traseiro) != 0) )
     {
             //cout << "Validar assento falhou!" << endl;
             throw invalid_argument ("Argumento invalido.");
     }
 }
 
-void Assento::setAssento(string Assento)
+void Assento::setAssento(string assento)
 {
-    validar(Assento);
-    this->Assento = Assento;
+    validar(assento);
+    this->assento = assento;
 }
 
 // Metodos da classe Bagagem - 0 a 4
@@ -30,13 +30,13 @@ void Assento::setAssento(string Assento)
 const int Bagagem::BAGAGEM_MIN = 0;
 const int Bagagem::BAGAGEM_MAX = 4;
 
-void Bagagem::validar(string Bagagem)
+void Bagagem::validar(string bagagem)
 {
     // transformar string bagagem para inteiro e verificar 0 <= Bagagem <= 4
 
-    int Bagagem_int = stoi(Bagagem);
+    int bagagem_int = stoi(bagagem);
 
-    if ((Bagagem_int < BAGAGEM_MIN) || (Bagagem_int > BAGAGEM_MAX))
+    if ((bagagem_int < BAGAGEM_MIN) || (bagagem_int > BAGAGEM_MAX))
     {
         // cout << "Validar Bagagem falhou!" << endl;
         // cout << "Valor invalido: " << Bagagem << endl;
@@ -45,10 +45,10 @@ void Bagagem::validar(string Bagagem)
 
 }
 
-void Bagagem::setBagagem(string Bagagem)
+void Bagagem::setBagagem(string bagagem)
 {
-    validar(Bagagem);
-    this->Bagagem = Bagagem;
+    validar(bagagem);
+    this->bagagem = bagagem;
 }
 
 //Metodos da classe CodigoBanco - XXX - X de 0 a 9
@@ -57,19 +57,19 @@ const int CodigoBanco::QUANTIDADE_NUMEROS = 3;
 const int CodigoBanco::MENOR_VALOR_VALIDO = 0;
 const int CodigoBanco::MAIOR_VALOR_VALIDO = 999;
 
-void CodigoBanco::validar(string Codigo)
+void CodigoBanco::validar(string codigo)
 {
 
-    if(Codigo.size() != QUANTIDADE_NUMEROS)
+    if(codigo.size() != QUANTIDADE_NUMEROS)
     {
         // cout << "Validar Codigo Banco falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
         throw invalid_argument("Argumento invalido.");
     }
 
-    int Banco_int = stoi(Codigo);
+    int banco_int = stoi(codigo);
 
-    if(Banco_int < MENOR_VALOR_VALIDO || Banco_int > MAIOR_VALOR_VALIDO)
+    if(banco_int < MENOR_VALOR_VALIDO || banco_int > MAIOR_VALOR_VALIDO)
     {
         // cout << "Validar Codigo Banco falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
@@ -78,10 +78,10 @@ void CodigoBanco::validar(string Codigo)
 
 }
 
-void CodigoBanco::setCodigoBanco(string CodigoBanco)
+void CodigoBanco::setCodigoBanco(string codigoBanco)
 {
-    CodigoBanco::validar(CodigoBanco);
-    this->CodigoBanco = CodigoBanco;
+    CodigoBanco::validar(codigoBanco);
+    this->codigoBanco = codigoBanco;
 }
 
 //Metodos da classe CodigoCarona - XXXX - X de 0 a 9
@@ -89,17 +89,17 @@ const int CodigoCarona::QUANTIDADE_NUMEROS = 4;
 const int CodigoCarona::MENOR_VALOR_VALIDO = 0;
 const int CodigoCarona::MAIOR_VALOR_VALIDO = 9999;
 
-void CodigoCarona::validar(string Codigo)
+void CodigoCarona::validar(string codigo)
 {
-    if(Codigo.size() != QUANTIDADE_NUMEROS){
+    if(codigo.size() != QUANTIDADE_NUMEROS){
         // cout << "Validar Codigo Carona falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
         throw invalid_argument("Argumento invalido.");
     }
 
-    int Carona_int = stoi(Codigo);
+    int carona_int = stoi(codigo);
 
-    if(Carona_int < MENOR_VALOR_VALIDO || Carona_int > MAIOR_VALOR_VALIDO)
+    if(carona_int < MENOR_VALOR_VALIDO || carona_int > MAIOR_VALOR_VALIDO)
     {
         // cout << "Validar Codigo Carona falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
@@ -107,10 +107,10 @@ void CodigoCarona::validar(string Codigo)
     }
 }
 
-void CodigoCarona::setCodigoCarona(string CodigoCarona)
+void CodigoCarona::setCodigoCarona(string codigoCarona)
 {
-    CodigoCarona::validar(CodigoCarona);
-    this->CodigoCarona = CodigoCarona;
+    CodigoCarona::validar(codigoCarona);
+    this->codigoCarona = codigoCarona;
 }
 
 //Metodos da classe CodigoReserva - XXXXX - X de 0 a 9
@@ -118,17 +118,17 @@ const int CodigoReserva::QUANTIDADE_NUMEROS = 5;
 const int CodigoReserva::MENOR_VALOR_VALIDO = 0;
 const int CodigoReserva::MAIOR_VALOR_VALIDO = 99999;
 
-void CodigoReserva::validar(string Codigo)
+void CodigoReserva::validar(string codigo)
 {
-    if(Codigo.size() != QUANTIDADE_NUMEROS){
+    if(codigo.size() != QUANTIDADE_NUMEROS){
         // cout << "Validar Codigo Reserva falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
         throw invalid_argument("Argumento invalido.");
     }
 
-    int Reserva_int = stoi(Codigo);
+    int reserva_int = stoi(codigo);
 
-    if(Reserva_int < MENOR_VALOR_VALIDO || Reserva_int > MAIOR_VALOR_VALIDO)
+    if(reserva_int < MENOR_VALOR_VALIDO || reserva_int > MAIOR_VALOR_VALIDO)
     {
         // cout << "Validar Codigo Reserva falhou!" << endl;
         // cout << "Valor invalido: " << Codigo << endl;
@@ -136,10 +136,10 @@ void CodigoReserva::validar(string Codigo)
     }
 }
 
-void CodigoReserva::setCodigoReserva(string CodigoReserva)
+void CodigoReserva::setCodigoReserva(string codigoReserva)
 {
-    CodigoReserva::validar(CodigoReserva);
-    this->CodigoReserva = CodigoReserva;
+    CodigoReserva::validar(codigoReserva);
+    this->codigoReserva = codigoReserva;
 }
 
 // Metodos da classe Cidade - 10 caracteres - letra ponto ou espaço
@@ -436,12 +436,12 @@ void Data::validar(int data_int)
 const int Duracao::DURACAO_MIN = 1;
 const int Duracao::DURACAO_MAX = 48;
 
-void Duracao::validar(string Duracao)
+void Duracao::validar(string duracao)
 {
     // transformar string Duracao para inteiro e verificar 1 <= Duracao <= 48
-    int Duracao_int = stoi(Duracao);
+    int duracao_int = stoi(duracao);
 
-    if ((Duracao_int < DURACAO_MIN) || (Duracao_int > DURACAO_MAX))
+    if ((duracao_int < DURACAO_MIN) || (duracao_int > DURACAO_MAX))
     {
         // cout << "Validar Duracao falhou!" << endl;
         // cout << "Valor invalido: " << Duracao << endl;
@@ -450,10 +450,10 @@ void Duracao::validar(string Duracao)
 
 }
 
-void Duracao::setDuracao(string Duracao)
+void Duracao::setDuracao(string duracao)
 {
-    validar(Duracao);
-    this->Duracao = Duracao;
+    validar(duracao);
+    this->duracao = duracao;
 }
 
 // Metodos da classe Estado -
@@ -463,18 +463,18 @@ void Duracao::setDuracao(string Duracao)
 const string Estado::ESTADOS_VALIDOS[27] = {"AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG",
     "PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"};
 
-void Estado::validar(string Estado){
-    bool notExists = (std::find(std::begin(ESTADOS_VALIDOS), std::end(ESTADOS_VALIDOS), Estado) == std::end(ESTADOS_VALIDOS));
+void Estado::validar(string estado){
+    bool notExists = (std::find(std::begin(ESTADOS_VALIDOS), std::end(ESTADOS_VALIDOS), estado) == std::end(ESTADOS_VALIDOS));
     if(notExists){
         //cout << "Validar estado falhou!" << endl;
         throw invalid_argument("Argumento invalido.");
     }
 }
 
-void Estado::setEstado(string Estado)
+void Estado::setEstado(string estado)
 {
-    Estado::validar(Estado);
-    this->Estado = Estado;
+    Estado::validar(estado);
+    this->estado = estado;
 }
 
 // Metodos da classe Email - 1 a 20 caracteres - a-z ou ponto '.'
@@ -485,37 +485,37 @@ void Estado::setEstado(string Estado)
 
 const int Email::TAMANHO_MAX = 20;
 
-void Email::validar(string Email)
+void Email::validar(string email)
 {
 	unsigned int i = 0;
 
 	// checa tamanho
-    if(Email.size() > TAMANHO_MAX)
+    if(email.size() > TAMANHO_MAX)
 	{
 		throw invalid_argument("Email invalido. Tamanho invalido!");
 	}
 
 	// checa se local comeca com ponto
-	if(Email[0] == '.' || Email[0] == '@')
+	if(email[0] == '.' || email[0] == '@')
 	{
 		throw invalid_argument("Email invalido. Local comeca com ponto ou arroba!");
 	}
 
 	// checa se arroba ou ponto esta no final
-	if(Email[Email.size()-1] == '@' || Email[Email.size()-1] == '.')
+	if(email[email.size()-1] == '@' || email[email.size()-1] == '.')
 	{
 		throw invalid_argument("Email invalido. Ponto ou arroba no final!");
 	}
 
 	// checa caracteres - letra a-z ou ponto
-	for(i = 0; i < Email.size(); i++)
+	for(i = 0; i < email.size(); i++)
 	{
 		// checa se possui ponto repetido ou irregular
-		if(isalpha(Email[i]) == false)
+		if(isalpha(email[i]) == false)
 		{
-			if (Email[i] == '@' || Email[i] == '.')
+			if (email[i] == '@' || email[i] == '.')
 			{
-				if(Email[i-1] == '.' || Email[i+1] == '.')
+				if(email[i-1] == '.' || email[i+1] == '.')
 				{
 					throw invalid_argument("Email invalido. Ponto irregular!");
 				}
@@ -524,13 +524,13 @@ void Email::validar(string Email)
 		}
 
 		// checa se tem numeros
-		if(isdigit(Email[i]))
+		if(isdigit(email[i]))
 		{
 			throw invalid_argument("Email invalido. Possui numero!");
 		}
 
 		// checa se tem letra maiuscula
-		if(isupper(Email[i]))
+		if(isupper(email[i]))
 		{
 			throw invalid_argument("Email invalido. Possui letra maiuscula!");
 		}
@@ -538,9 +538,9 @@ void Email::validar(string Email)
 
 	unsigned int conta_arroba = 0;
 	// checa se possui '@' mais de uma vez
-	for(i = 0; i < Email.size(); i++)
+	for(i = 0; i < email.size(); i++)
 	{
-		if(Email[i] == '@')
+		if(email[i] == '@')
 		{
 			conta_arroba++;
 		}
@@ -554,10 +554,10 @@ void Email::validar(string Email)
 
 }
 
-void Email::setEmail(string Email)
+void Email::setEmail(string email)
 {
-    validar(Email);
-    this->Email = Email;
+    validar(email);
+    this->email = email;
 }
 
 //Metodos da classe Nome
@@ -565,17 +565,17 @@ void Email::setEmail(string Email)
 const unsigned int Nome::TAMANHO_MIN = 1;
 const unsigned int Nome::TAMANHO_MAX = 20;
 
-void Nome::validar(string Nome)
+void Nome::validar(string nome)
 {
-    if( Nome.size() <  Nome::TAMANHO_MIN || Nome.size() > Nome::TAMANHO_MAX)
+    if( nome.size() <  Nome::TAMANHO_MIN || nome.size() > Nome::TAMANHO_MAX)
     {
         throw invalid_argument ("Argumento invalido.");
     }
 
     bool naoTemLetra = true;
-    for(unsigned int i = 0; i < Nome.size(); i++)
+    for(unsigned int i = 0; i < nome.size(); i++)
     {
-        bool temLetra = isalpha(Nome[i]);
+        bool temLetra = isalpha(nome[i]);
         if(temLetra)
         {
             naoTemLetra = false;
@@ -584,9 +584,9 @@ void Nome::validar(string Nome)
     }
 
     bool nemTodosCaracteresValidos = false; // caracteres sao letras, espaços ou pontos
-    for(unsigned int i = 0; i < Nome.size(); i++)
+    for(unsigned int i = 0; i < nome.size(); i++)
     {
-        bool invalido = !(isalpha(Nome[i]) || Nome[i] == ' ' || Nome[i] == '.');
+        bool invalido = !(isalpha(nome[i]) || nome[i] == ' ' || nome[i] == '.');
         if(invalido)
         {
             nemTodosCaracteresValidos = true;
@@ -595,16 +595,16 @@ void Nome::validar(string Nome)
     }
 
     bool temPontoSemLetraAntes = false;
-    for(unsigned int i = 0; i < Nome.size(); i++)
+    for(unsigned int i = 0; i < nome.size(); i++)
     {
-        if(Nome[i] == '.')
+        if(nome[i] == '.')
         {
             if( i == 0 )
             {
                 temPontoSemLetraAntes = true;
                 break;
             }
-            else if( !isalpha(Nome[i-1]) )
+            else if( !isalpha(nome[i-1]) )
             {
                 temPontoSemLetraAntes = true;
                 break;
@@ -613,11 +613,11 @@ void Nome::validar(string Nome)
     }
 
     bool temEspacosEmSequencia = false;
-    for(unsigned int i = 0; i < Nome.size(); i++)
+    for(unsigned int i = 0; i < nome.size(); i++)
     {
-        if(Nome[i] == ' ' && (i != Nome.size() - 1))
+        if(nome[i] == ' ' && (i != nome.size() - 1))
         {
-            if(Nome[i+1] == ' ')
+            if(nome[i+1] == ' ')
             {
                 temEspacosEmSequencia = true;
                 break;
@@ -633,10 +633,10 @@ void Nome::validar(string Nome)
 
 }
 
-void Nome::setNome(string Nome)
+void Nome::setNome(string nome)
 {
-    validar(Nome);
-    this->Nome = Nome;
+    validar(nome);
+    this->nome = nome;
 }
 
 // Metodos da classe Agencia - XXXX-Y - 0 a 9
@@ -644,16 +644,16 @@ void Nome::setNome(string Nome)
 
 const int Agencia::TAMANHO = 6;
 
-void Agencia::validar(string Agencia)
+void Agencia::validar(string agencia)
 {
     // checa tamanho
-    if(Agencia.size() != TAMANHO)
+    if(agencia.size() != TAMANHO)
 	{
 		throw invalid_argument("Agencia invalida.");
 	}
 
     // checa se tem '-' na posicao correta
-    if (Agencia[4] != '-')
+    if (agencia[4] != '-')
 	{
 		throw invalid_argument("Agencia invalida.");
 	}
@@ -663,7 +663,7 @@ void Agencia::validar(string Agencia)
     // checa se possui apenas numeros
     for(i = 0; i < TAMANHO; i++)
     {
-        if( isdigit(Agencia[i]) == false )
+        if( isdigit(agencia[i]) == false )
         {
             if (i != 4)
             {
@@ -680,7 +680,7 @@ void Agencia::validar(string Agencia)
 	// indices pares tem peso 1
 	for(i = 0; i < 4; )
 	{
-		peso = (Agencia[i] - '0');
+		peso = (agencia[i] - '0');
 		soma += peso;
 		i = i+2;
 	}
@@ -688,7 +688,7 @@ void Agencia::validar(string Agencia)
 	// indices impares tem peso 2
 	for(i = 1; i < 4; )
 	{
-		peso = (Agencia[i] - '0')*2;
+		peso = (agencia[i] - '0')*2;
 
 		if(peso > 9)
 		{
@@ -704,17 +704,17 @@ void Agencia::validar(string Agencia)
 	resto = soma%10;
 	int digito_verificador = 10 - resto;
 
-	if (Agencia[5] - '0' != digito_verificador)
+	if (agencia[5] - '0' != digito_verificador)
 	{
 		throw invalid_argument("Agencia invalida, digito verificador invalido!");
 	}
 
 }
 
-void Agencia::setAgencia(string Agencia)
+void Agencia::setAgencia(string agencia)
 {
-    validar(Agencia);
-    this->Agencia = Agencia;
+    validar(agencia);
+    this->agencia = agencia;
 }
 
 // Metodos da classe Conta - XXXXXX-Y - 0 a 9
@@ -722,16 +722,16 @@ void Agencia::setAgencia(string Agencia)
 
 const int NumeroConta::TAMANHO = 8;
 
-void NumeroConta::validar(string Conta)
+void NumeroConta::validar(string conta)
 {
     // checa tamanho
-    if(Conta.size() != TAMANHO)
+    if(conta.size() != TAMANHO)
 	{
 		throw invalid_argument("Conta invalida.");
 	}
 
     // checa se tem '-' na posicao correta
-    if (Conta[6] != '-')
+    if (conta[6] != '-')
 	{
 		throw invalid_argument("Conta invalida.");
 	}
@@ -741,7 +741,7 @@ void NumeroConta::validar(string Conta)
     // checa se possui apenas numeros
     for(i = 0; i < TAMANHO; i++)
     {
-        if( isdigit(Conta[i]) == false )
+        if( isdigit(conta[i]) == false )
         {
             if (i != 6)
             {
@@ -758,7 +758,7 @@ void NumeroConta::validar(string Conta)
 	// indices pares tem peso 1
 	for(i = 0; i < 6; )
 	{
-		peso = (Conta[i] - '0');
+		peso = (conta[i] - '0');
 		soma += peso;
 		i = i+2;
 	}
@@ -766,7 +766,7 @@ void NumeroConta::validar(string Conta)
 	// indices impares tem peso 2
 	for(i = 1; i < 6; )
 	{
-		peso = (Conta[i] - '0')*2;
+		peso = (conta[i] - '0')*2;
 
 		if(peso > 9)
 		{
@@ -782,17 +782,17 @@ void NumeroConta::validar(string Conta)
 	resto = soma%10;
 	int digito_verificador = 10 - resto;
 
-	if (Conta[7] - '0' != digito_verificador)
+	if (conta[7] - '0' != digito_verificador)
 	{
 		throw invalid_argument("Conta invalida, digito verificador invalido!");
 	}
 
 }
 
-void NumeroConta::setConta(string Conta)
+void NumeroConta::setConta(string conta)
 {
-    validar(Conta);
-    this->Conta = Conta;
+    validar(conta);
+    this->conta = conta;
 }
 
 // Metodos da classe Preco - 1,00 a 5000,00
@@ -800,13 +800,13 @@ void NumeroConta::setConta(string Conta)
 const float Preco::PRECO_MIN = 1.00;
 const float Preco::PRECO_MAX = 5000.00;
 
-void Preco::validar(string Preco)
+void Preco::validar(string preco)
 {
     // transformar string Preco para float e verificar 1,00 <= Preco <= 5000,00
 
-    float Preco_float = stof(Preco);
+    float preco_float = stof(preco);
 
-    if (Preco_float < PRECO_MIN || Preco_float > PRECO_MAX)
+    if (preco_float < PRECO_MIN || preco_float > PRECO_MAX)
     {
         // cout << "Validar Preco falhou!" << endl;
         // cout << "Valor invalido: " << Preco << endl;
@@ -815,28 +815,28 @@ void Preco::validar(string Preco)
 
 }
 
-void Preco::setPreco(string Preco)
+void Preco::setPreco(string preco)
 {
-    validar(Preco);
-    this->Preco = Preco;
+    validar(preco);
+    this->preco = preco;
 }
 
 //Metodos da classe Telefone XX-YY-ZZZZZZZZZ
 
 const unsigned int Telefone::TAMANHO = 15;//Tamanho da string Telefone
 
-void Telefone::validar(string Telefone)
+void Telefone::validar(string telefone)
 {
-    if(Telefone.size() != Telefone::TAMANHO || // Telefone deve ter 15 caracteres
-       (Telefone[2] != '-' || Telefone[5] != '-')) // Telefone seque o formato XX-YY-ZZZZZZZZZ
+    if(telefone.size() != Telefone::TAMANHO || // Telefone deve ter 15 caracteres
+       (telefone[2] != '-' || telefone[5] != '-')) // Telefone seque o formato XX-YY-ZZZZZZZZZ
     {
         throw invalid_argument ("Argumento invalido.");
     }
-    string xx = {Telefone[0],Telefone[1]};
-    string yy = {Telefone[3],Telefone[4]};
-    string zz = {Telefone[6],Telefone[7],Telefone[8],
-        Telefone[9],Telefone[10],Telefone[11],
-        Telefone[12],Telefone[13],Telefone[14]};
+    string xx = {telefone[0],telefone[1]};
+    string yy = {telefone[3],telefone[4]};
+    string zz = {telefone[6],telefone[7],telefone[8],
+        telefone[9],telefone[10],telefone[11],
+        telefone[12],telefone[13],telefone[14]};
 
     int xx_int = stoi(xx);
     int yy_int = stoi(yy);
@@ -850,10 +850,10 @@ void Telefone::validar(string Telefone)
     }
 }
 
-void Telefone::setTelefone(string Telefone)
+void Telefone::setTelefone(string telefone)
 {
-    validar(Telefone);
-    this->Telefone = Telefone;
+    validar(telefone);
+    this->telefone = telefone;
 }
 
 // Metodos da classe Senha - XXXXX - (a-z ou A-Z, 0 a 9, #,$,%,&)
@@ -862,24 +862,24 @@ void Telefone::setTelefone(string Telefone)
 
 const int Senha::TAMANHO = 5;
 
-void Senha::validar(string Senha)
+void Senha::validar(string senha)
 {
 
 	// checa tamanho
-    if(Senha.size() != TAMANHO)
+    if(senha.size() != TAMANHO)
 	{
 		throw invalid_argument("Senha invalida. TAMANHO");
 	}
 
 	int i = 0;
 
-	for(i = 0; i < TAMANHO; i++)
+	for(i = 0; i < Senha::TAMANHO; i++)
 	{
 		// checa se possui apenas letras ou numeros
-		if(isalnum(Senha[i]) == false)
+		if(isalnum(senha[i]) == false)
 		{
 			// se nao for letra ou numero, pode ser um dos simblos #,$,%,&
-			if (Senha[i] != '#' && Senha[i] != '$' && Senha[i] != '%' && Senha[i] != '&')
+			if (senha[i] != '#' && senha[i] != '$' && senha[i] != '%' && senha[i] != '&')
             {
 				// cout << "Senha possui caractere invalido: " << Senha[i] << endl;
 				throw invalid_argument("Senha invalida, possui caractere invalido");
@@ -892,8 +892,8 @@ void Senha::validar(string Senha)
     // checa se ha caracteres repetidos
     map<char,int> contarletras;
 
-    for (i = 0; i < TAMANHO; i++)
-        contarletras[Senha[i]]++;
+    for (i = 0; i < Senha::TAMANHO; i++)
+        contarletras[senha[i]]++;
 
     for (map<char, int>::iterator it = contarletras.begin(); it != contarletras.end(); ++it)
 	{
@@ -911,12 +911,12 @@ void Senha::validar(string Senha)
     // checa se ha pelo menos uma letra ou numero
     for(i = 0; i < TAMANHO; i++)
 	{
-		if(isdigit(Senha[i]) == true)
+		if(isdigit(senha[i]) == true)
 		{
 		    tem_letra = true;
 		}
 
-		if(isalpha(Senha[i]) == true)
+		if(isalpha(senha[i]) == true)
 		{
             tem_numero = true;
 		}
@@ -935,10 +935,10 @@ void Senha::validar(string Senha)
 
 }
 
-void Senha::setSenha(string Senha)
+void Senha::setSenha(string senha)
 {
-    validar(Senha);
-    this->Senha = Senha;
+    validar(senha);
+    this->senha = senha;
 }
 
 // Metodos da classe Vagas - 0 a 4
@@ -946,13 +946,13 @@ void Senha::setSenha(string Senha)
 const int Vagas::VAGAS_MIN = 0;
 const int Vagas::VAGAS_MAX = 4;
 
-void Vagas::validar(string Vagas)
+void Vagas::validar(string vagas)
 {
     // transformar string Vagas para inteiro e verificar 0 <= Vagas <= 4
 
-    int Vagas_int = stoi(Vagas);
+    int vagas_int = stoi(vagas);
 
-    if ((Vagas_int < VAGAS_MIN) || (Vagas_int > VAGAS_MAX))
+    if ((vagas_int < VAGAS_MIN) || (vagas_int > VAGAS_MAX))
     {
         // cout << "Validar Vagas falhou!" << endl;
         // cout << "Valor invalido: " << Vagas << endl;
@@ -961,9 +961,9 @@ void Vagas::validar(string Vagas)
 
 }
 
-void Vagas::setVagas(string Vagas)
+void Vagas::setVagas(string vagas)
 {
-    validar(Vagas);
-    this->Vagas = Vagas;
+    validar(vagas);
+    this->vagas = vagas;
 }
 

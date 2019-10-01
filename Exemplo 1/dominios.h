@@ -17,7 +17,7 @@ class Assento
 {
 private:
 
-    string Assento;
+    string assento;
 
     const static string Dianteiro, Traseiro;
 
@@ -28,8 +28,11 @@ public:
 
     string getAssento() const
     {
-        return Assento;
+        return assento;
     }
+
+    //Assento(string assento);
+    //Assento();
 
 };
 
@@ -37,7 +40,7 @@ class Bagagem
 {
 private:
 
-    string Bagagem;
+    string bagagem;
 
     const static int BAGAGEM_MIN;
     const static int BAGAGEM_MAX;
@@ -49,7 +52,7 @@ public:
 
     string getBagagem() const
     {
-        return Bagagem;
+        return bagagem;
     }
 
 };
@@ -57,7 +60,7 @@ public:
 class CodigoBanco
 {
 private:
-    string CodigoBanco;
+    string codigoBanco;
 
     const static int QUANTIDADE_NUMEROS;
     const static int MENOR_VALOR_VALIDO;
@@ -70,14 +73,14 @@ public:
 
     string getCodigoBanco() const
     {
-        return CodigoBanco;
+        return codigoBanco;
     }
 };
 
 class CodigoCarona
 {
 private:
-    string CodigoCarona;
+    string codigoCarona;
 
     const static int QUANTIDADE_NUMEROS;
     const static int MENOR_VALOR_VALIDO;
@@ -90,14 +93,14 @@ public:
 
     string getCodigoCarona() const
     {
-        return CodigoCarona;
+        return codigoCarona;
     }
 };
 
 class CodigoReserva
 {
 private:
-    string CodigoReserva;
+    string codigoReserva;
 
     const static int QUANTIDADE_NUMEROS;
     const static int MENOR_VALOR_VALIDO;
@@ -110,7 +113,7 @@ public:
 
     string getCodigoReserva() const
     {
-        return CodigoReserva;
+        return codigoReserva;
     }
 };
 
@@ -174,7 +177,7 @@ class Duracao
 {
 private:
 
-    string Duracao;
+    string duracao;
 
     const static int DURACAO_MIN;
     const static int DURACAO_MAX;
@@ -186,7 +189,7 @@ public:
 
     string getDuracao() const
     {
-        return Duracao;
+        return duracao;
     }
 
 };
@@ -194,7 +197,7 @@ public:
 class Estado
 {
 private:
-    string Estado;
+    string estado;
 
     const static string ESTADOS_VALIDOS[27];
 
@@ -205,14 +208,14 @@ public:
 
     string getEstado() const
     {
-        return Estado;
+        return estado;
     }
 };
 
 class Email
 {
 private:
-    string Email;
+    string email;
 
     const static int TAMANHO_MAX;
 
@@ -223,7 +226,7 @@ public:
 
     string getEmail() const
     {
-        return Email;
+        return email;
     }
 };
 
@@ -231,7 +234,7 @@ class Nome
 {
 private:
 
-    string Nome;
+    string nome;
 
     const static unsigned int TAMANHO_MAX;
     const static unsigned int TAMANHO_MIN;
@@ -243,14 +246,14 @@ public:
 
     string getNome()
     {
-        return Nome;
+        return nome;
     }
 };
 
 class Agencia
 {
 private:
-    string Agencia;
+    string agencia;
 
     const static int TAMANHO;
 
@@ -261,14 +264,14 @@ public:
 
     string getAgencia() const
     {
-        return Agencia;
+        return agencia;
     }
 };
 
 class NumeroConta
 {
 private:
-    string Conta;
+    string conta;
 
     const static int TAMANHO;
 
@@ -279,7 +282,7 @@ public:
 
     string getConta() const
     {
-        return Conta;
+        return conta;
     }
 };
 
@@ -287,7 +290,7 @@ class Preco
 {
 private:
 
-    string Preco;
+    string preco;
 
     const static float PRECO_MIN;
     const static float PRECO_MAX;
@@ -299,7 +302,7 @@ public:
 
     string getPreco() const
     {
-        return Preco;
+        return preco;
     }
 
 };
@@ -308,7 +311,7 @@ class Telefone
 {
 private:
 
-    string Telefone;
+    string telefone;
 
     const static unsigned int TAMANHO;
 
@@ -319,14 +322,14 @@ public:
 
     string getTelefone()
     {
-        return Telefone;
+        return telefone;
     }
 };
 
 class Senha
 {
 private:
-    string Senha;
+    string senha;
 
     const static int TAMANHO;
 
@@ -337,7 +340,7 @@ public:
 
     string getSenha() const
     {
-        return Senha;
+        return senha;
     }
 };
 
@@ -345,7 +348,7 @@ class Vagas
 {
 private:
 
-    string Vagas;
+    string vagas;
 
     const static int VAGAS_MIN;
     const static int VAGAS_MAX;
@@ -357,7 +360,7 @@ public:
 
     string getVagas() const
     {
-        return Vagas;
+        return vagas;
     }
 
 };

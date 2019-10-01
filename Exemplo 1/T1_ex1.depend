@@ -144,10 +144,10 @@
 	"entidades.h"
 	"testes.h"
 
-1569719894 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\dominios.cpp
+1569720154 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\dominios.cpp
 	"dominios.h"
 
-1569719797 c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\dominios.h
+1569720295 c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\dominios.h
 	<iostream>
 	<stdexcept>
 	<string>
@@ -156,23 +156,24 @@
 	<map>
 	<ctype.h>
 
-1569719258 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\entidades.cpp
+1569890310 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\entidades.cpp
 	"entidades.h"
 
-1569719932 c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\entidades.h
+1569891135 c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\entidades.h
 	"dominios.h"
 	<string>
 
-1569716092 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\main.cpp
+1569892440 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\main.cpp
 	<iostream>
 	"dominios.h"
 	"entidades.h"
 	"testes.h"
 
-1569719906 c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\testes.h
+1569891676 c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\testes.h
 	"dominios.h"
+	"entidades.h"
 
-1569719913 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\testes.cpp
+1569892373 source:c:\users\computador\desktop\rafael\engcomp\s6\tp1\tp1_t1\exemplo 1\testes.cpp
 	"testes.h"
 	<iostream>
 

@@ -873,18 +873,18 @@ int TUAgencia::run()
 //========================================================================
 // Metodos testes da classe Conta
 
-void TUConta::setUp()
+void TUNumeroConta::setUp()
 {
     conta = new NumeroConta();
     estado = SUCESSO;
 }
 
-void TUConta::tearDown()
+void TUNumeroConta::tearDown()
 {
     delete conta;
 }
 
-void TUConta::testarCenarioSucesso()
+void TUNumeroConta::testarCenarioSucesso()
 {
     try
     {
@@ -904,7 +904,7 @@ void TUConta::testarCenarioSucesso()
     }
 }
 
-void TUConta::testarCenarioFalha()
+void TUNumeroConta::testarCenarioFalha()
 {
     try
     {
@@ -924,7 +924,7 @@ void TUConta::testarCenarioFalha()
     }
 }
 
-int TUConta::run()
+int TUNumeroConta::run()
 {
     setUp();
     testarCenarioSucesso();
@@ -1198,3 +1198,295 @@ int TUVagas::run()
 // verifica valor do objeto de codigo: if( obj.getcodigo().getvalor() )
 
 
+//========================================================================
+// Metodos testes da classe USUARIO
+
+void TUUsuario::setUp()
+{
+    usuario = new Usuario();
+
+    estado = SUCESSO;
+}
+
+void TUUsuario::tearDown()
+{
+
+    delete usuario;
+}
+
+void TUUsuario::testar()
+{
+    try
+    {
+
+        usuario->getNome()->setNome(NOME_VALIDO);
+        if (usuario->getNome()->getNome().compare(NOME_VALIDO) != 0)
+        {
+            cout << "TUUsuario::testar NOME_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        usuario->getTelefone()->setTelefone(TELEFONE_VALIDO);
+        if (usuario->getTelefone()->getTelefone().compare(TELEFONE_VALIDO) != 0)
+        {
+            cout << "TUUsuario::testar TELEFONE_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        usuario->getEmail()->setEmail(EMAIL_VALIDO);
+        if (usuario->getEmail()->getEmail().compare(EMAIL_VALIDO) != 0)
+        {
+            cout << "TUUsuario::testar EMAIL_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        usuario->getSenha()->setSenha(SENHA_VALIDA);
+        if (usuario->getSenha()->getSenha().compare(SENHA_VALIDA) != 0)
+        {
+            cout << "TUUsuario::testar SENHA_VALIDA falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        usuario->getCPF()->setCPF(CPF_VALIDO);
+        if (usuario->getCPF()->getCPF().compare(CPF_VALIDO) != 0)
+        {
+            cout << "TUUsuario::testar CPF_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUUsuario::testar falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+int TUUsuario::run()
+{
+    setUp();
+    testar();
+    tearDown();
+
+    return estado;
+}
+
+//========================================================================
+// Metodos testes da classe CARONA
+
+void TUCarona::setUp()
+{
+    carona = new Carona();
+
+    estado = SUCESSO;
+}
+
+void TUCarona::tearDown()
+{
+
+    delete carona;
+}
+
+void TUCarona::testar()
+{
+    try
+    {
+
+        carona->getCodigo()->setCodigoCarona(CODIGO_CARONA_VALIDO);
+        if (carona->getCodigo()->getCodigoCarona().compare(CODIGO_CARONA_VALIDO) != 0)
+        {
+            cout << "TUCarona::testar CODIGO_CARONA_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        carona->getCidadeOrigem()->setCidade(CIDADE_ORIGEM_VALIDA);
+        if (carona->getCidadeOrigem()->getCidade().compare(CIDADE_ORIGEM_VALIDA) != 0)
+        {
+            cout << "TUCarona::testar CIDADE_ORIGEM_VALIDA falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        carona->getCidadeDestino()->setCidade(CIDADE_DESTINO_VALIDA);
+        if (carona->getCidadeDestino()->getCidade().compare(CIDADE_DESTINO_VALIDA) != 0)
+        {
+            cout << "TUCarona::testar CIDADE_DESTINO_VALIDA falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        carona->getEstadoOrigem()->setEstado(ESTADO_ORIGEM_VALIDO);
+        if (carona->getEstadoOrigem()->getEstado().compare(ESTADO_ORIGEM_VALIDO) != 0)
+        {
+            cout << "TUCarona::testar ESTADO_ORIGEM_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        carona->getEstadoDestino()->setEstado(ESTADO_DESTINO_VALIDO);
+        if (carona->getEstadoDestino()->getEstado().compare(ESTADO_DESTINO_VALIDO) != 0)
+        {
+            cout << "TUCarona::testar ESTADO_DESTINO_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        carona->getData()->setData(DATA_VALIDA);
+        if (carona->getData()->getData().compare(DATA_VALIDA) != 0)
+        {
+            cout << "TUCarona::testar DATA_VALIDA falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        carona->getDuracao()->setDuracao(DURACAO_VALIDA);
+        if (carona->getDuracao()->getDuracao().compare(DURACAO_VALIDA) != 0)
+        {
+            cout << "TUCarona::testar DURACAO_VALIDA falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        carona->getVagas()->setVagas(VAGAS_VALIDAS);
+        if (carona->getVagas()->getVagas().compare(VAGAS_VALIDAS) != 0)
+        {
+            cout << "TUCarona::testar VAGAS_VALIDAS falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        carona->getPreco()->setPreco(PRECO_VALIDO);
+        if (carona->getPreco()->getPreco().compare(PRECO_VALIDO) != 0)
+        {
+            cout << "TUCarona::testar PRECO_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUCarona::testar falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+int TUCarona::run()
+{
+    setUp();
+    testar();
+    tearDown();
+
+    return estado;
+}
+
+//========================================================================
+// Metodos testes da classe RESERVA
+
+void TUReserva::setUp()
+{
+    reserva = new Reserva();
+
+    estado = SUCESSO;
+}
+
+void TUReserva::tearDown()
+{
+
+    delete reserva;
+}
+
+void TUReserva::testar()
+{
+    try
+    {
+
+        reserva->getCodigo()->setCodigoReserva(CODIGO_RESERVA_VALIDO);
+        if (reserva->getCodigo()->getCodigoReserva().compare(CODIGO_RESERVA_VALIDO) != 0)
+        {
+            cout << "TUReserva::testar CODIGO_RESERVA_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        reserva->getAssento()->setAssento(ASSENTO_VALIDO);
+        if (reserva->getAssento()->getAssento().compare(ASSENTO_VALIDO) != 0)
+        {
+            cout << "TUReserva::testar ASSENTO_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        reserva->getBagagem()->setBagagem(BAGAGEM_VALIDA);
+        if (reserva->getBagagem()->getBagagem().compare(BAGAGEM_VALIDA) != 0)
+        {
+            cout << "TUReserva::testar BAGAGEM_VALIDA falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUReserva::testar falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+int TUReserva::run()
+{
+    setUp();
+    testar();
+    tearDown();
+
+    return estado;
+}
+
+//========================================================================
+// Metodos testes da classe CONTA
+
+void TUConta::setUp()
+{
+    conta = new Conta();
+
+    estado = SUCESSO;
+}
+
+void TUConta::tearDown()
+{
+
+    delete conta;
+}
+
+void TUConta::testar()
+{
+    try
+    {
+
+        conta->getBanco()->setCodigoBanco(CODIGO_BANCO_VALIDO);
+        if (conta->getBanco()->getCodigoBanco().compare(CODIGO_BANCO_VALIDO) != 0)
+        {
+            cout << "TUConta::testar CODIGO_BANCO_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        conta->getAgencia()->setAgencia(AGENCIA_VALIDA);
+        if (conta->getAgencia()->getAgencia().compare(AGENCIA_VALIDA) != 0)
+        {
+            cout << "TUConta::testar AGENCIA_VALIDA falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+        conta->getNumero()->setConta(NUMERO_CONTA_VALIDO);
+        if (conta->getNumero()->getConta().compare(NUMERO_CONTA_VALIDO) != 0)
+        {
+            cout << "TUConta::testar NUMERO_CONTA_VALIDO falhou! VALOR VALIDO" << endl;
+            estado = FALHA;
+        }
+
+    }
+    catch(invalid_argument excecao)
+    {
+        cout << "TUConta::testar falhou! CATCH" << endl;
+        estado = FALHA;
+    }
+}
+
+int TUConta::run()
+{
+    setUp();
+    testar();
+    tearDown();
+
+    return estado;
+}

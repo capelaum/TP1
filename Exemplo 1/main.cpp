@@ -29,12 +29,17 @@ int main()
     TUEstado teste_estado;
     TUEmail teste_email;
     TUAgencia teste_agencia;
-    TUConta teste_conta;
+    TUNumeroConta teste_conta;
     TUPreco teste_preco;
     TUSenha teste_senha;
     TUVagas teste_vagas;
     TUNome teste_nome;
     TUTelefone teste_telefone;
+
+    TUUsuario teste_usuario;
+    TUCarona teste_carona;
+    TUReserva teste_reserva;
+    TUConta teste_conta_entidade;
 
     cout << "TESTE DE ASSENTO: " ;
     // run teste de Assento
@@ -196,10 +201,10 @@ int main()
     // run teste de Conta
     switch(teste_conta.run())
     {
-    case TUConta::SUCESSO:
+    case TUNumeroConta::SUCESSO:
         cout << "SUCESSO!" << endl;
         break;
-    case TUConta::FALHA:
+    case TUNumeroConta::FALHA:
         cout << "FALHA!" << endl;
         break;
     }
@@ -253,6 +258,54 @@ int main()
     }
 
     cout << "--------->TESTES DE ENTIDADES<---------" << endl;
+
+    cout << "TESTE DE USUARIO: " ;
+    // run teste de Vagas
+    switch(teste_usuario.run())
+    {
+    case TUUsuario::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUUsuario::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE CARONA: " ;
+    // run teste de Vagas
+    switch(teste_carona.run())
+    {
+    case TUCarona::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUCarona::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE RESERVA: " ;
+    // run teste de Vagas
+    switch(teste_reserva.run())
+    {
+    case TUReserva::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUReserva::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
+
+    cout << "TESTE DE CONTA: " ;
+    // run teste de Vagas
+    switch(teste_conta_entidade.run())
+    {
+    case TUConta::SUCESSO:
+        cout << "SUCESSO!" << endl;
+        break;
+    case TUConta::FALHA:
+        cout << "FALHA!" << endl;
+        break;
+    }
 
 
     return 0;

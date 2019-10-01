@@ -2,6 +2,7 @@
 #define TESTES_H_INCLUDED
 
 #include "dominios.h"
+#include "entidades.h"
 
 // Declaração de Classes de Testes Unitarios
 
@@ -354,7 +355,7 @@ public:
 //==================================================================================
 // Teste Unitario para Classe Conta
 
-class TUConta
+class TUNumeroConta
 {
 private:
 
@@ -481,7 +482,124 @@ public:
 
     int run(); //
 };
+
+
 //==================================================================================
+// Teste Unitario para Classe de Entidade USUARIO
+
+
+class TUUsuario
+{
+private:
+
+    const string NOME_VALIDO = "Rafael Barbosa";
+    const string TELEFONE_VALIDO = "55-61-982217987";
+    const string EMAIL_VALIDO = "rafael@gmail.com";
+    const string SENHA_VALIDA = "A#$45";
+    const string CPF_VALIDO = "047130041-11";
+
+    Usuario *usuario;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testar();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+//==================================================================================
+// Teste Unitario para Classe de Entidade CARONA
+
+
+class TUCarona
+{
+private:
+
+    const string CODIGO_CARONA_VALIDO = "2000";
+    const string CIDADE_ORIGEM_VALIDA = "Goiania";
+    const string CIDADE_DESTINO_VALIDA = "Chapadinha";
+    const string ESTADO_ORIGEM_VALIDO = "GO";
+    const string ESTADO_DESTINO_VALIDO = "MA";
+    const string DATA_VALIDA = "021199";
+    const string DURACAO_VALIDA = "20";
+    const string VAGAS_VALIDAS = "3";
+    const string PRECO_VALIDO = "200,00";
+
+    Carona *carona;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testar();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+//==================================================================================
+// Teste Unitario para Classe de RESERVA
+
+
+class TUReserva
+{
+private:
+
+    const string CODIGO_RESERVA_VALIDO = "20000";
+    const string ASSENTO_VALIDO = "D";
+    const string BAGAGEM_VALIDA = "2";
+
+    Reserva *reserva;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testar();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
+//==================================================================================
+// Teste Unitario para Classe de CONTA
+
+
+class TUConta
+{
+private:
+
+    const string CODIGO_BANCO_VALIDO = "200";
+    const string AGENCIA_VALIDA = "3590-7";
+    const string NUMERO_CONTA_VALIDO = "261533-4";
+
+    Conta *conta;
+
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testar();
+
+public:
+
+    const static int SUCESSO =  0;
+    const static int FALHA   = -1;
+
+    int run(); //
+};
 
 #endif // TESTES_H_INCLUDED
 

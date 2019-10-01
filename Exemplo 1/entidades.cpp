@@ -10,9 +10,9 @@ void Usuario::setNome(Nome *nome)
     this->nome = nome;
 }
 
-Nome Usuario::getNome()
+Nome* Usuario::getNome()
 {
-    return *this->nome;
+    return this->nome;
 }
 
 void Usuario::setTelefone(Telefone *telefone)
@@ -20,9 +20,9 @@ void Usuario::setTelefone(Telefone *telefone)
     this->telefone = telefone;
 }
 
-Telefone Usuario::getTelefone()
+Telefone* Usuario::getTelefone()
 {
-    return *this->telefone;
+    return this->telefone;
 }
 
 void Usuario::setEmail(Email *email)
@@ -30,9 +30,9 @@ void Usuario::setEmail(Email *email)
     this->email = email;
 }
 
-Email Usuario::getEmail()
+Email* Usuario::getEmail()
 {
-    return *this->email;
+    return this->email;
 }
 
 void Usuario::setSenha(Senha *senha)
@@ -40,9 +40,9 @@ void Usuario::setSenha(Senha *senha)
     this->senha = senha;
 }
 
-Senha Usuario::getSenha()
+Senha* Usuario::getSenha()
 {
-    return *this->senha;
+    return this->senha;
 }
 
 void Usuario::setCPF(CPF *cpf)
@@ -50,9 +50,9 @@ void Usuario::setCPF(CPF *cpf)
     this->cpf = cpf;
 }
 
-CPF Usuario::getCPF()
+CPF* Usuario::getCPF()
 {
-    return *this->cpf;
+    return this->cpf;
 }
 
 //=======================================================
@@ -61,81 +61,81 @@ void Carona::setCodigo(CodigoCarona *codigo)
 {
     this->codigo = codigo;
 }
-CodigoCarona Carona::getCodigo()
+CodigoCarona* Carona::getCodigo()
 {
-    return *this->codigo;
+    return this->codigo;
 }
 
 void Carona::setCidadeOrigem(Cidade *cidadeOrigem)
 {
     this->cidadeOrigem = cidadeOrigem;
 }
-Cidade Carona::getCidadeOrigem()
+Cidade* Carona::getCidadeOrigem()
 {
-    return *this->cidadeOrigem;
+    return this->cidadeOrigem;
 }
 
 void Carona::setEstadoOrigem(Estado *estadoOrigem)
 {
     this->estadoOrigem = estadoOrigem;
 }
-Estado Carona::getEstadoOrigem()
+Estado* Carona::getEstadoOrigem()
 {
-    return *this->estadoOrigem;
+    return this->estadoOrigem;
 }
 
 void Carona::setCidadeDestino(Cidade *cidadeDestino)
 {
     this->cidadeDestino = cidadeDestino;
 }
-Cidade Carona::getCidadeDestino()
+Cidade* Carona::getCidadeDestino()
 {
-    return *this->cidadeDestino;
+    return this->cidadeDestino;
 }
 
 void Carona::setEstadoDestino(Estado *estadoDestino)
 {
     this->estadoDestino = estadoDestino;
 }
-Estado Carona::getEstadoDestino()
+Estado* Carona::getEstadoDestino()
 {
-    return *this->estadoDestino;
+    return this->estadoDestino;
 }
 
 void Carona::setData(Data *data)
 {
     this->data = data;
 }
-Data Carona::getData()
+Data* Carona::getData()
 {
-    return *this->data;
+    return this->data;
 }
 
 void Carona::setDuracao(Duracao *duracao)
 {
     this->duracao = duracao;
 }
-Duracao Carona::getDuracao()
+Duracao* Carona::getDuracao()
 {
-    return *this->duracao;
+    return this->duracao;
 }
 
 void Carona::setVagas(Vagas *vagas)
 {
     this->vagas = vagas;
 }
-Vagas Carona::getVagas()
+Vagas* Carona::getVagas()
 {
-    return *this->vagas;
+    return this->vagas;
 }
 
 void Carona::setPreco(Preco *preco)
 {
     this->preco = preco;
 }
-Preco Carona::getPreco()
+Preco* Carona::getPreco()
 {
-    return *this->preco;
+    return this->preco;
 }
 
 //==============================================================
@@ -144,27 +144,27 @@ void Reserva::setCodigo(CodigoReserva *codigo)
 {
     this->codigo = codigo;
 }
-CodigoReserva Reserva::getCodigo()
+CodigoReserva* Reserva::getCodigo()
 {
-    return *this->codigo;
+    return this->codigo;
 }
 
 void Reserva::setAssento(Assento *assento)
 {
     this->assento = assento;
 }
-Assento Reserva::getAssento()
+Assento* Reserva::getAssento()
 {
-    return *this->assento;
+    return this->assento;
 }
 
 void Reserva::setBagagem(Bagagem *bagagem)
 {
     this->bagagem = bagagem;
 }
-Bagagem Reserva::getBagagem()
+Bagagem* Reserva::getBagagem()
 {
-    return *this->bagagem;
+    return this->bagagem;
 }
 
 //============================================================
@@ -173,25 +173,25 @@ void Conta::setBanco(CodigoBanco *banco)
 {
     this->banco = banco;
 }
-CodigoBanco Conta::getBanco()
+CodigoBanco* Conta::getBanco()
 {
-    return *this->banco;
+    return this->banco;
 }
 
 void Conta::setAgencia(Agencia *agencia)
 {
     this->agencia = agencia;
 }
-Agencia Conta::getAgencia()
+Agencia* Conta::getAgencia()
 {
-    return *this->agencia;
+    return this->agencia;
 }
 
 void Conta::setNumero(NumeroConta *numero)
 {
     this->numero = numero;
 }
-NumeroConta Conta::getNumero()
+NumeroConta* Conta::getNumero()
 {
-    return *this->numero;
+    return this->numero;
 }
