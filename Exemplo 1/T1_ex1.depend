@@ -177,3 +177,36 @@
 	"testes.h"
 	<iostream>
 
+1569898608 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\dominios.cpp
+	"dominios.h"
+
+1569899026 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\dominios.h
+	<iostream>
+	<stdexcept>
+	<string>
+	<algorithm>
+	<iterator>
+	<map>
+	<ctype.h>
+
+1569897439 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\entidades.cpp
+	"entidades.h"
+
+1569897439 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\entidades.h
+	"dominios.h"
+	<string>
+
+1569897439 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1569898675 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1569897439 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\exemplo 1\testes.cpp
+	"testes.h"
+	<iostream>
+

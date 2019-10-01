@@ -1,3 +1,13 @@
+/**
+ * @file testes.h
+ *
+ * @brief Arquivo com a declara&ccedil;&atilde;o  das classes de Testes Unit&aacute;rios do programa
+ *
+ * @author Lu&iacute;s Capelletto
+ * @author Rafael Barbosa
+ *
+ */
+
 #ifndef TESTES_H_INCLUDED
 #define TESTES_H_INCLUDED
 
@@ -203,8 +213,8 @@ class TUData
 {
 private:
 
-    const string VALOR_VALIDO = "310299";
-    const string VALOR_INVALIDO = "451389";
+    const string VALOR_VALIDO = "28/02/2098";
+    const string VALOR_INVALIDO = "4513/89";
 
     Data *data;
 
@@ -575,7 +585,6 @@ public:
 };
 //==================================================================================
 // Teste Unitario para Classe de CONTA
-
 
 class TUConta
 {

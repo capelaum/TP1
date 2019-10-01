@@ -1,11 +1,23 @@
+/**
+ * @file main.cpp
+ *
+ * @brief Arquivo com a implementa&ccedil;&atilde;o b&aacute;sica do programa,
+ *  onde executa-se os Testes Unit&aacute;rios de todas Classes de Dom&iacute;nios e Entidades.
+ *
+ * @author Lu&iacute;s Capelletto
+ * @author Rafael Barbosa
+ */
+
+/*
+   Feito por:
+   - Luis Vinicius Capelletto - 16/0134544
+   - Rafael Barbosa de Souza  - 17/0043827
+
+   Convencao de codificacao adotada: AStyle
+*/
+
+
 #include <iostream>
-
-// Documentaçao do doxygen deve ser comentada
-// Definir cpf, data, usuario, nome, telefone, etc..
-// explicar como foram validados e como funciona
-// Como se explicasse para um leigo em prog
-
-/** main() **/
 
 #include "dominios.h"
 #include "entidades.h"
@@ -260,7 +272,7 @@ int main()
     cout << "--------->TESTES DE ENTIDADES<---------" << endl;
 
     cout << "TESTE DE USUARIO: " ;
-    // run teste de Vagas
+    // run teste de Usuario
     switch(teste_usuario.run())
     {
     case TUUsuario::SUCESSO:
@@ -272,7 +284,7 @@ int main()
     }
 
     cout << "TESTE DE CARONA: " ;
-    // run teste de Vagas
+    // run teste de Carona
     switch(teste_carona.run())
     {
     case TUCarona::SUCESSO:
@@ -284,7 +296,7 @@ int main()
     }
 
     cout << "TESTE DE RESERVA: " ;
-    // run teste de Vagas
+    // run teste de Reserva
     switch(teste_reserva.run())
     {
     case TUReserva::SUCESSO:
@@ -296,7 +308,7 @@ int main()
     }
 
     cout << "TESTE DE CONTA: " ;
-    // run teste de Vagas
+    // run teste de Conta
     switch(teste_conta_entidade.run())
     {
     case TUConta::SUCESSO:
@@ -306,7 +318,6 @@ int main()
         cout << "FALHA!" << endl;
         break;
     }
-
 
     return 0;
 }

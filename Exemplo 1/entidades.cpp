@@ -1,9 +1,20 @@
+/**
+ * @file entidades.cpp
+ *
+ * @brief Arquivo com a implementa&ccedil;&atilde;o dos m&eacute;todos das Classes de Entidades do programa
+ *
+ * @section a Descri&ccedil;&atilde;o
+ * Cont&eacute;m os m&eacute;todos de defini&ccedil;&atilde;o e obten&ccedil;&atilde;o das Classes de Entidades.
+ * Segundo os m&eacute;todos de valida&ccedil;&atilde;o e defini&ccedil;&atilde;o das Classes de Dom&iacute;nios
+ *
+ * @author Lu&iacute;s Capelletto
+ * @author Rafael Barbosa
+ *
+ */
+
 #include "entidades.h"
 
-// Ao se fazer os metodos de entidades, passar os objetos por valor
-// **NAO por referencia** -> vc nao quer modificar o conteudo dos objetos
-// exemplo: void set(User &p1, User &p2){...}
-// por conta de modificaçao no valor passado
+// Metodos da classe Usuario
 
 void Usuario::setNome(Nome *nome)
 {
@@ -56,6 +67,7 @@ CPF* Usuario::getCPF()
 }
 
 //=======================================================
+// Metodos da classe Carona
 
 void Carona::setCodigo(CodigoCarona *codigo)
 {
@@ -139,6 +151,7 @@ Preco* Carona::getPreco()
 }
 
 //==============================================================
+// Metodos da classe Reserva
 
 void Reserva::setCodigo(CodigoReserva *codigo)
 {
@@ -168,6 +181,7 @@ Bagagem* Reserva::getBagagem()
 }
 
 //============================================================
+// Metodos da classe Conta
 
 void Conta::setBanco(CodigoBanco *banco)
 {

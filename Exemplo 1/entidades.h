@@ -1,3 +1,12 @@
+/**
+ * @file entidades.h
+ *
+ * @brief Arquivo com a declara&ccedil;&atilde;o das Classes de Entidades do programa
+ *
+ *  @author Lu&iacute;s Capelletto
+ *  @author Rafael Barbosa
+ */
+
 #ifndef ENTIDADES_H_INCLUDED
 #define ENTIDADES_H_INCLUDED
 
@@ -6,10 +15,18 @@
 
 using namespace std;
 
-// Definir atributos como objetos de classes de dominios
-// Fazer um set e get para cada atributo
-
 // Declaracao de classes de Entidades
+
+/**
+ *  @brief Usu&aacute;rio.
+ *
+ *  @section a Descri&ccedil;&atilde;o
+ *  Essa classe armazena um objeto de Nome, Telefone, Email, Senha, CPF
+ *
+ *  @subsection Formato
+ *  A atribui&ccedil;&atilde;o dos objetos devem obedecer &agrave;s suas respectivas regras de valida&ccedil;&atilde;o
+ *  no n&iacute;vel de Dom&iacute;nio
+ */
 
 class Usuario
 {
@@ -23,7 +40,11 @@ private:
     CPF *cpf;
 
 public:
-
+    /**
+     *
+     * Define os objetos do Usu&aacute;rio
+     *
+     */
     Usuario()
     {
         this->nome = new Nome();

@@ -1,8 +1,21 @@
+/**
+ * @file dominios.cpp
+ *
+ * @brief Arquivo com a implementa&ccedil;&atilde;o dos m&eacute;todos das Classes de Dom&iacute;nios
+ *
+ * @section a Descri&ccedil;&atilde;o
+ * Cont&eacute;m os m&eacute;todos de valida&ccedil;&atilde;o e define as Classes de Dom&iacute;nios
+ *
+ * @author Lu&iacute;s Capelletto
+ * @author Rafael Barbosa
+ *
+ */
+
 #include "dominios.h"
 
 // Definicoes de metodos das classes de Dominio
 
-//Definicoes de constantes.
+// Definicoes de constantes.
 
 // Metodos da classe Assento - D ou T
 
@@ -142,7 +155,7 @@ void CodigoReserva::setCodigoReserva(string codigoReserva)
     this->codigoReserva = codigoReserva;
 }
 
-// Metodos da classe Cidade - 10 caracteres - letra ponto ou espaço
+// Metodos da classe Cidade - 10 caracteres - letra ponto ou espaÃ§o
 // pelo menos 1 caractere eh letra
 // nao ha espacos seguidos
 // antes de ponto ha uma letra
@@ -339,96 +352,104 @@ void CPF::setCPF (string cpf)
     this->cpf = cpf;
 }
 
-// Metodos da classe Data - 6 caracteres
-// Formato: DD/MM/AA onde 1 <= MM <= 12, 00 <= AA <= 99, 1 <= DD <= 31
+// Metodos da classe Data - 10 caracteres
+// Formato: DD/MM/AAAA onde 1 <= MM <= 12, 2000 <= AA <= 2099, 1 <= DD <= 31
 // Deve se considerar anos bissextos
-// Suposição de que nao serao criadas datas para o seculo passado
-// Ao se declarar o ano como "99", consideramos 2099.
-// Entrada: 251298 se queremos expressar 25/12/2098
-// No output final se fara print com as divisoes
 
-void Data::setData(string nova_data)
+const int Data::TAMANHO_MAX = 10;
+
+void Data::validar(string data)
 {
-    int data_int = 0;
-
-    data_int = ( (nova_data[5]-48) + ( (nova_data[4]-48)*10 ) + ( (nova_data[3]-48)*100 )
-    + ( (nova_data[2]-48)*1000 ) + ( (nova_data[1]-48)*10000) + ((nova_data[0]-48)*100000) );
-
-    validar(data_int);
-
-    int k;
-
-    for(k = 0; k < 6; k++)
+    // checa tamanho
+    if(data.size() > TAMANHO_MAX)
     {
-        //copia a nova entrada e define seu limite
-        data[k] = nova_data[k];
+        throw invalid_argument("Data invalida. Formato invalido!");
     }
 
-    data[6] = '\0';
-}
-
-void Data::validar(int data_int)
-{
-    // cout << "DATA_INT: " << data_int << endl;
-
-    int SUCESSO = 0;
-
-    int num_dia = 0;
-    int num_mes = 0;
-    int num_ano = 0;
-
-    int ano_validar_bissexto = 0;
-    int fevereiro = 2;
-    int limite_dias_fevereiro_ano_bissexto = 29;
-
-    num_ano = data_int%100;
-    // cout << "NUM_ANO: " << num_ano << endl;
-    data_int = data_int/100;
-
-    num_mes = data_int % 100;
-    // cout << "NUM_MES: " << num_mes << endl;
-    data_int = data_int/100;
-
-    num_dia = data_int % 100;
-    // cout << "NUM_DIA: " << num_dia << endl;
-    data_int = data_int/100;
-
-    if((num_dia > 31) || (num_dia <= 0))
+    // checa formato
+    if(data[2] != '/' || data[5] != '/')
     {
-        SUCESSO = 1;
+        throw invalid_argument("Data invalida. Formato invalido!");
     }
 
-    if((num_mes > 12) || (num_mes <= 0))
+    // checa os numeros representados por DD MM e AAAA
+
+    char dia[3], mes[3], ano[5];
+
+    dia[0] = data[0];
+    dia[1] = data[1];
+    dia[2] = '\0';
+
+    int dia_int = stoi(dia);
+
+    // 1 <= DD <= 31
+    if(dia_int < 1 || dia_int > 31)
     {
-        SUCESSO = 1;
+        throw invalid_argument("Data invalida. Dia invalido!");
     }
 
-    if((num_ano > 99) || (num_ano <= 0))
+    mes[0]= data[3];
+    mes[1]= data[4];
+    mes[2] = '\0';
+
+    int mes_int = stoi(mes);
+
+    // 1 <= MM <= 12
+    if(mes_int < 1 || mes_int > 12)
     {
-        // ano não pode ser 0, no caso, ano 2000 < ano 2099 (caso de evento passado)
-        SUCESSO = 1;
+        throw invalid_argument("Data invalida. Mes invalido!");
     }
 
-    // adiciona 2000 para termos o numero no formato completo
-    // (temos numero 19, 2000 + 19 = 2019, um ano expresso por inteiro)
-    ano_validar_bissexto = num_ano + 2000;
+    ano[0] = data[6];
+    ano[1] = data[7];
+    ano[2] = data[8];
+    ano[3] = data[9];
+    ano[4] = '\0';
 
-    if((ano_validar_bissexto % 4 == 0) && (ano_validar_bissexto % 100 != 0))
+    int ano_int = stoi(ano);
+
+    // 2000 <= AA <= 2099
+    if(ano_int < 2000 || ano_int > 2099)
     {
-        //validamos ano bissexto
-        //TEMOS UM ANO BISSEXTO!
-        if((num_mes == fevereiro) && (num_dia > limite_dias_fevereiro_ano_bissexto))
+        throw invalid_argument("Data invalida. Ano invalido!");
+    }
+
+    // checar anos bissextos
+    // 1- Todo ano divisï¿½vel por 4 ï¿½ bissexto
+    // 2- Todo ano divisï¿½vel por 100 nï¿½o ï¿½ bissexto
+    // 3- Mas se o ano for tambï¿½m divisï¿½vel por 400 ï¿½ bissexto
+
+    // se o mes for de fevereiro
+    if (mes_int == 2)
+    {
+        // checa se tem 29 dias ou menos
+        if(dia_int > 29)
         {
-            //avisamos formato invalido de ano bissexto
-            SUCESSO = 1;
+            throw invalid_argument("Data invalida. Fevereiro tem apenas 28 ou 29 dias!");
+        }
+
+        // Ano eh bissexto
+        if (ano_int%4 == 0 && ano_int%400 == 0)
+        {
+            if(dia_int > 29)
+            {
+                throw invalid_argument("Data invalida. Ano bissexto, fevereiro tem 29 dias!");
+            }
+        }
+        else  // Ano nao eh bissexto
+        {
+            if(dia_int > 28)
+            {
+                throw invalid_argument("Data invalida. Ano nao eh bissexto, fevereiro tem 28 dias!");
+            }
         }
     }
+}
 
-    if(SUCESSO != 0)
-    {
-        throw invalid_argument("Data de evento invalida");
-    }
-
+void Data::setData(string data)
+{
+    validar(data);
+    this->data = data;
 }
 
 // Metodos da classe Duracao - 1 a 48
@@ -583,7 +604,7 @@ void Nome::validar(string nome)
         }
     }
 
-    bool nemTodosCaracteresValidos = false; // caracteres sao letras, espaços ou pontos
+    bool nemTodosCaracteresValidos = false; // caracteres sao letras, espaÃ§os ou pontos
     for(unsigned int i = 0; i < nome.size(); i++)
     {
         bool invalido = !(isalpha(nome[i]) || nome[i] == ' ' || nome[i] == '.');

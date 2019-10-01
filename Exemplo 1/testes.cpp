@@ -1,14 +1,18 @@
+/**
+ * @file testes.cpp
+ *
+ * @brief Arquivo com a implementa&ccedil;&atilde;o dos Testes Unit&aacute;rios do programa
+ *
+ * @author Lu&iacute;s Capelletto
+ * @author Rafael Barbosa
+ *
+ */
+
 #include "testes.h"
 
 #include <iostream>
 
 // Definicoes de Metodos de Testes Unitarios
-
-/*
-    Separar cenarios de FALHA/SUCESSO
-    Especificar o que falhou
-    Testes unitarios para cada classe
-*/
 
 // TESTES UNITARIOS DE DOMINIOS
 //========================================================================
