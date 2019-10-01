@@ -57,17 +57,13 @@ public:
     /**
      * Obt&eacute;m o Assento
      *
-     * @return String "D" ou "T".
+     * @return string (D ou T)
      *
      */
     string getAssento() const
     {
         return assento;
     }
-
-    //Assento(string assento);
-    //Assento();
-
 };
 
 /**
@@ -111,7 +107,6 @@ public:
     {
         return bagagem;
     }
-
 };
 
 /**
@@ -148,7 +143,7 @@ public:
     /**
      * Obt&eacute;m o c&oacute;digo de banco
      *
-     * @return String XXX (0-9)
+     * @return string XXX (0-9)
      *
      */
     string getCodigoBanco() const
@@ -191,7 +186,7 @@ public:
     /**
      * Obt&eacute;m o c&oacute;digo de carona
      *
-     * @return String XXXX (0-9)
+     * @return string XXXX (0-9)
      *
      */
     string getCodigoCarona() const
@@ -234,7 +229,7 @@ public:
     /**
      * Obt&eacute;m o c&oacute;digo de reserva
      *
-     * @return String XXXXX (0-9)
+     * @return string XXXXX (0-9)
      *
      */
     string getCodigoReserva() const
@@ -251,7 +246,7 @@ public:
  *  Essa classe armazena a cidade escolhida (origem ou destino)
  *
  *  @subsection Formato
- *  De 1 a 10 letras (espa�o/ponto/letras),
+ *  De 1 a 10 letras (espa&ccedil;o/ponto/letras),
  *  n&atilde;o &eacute; permitido 2 espa&ccedil;os seguidos
  */
 
@@ -276,7 +271,7 @@ public:
     /**
      * Obt&eacute;m a cidade
      *
-     * @return String (texto)
+     * @return string (Cidade)
      *
      */
     string getCidade() const
@@ -317,7 +312,7 @@ public:
     /**
      * Obt&eacute;m o cpf
      *
-     * @return String XXX XXX XXX-YY (0-9)
+     * @return string XXX XXX XXX-YY (0-9)
      *
      */
     string getCPF() const
@@ -404,7 +399,7 @@ public:
     /**
      * Obt&eacute;m a dura&ccedil;&atilde;o
      *
-     * @return String
+     * @return string (valor de 1 a 48)
      *
      */
     string getDuracao() const
@@ -447,7 +442,7 @@ public:
     /**
      * Obt&eacute;m o Estado
      *
-     * @return String
+     * @return string (Estados brasileiros)
      *
      */
     string getEstado() const
@@ -491,7 +486,7 @@ public:
     /**
      * Obt&eacute;m o email
      *
-     * @return String
+     * @return string (email)
      *
      */
     string getEmail() const
@@ -536,7 +531,7 @@ public:
     /**
      * Obt&eacute;m o nome
      *
-     * @return String
+     * @return string (nome)
      *
      */
     string getNome()
@@ -580,7 +575,7 @@ public:
     /**
      * Obt&eacute;m a ag&ecirc;ncia
      *
-     * @return String
+     * @return string XXXX-Y (0-9)
      *
      */
     string getAgencia() const
@@ -624,7 +619,7 @@ public:
     /**
      * Obt&eacute;m o n&uacute;mero de conta
      *
-     * @return String
+     * @return string XXXXX-Y (0-9)
      *
      */
     string getConta() const
@@ -668,7 +663,7 @@ public:
     /**
      * Obt&eacute;m o pre&ccedil;o
      *
-     * @return String
+     * @return string (valor de 1,00 a 5000,00)
      *
      */
     string getPreco() const
@@ -712,7 +707,7 @@ public:
     /**
      * Obt&eacute;m o telefone
      *
-     * @return String
+     * @return string XX-YY-ZZZZZZZZZ (0-9)
      *
      */
     string getTelefone()
@@ -755,7 +750,7 @@ public:
     /**
      * Obt&eacute;m a senha
      *
-     * @return String
+     * @return string (senha)
      *
      */
     string getSenha() const
@@ -799,7 +794,7 @@ public:
     /**
      * Obt&eacute;m o n&uacute;mero de vagas
      *
-     * @return String
+     * @return string (valor de 0 a 4)
      *
      */
     string getVagas() const
