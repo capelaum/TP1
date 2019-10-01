@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1569948033 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp_trabalho 1\dominios.cpp
+	"dominios.h"
+
+1569948663 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp_trabalho 1\dominios.h
+	<iostream>
+	<stdexcept>
+	<string>
+	<algorithm>
+	<iterator>
+	<map>
+	<ctype.h>
+
+1569899206 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp_trabalho 1\entidades.cpp
+	"entidades.h"
+
+1569924314 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp_trabalho 1\entidades.h
+	"dominios.h"
+	<string>
+
+1569950324 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp_trabalho 1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1569900242 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp_trabalho 1\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1569903256 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\tp - trabalho 1\tp_trabalho 1\testes.cpp
+	"testes.h"
+	<iostream>
+
