@@ -205,7 +205,7 @@ int main()
     }
 
     cout << "TESTE DE NUMERO DE CONTA:   ";
-    // run teste de Conta
+    // run teste de Numero de Conta
     switch(teste_conta.run())
     {
     case TUNumeroConta::SUCESSO:

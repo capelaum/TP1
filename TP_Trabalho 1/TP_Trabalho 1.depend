@@ -32,3 +32,30 @@
 	"testes.h"
 	<iostream>
 
+1569967711 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\tp_trabalho 1\dominios.cpp
+	"dominios.h"
+
+1569948663 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\tp_trabalho 1\dominios.h
+	<iostream>
+	<stdexcept>
+	<string>
+	<algorithm>
+	<iterator>
+	<map>
+	<ctype.h>
+
+1569899206 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\tp_trabalho 1\entidades.cpp
+	"entidades.h"
+
+1569924314 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\tp_trabalho 1\entidades.h
+	"dominios.h"
+	<string>
+
+1569903256 source:c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\tp_trabalho 1\testes.cpp
+	"testes.h"
+	<iostream>
+
+1569900242 c:\users\luis\documents\unb_2019\2019_2\tp 1\codes\github\source\tp - t1\tp1_t1\tp_trabalho 1\testes.h
+	"dominios.h"
+	"entidades.h"
+
