@@ -21,6 +21,7 @@
 
 #include "dominios.h"
 #include "entidades.h"
+#include "interfaces.h"
 #include "testes.h"
 
 using namespace std;
