@@ -1,10 +1,10 @@
 /**
  * @file interfaces.h
  *
- * @brief Arquivo com a declara&ccedil;&atilde;o das Classes da Camada de Apresenta&ccedil;&atilde;o do programa
+ * @brief Arquivo com a declara&ccedil;&atilde;o das Classes de Interface da Camada de Apresenta&ccedil;&atilde;o do programa
  *
- *  @author Lu&iacute;s Capelletto
- *  @author Rafael Barbosa
+ * @author Lu&iacute;s Capelletto
+ * @author Rafael Barbosa
  */
 
 #ifndef INTERFACES_H_INCLUDED
