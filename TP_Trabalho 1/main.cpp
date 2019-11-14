@@ -28,6 +28,9 @@ using namespace std;
 
 int main()
 {
+
+    cout << "Arquivo interfaces.h adicionado ao programa \n" << endl;
+    /*
     cout << "--------->TESTES DE DOMINIOS<---------\n" << endl;
 
     TUAssento teste_assento;
@@ -319,6 +322,6 @@ int main()
         cout << "FALHA!" << endl;
         break;
     }
-
+    */
     return 0;
 }

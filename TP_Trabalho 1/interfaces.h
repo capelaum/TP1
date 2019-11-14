@@ -1,3 +1,12 @@
+/**
+ * @file interfaces.h
+ *
+ * @brief Arquivo com a declara&ccedil;&atilde;o das Classes da Camada de Apresenta&ccedil;&atilde;o do programa
+ *
+ *  @author Lu&iacute;s Capelletto
+ *  @author Rafael Barbosa
+ */
+
 #ifndef INTERFACES_H_INCLUDED
 #define INTERFACES_H_INCLUDED
 
@@ -6,7 +15,7 @@
 
 using namespace std;
 
-// Declarações de Interfaces na Camada de Apresentação
+// Declarações de Interfaces da Camada de Apresentação
 // --------------------------------------------------------------------------------------
 // Declaração de interface para funcionalidades de Autenticação na camada de apresentação.
 
@@ -15,10 +24,10 @@ class IAutenticacao
 public:
 
     // Método por meio do qual é solicitado autenticação.
-    bool Autenticar() throw(runtime_error) = 0;
+    virtual bool Autenticar() throw(runtime_error) = 0;
 
     // Método destrutor virtual.
-    ~IAutenticacao(){}
+    virtual ~IAutenticacao(){}
 };
 // --------------------------------------------------------------------------------------
 // Declaração de interface para funcionalidades de Usuário na camada de apresentação.
@@ -27,13 +36,15 @@ class IUsuario
 {
 public:
 
-    // Métodos relacionados a contas de Usuário
-    virtual Cadastrar() throw(runtime_error) = 0;
-    virtual Editar()    throw(runtime_error) = 0;
-    virtual Excluir()   throw(runtime_error) = 0;
-    virtual Pesquisar() throw(runtime_error) = 0;
+    // Métodos relacionados a operações de contas de Usuário
+    virtual void Executar (Email, bool*)  throw(runtime_error) = 0;
+    virtual void Cadastrar()              throw(runtime_error) = 0;
 
-    // Método destrutor virtual.
+    virtual void Editar(Usuario)          throw(runtime_error) = 0;
+    virtual int  Excluir(Usuario)         throw(runtime_error) = 0;
+    virtual void Pesquisar(Usuario)       throw(runtime_error) = 0;
+
+
     virtual ~IUsuario(){}
 };
 // --------------------------------------------------------------------------------------
@@ -43,10 +54,14 @@ class ICarona
 {
 public:
 
-    // Método por meio do qual é solicitado cadastro.
-    virtual cadastrar() throw(runtime_error) = 0;
+    // Métodos relacionados a operações de Caronas
+    virtual void Executar(Email)       throw(runtime_error) = 0;
+    virtual void Pesquisar(Carona)     throw(runtime_error) = 0;
 
-    // Método destrutor virtual.
+    virtual bool Cadastrar(Carona)     throw(runtime_error) = 0;
+    virtual void Editar(Carona)        throw(runtime_error) = 0;
+    virtual int  Excluir(Carona)       throw(runtime_error) = 0;
+
     virtual ~ICarona(){}
 };
 // --------------------------------------------------------------------------------------
@@ -56,10 +71,14 @@ class IReserva
 {
 public:
 
-    // Método por meio do qual é solicitado cadastro.
-    virtual cadastrar() throw(runtime_error) = 0;
+    // Métodos relacionados a operações de Reservas
+    virtual void Executar(Email)        throw(runtime_error) = 0;
+    virtual void Pesquisar(Reserva)     throw(runtime_error) = 0;
 
-    // Método destrutor virtual.
+    virtual bool Cadastrar(Reserva)     throw(runtime_error) = 0;
+    virtual void Editar(Reserva)        throw(runtime_error) = 0;
+    virtual int  Excluir(Reserva)       throw(runtime_error) = 0;
+
     virtual ~IReserva(){}
 };
 
