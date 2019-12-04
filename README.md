@@ -1,7 +1,5 @@
 # TP1_T1
- Trabalho 1 de Técnicas de programação
+ Trabalho de Técnicas de Programação 1 - UnB - Semestre: 2019-2
  
- .Classes de Dominios, Entidades;
- 
- .Testes Unitários para cada classe;
+ Sistema de Caronas com Arquitetura em Camadas escrito com programação orientada a objeto em C++.
 
