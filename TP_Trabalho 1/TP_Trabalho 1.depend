@@ -97,3 +97,30 @@
 	"dominios.h"
 	"entidades.h"
 
+1581587074 source:c:\users\theca\documents\tp1\tp_trabalho 1\dominios.cpp
+	"dominios.h"
+
+1581587074 c:\users\theca\documents\tp1\tp_trabalho 1\dominios.h
+	<iostream>
+	<stdexcept>
+	<string>
+	<algorithm>
+	<iterator>
+	<map>
+	<ctype.h>
+
+1581587074 source:c:\users\theca\documents\tp1\tp_trabalho 1\entidades.cpp
+	"entidades.h"
+
+1581587074 c:\users\theca\documents\tp1\tp_trabalho 1\entidades.h
+	"dominios.h"
+	<string>
+
+1581587074 source:c:\users\theca\documents\tp1\tp_trabalho 1\testes.cpp
+	"testes.h"
+	<iostream>
+
+1581587074 c:\users\theca\documents\tp1\tp_trabalho 1\testes.h
+	"dominios.h"
+	"entidades.h"
+
