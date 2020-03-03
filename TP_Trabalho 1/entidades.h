@@ -3,8 +3,8 @@
  *
  * @brief Arquivo com a declara&ccedil;&atilde;o das Classes de Entidades do programa
  *
- *  @author Lu&iacute;s Capelletto
- *  @author Rafael Barbosa
+ * @author Lu&iacute;s Capelletto
+ * @author Rafael Barbosa
  */
 
 #ifndef ENTIDADES_H_INCLUDED

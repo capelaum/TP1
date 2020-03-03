@@ -124,3 +124,14 @@
 	"dominios.h"
 	"entidades.h"
 
+1581589171 source:c:\users\theca\documents\tp1\tp_trabalho 1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"testes.h"
+
+1581587074 c:\users\theca\documents\tp1\tp_trabalho 1\interfaces.h
+	"dominios.h"
+	"entidades.h"
+
