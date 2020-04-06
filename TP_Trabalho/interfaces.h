@@ -15,20 +15,38 @@
 
 using namespace std;
 
+class ILNAutenticacao; // classe de logica de negocio
+
 // Declarações de Interfaces da Camada de Apresentação
 // --------------------------------------------------------------------------------------
-// Declaração de interface para funcionalidades de Autenticação na camada de apresentação.
-
-class IAutenticacao
+// Declaração de interface para serviço de autenticação na camada de apresentação.
+class IUAutenticacao
 {
 public:
 
-    // Método por meio do qual é solicitado autenticação.
-    virtual bool Autenticar() throw(runtime_error) = 0;
+    // Método por meio do qual é solicitado serviço.
+    virtual ResultadoAutenticacao autenticar()
+    throw(runtime_error) = 0;
+
+    // Método por meio do qual é estabelecida ligação (link) com a controladora na camada de serviço.
+    virtual void setCntrLNAutenticacao(ILNAutenticacao *) = 0;
 
     // Método destrutor virtual.
-    virtual ~IAutenticacao(){}
+    virtual ~IUAutenticacao(){}
 };
+
+class ILNAutenticacao {
+public:
+
+    // Método por meio do qual é solicitado serviço.
+
+    virtual ResultadoAutenticacao autenticar(const Matricula&,
+                                             const Senha&) throw(runtime_error)= 0;
+   // Método destrutor virtual.
+
+    virtual ~ILNAutenticacao(){}
+};
+
 // --------------------------------------------------------------------------------------
 // Declaração de interface para funcionalidades de Usuário na camada de apresentação.
 

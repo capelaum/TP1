@@ -954,4 +954,16 @@ void Vagas::setVagas(string vagas)
     validar(vagas);
     this->vagas = vagas;
 }
+//==================================================================
+// APENAS PARA EXEMPLO
+// Definições de métodos da classe Matricula.
 
+void Matricula::validar(string valor) {
+    if(valor == MATRICULA_INVALIDA)
+        throw invalid_argument("Erro parametro de matricula invalida.");
+}
+
+void Matricula::setValor(string valor) {
+    validar(valor);
+    this->valor = valor;
+}

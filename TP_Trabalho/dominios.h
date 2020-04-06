@@ -802,5 +802,27 @@ public:
         return vagas;
     }
 };
+//============================================================
+// Declaração da classe Matricula.
+
+class Matricula {
+
+private:
+
+    string valor;
+    void validar(string);
+
+public:
+
+    string MATRICULA_INVALIDA = "12345";
+
+    void setValor(string);
+
+    string getValor() const {
+        return valor;
+    }
+};
+
+// Declaração da classe Senha.
 
 #endif // DOMINIOS_H_INCLUDED
