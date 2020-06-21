@@ -231,3 +231,61 @@
 	<iostream>
 	<typeinfo>
 
+1583192576 source:c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\comandos.cpp
+
+1584039300 source:c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\controladoras.cpp
+	"controladoras.h"
+
+1583192576 c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\controladoras.h
+	"interfaces.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+
+1584038398 c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\interfaces.h
+	"dominios.h"
+	"entidades.h"
+
+1584048692 c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\dominios.h
+	<iostream>
+	<stdexcept>
+	<string>
+	<algorithm>
+	<iterator>
+	<map>
+	<ctype.h>
+
+1584037037 c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\entidades.h
+	"dominios.h"
+	<string>
+
+1584048726 source:c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\dominios.cpp
+	"dominios.h"
+
+1581587074 source:c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\entidades.cpp
+	"entidades.h"
+
+1584047597 source:c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"testes.h"
+
+1581587074 c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1584039115 source:c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\stubs.cpp
+	"stubs.h"
+
+1584039128 c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\stubs.h
+	"Interfaces.h"
+	<stdexcept>
+	<iostream>
+	<typeinfo>
+
+1581587074 source:c:\users\theca\documents\ti\tp 1\projeto tp 1\tp_trabalho\testes.cpp
+	"testes.h"
+	<iostream>
+
